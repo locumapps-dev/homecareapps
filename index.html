@@ -1,10 +1,1294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>HomeCareApps — Hello world </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Book a verified registered nurse for home visits in Malaysia. Post-surgical wound care, IV therapy, catheter care and more. Online booking, upfront pricing, no WhatsApp negotiation.">
+<meta name="keywords" content="home nursing Malaysia, nurse home visit Kuala Lumpur, post surgery nurse at home Malaysia, home nursing care KL">
+<title>HomeCareApps — Verified Home Nursing in Malaysia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F1E63;
+    --blue: #2563EB;
+    --teal: #008A8A;
+    --teal-light: #C3E7E3;
+    --grey: #475569;
+    --grey-light: #F1F5F9;
+    --white: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .brand {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(15, 30, 99, 0.97);
+    backdrop-filter: blur(12px);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--teal);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .nav-logo-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--white);
+    letter-spacing: -0.3px;
+  }
+
+  .nav-logo-text span { color: var(--teal-light); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--teal) !important;
+    color: var(--white) !important;
+    padding: 9px 20px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: #006f6f !important; }
+
+  .nav-mobile-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+  }
+
+  .nav-mobile-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy) 0%, #1a2f7a 50%, #0d2060 100%);
+    display: flex;
+    align-items: center;
+    padding: 100px 5% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,138,138,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,138,138,0.15);
+    border: 1px solid rgba(0,138,138,0.3);
+    color: var(--teal-light);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: #4ade80;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 span { color: var(--teal-light); }
+
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 36px;
+    max-width: 480px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: #006f6f;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0,138,138,0.35);
+  }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.2s;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.14);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-stat-num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+
+  .hero-stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+  }
+
+  .hero-stat-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.15);
+    align-self: stretch;
+  }
+
+  /* Hero visual card */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 28px;
+    width: 100%;
+    max-width: 360px;
+    backdrop-filter: blur(20px);
+  }
+
+  .hero-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nurse-avatar {
+    width: 48px; height: 48px;
+    background: var(--teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+  }
+
+  .hero-card-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    font-size: 15px;
+  }
+
+  .hero-card-role {
+    font-size: 12px;
+    color: var(--teal-light);
+    font-weight: 500;
+  }
+
+  .trust-score-badge {
+    margin-left: auto;
+    background: rgba(0,138,138,0.2);
+    border: 1px solid rgba(0,138,138,0.3);
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+  }
+
+  .trust-score-num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: #4ade80;
+  }
+
+  .trust-score-label {
+    font-size: 9px;
+    color: rgba(255,255,255,0.5);
+    display: block;
+  }
+
+  .hero-card-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-card-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-card-icon {
+    width: 32px; height: 32px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .hero-card-row-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .hero-card-row-text strong {
+    color: var(--white);
+    display: block;
+    font-size: 13px;
+  }
+
+  .hero-card-confirm {
+    margin-top: 16px;
+    background: var(--teal);
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    color: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--navy);
+    padding: 18px 5%;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .trust-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .trust-item-icon {
+    width: 24px; height: 24px;
+    background: rgba(0,138,138,0.2);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  /* SECTIONS */
+  section { padding: 80px 5%; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    display: inline-block;
+    background: var(--teal-light);
+    color: var(--teal);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+    line-height: 1.15;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* HOW IT WORKS */
+  .how-section { background: var(--grey-light); }
+
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+    position: relative;
+  }
+
+  .how-steps::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: calc(16.67% + 16px);
+    right: calc(16.67% + 16px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal), var(--blue));
+    z-index: 0;
+  }
+
+  .how-step {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    position: relative;
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s;
+  }
+
+  .how-step:hover {
+    box-shadow: 0 8px 32px rgba(15,30,99,0.08);
+  }
+
+  .how-step-num {
+    width: 56px; height: 56px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    margin: 0 auto 18px;
+    position: relative;
+    z-index: 1;
+    border: 3px solid var(--grey-light);
+  }
+
+  .how-step:nth-child(2) .how-step-num { background: var(--teal); }
+  .how-step:nth-child(3) .how-step-num { background: var(--blue); }
+
+  .how-step h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .how-step p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .service-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px 22px;
+    transition: all 0.25s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--blue));
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .service-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 8px 32px rgba(0,138,138,0.1);
+    transform: translateY(-2px);
+  }
+
+  .service-card:hover::before { opacity: 1; }
+
+  .service-icon {
+    width: 48px; height: 48px;
+    background: var(--teal-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .service-price {
+    display: inline-block;
+    background: var(--grey-light);
+    color: var(--navy);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  .service-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .service-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .service-meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  .service-meta-item {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* POSITIONING STATEMENT */
+  .positioning {
+    background: var(--navy);
+    text-align: center;
+    padding: 80px 5%;
+  }
+
+  .positioning-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .positioning h2 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .positioning h2 span { color: var(--teal-light); }
+
+  .positioning p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  /* EARLY ACCESS */
+  .early-access {
+    background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+    border-top: 1px solid var(--border);
+  }
+
+  .early-access-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .email-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .email-form input {
+    flex: 1;
+    min-width: 240px;
+    padding: 14px 18px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+    background: var(--white);
+  }
+
+  .email-form input:focus { border-color: var(--teal); }
+
+  .email-form input::placeholder { color: #94a3b8; }
+
+  /* FAQ */
+  .faq-section { background: var(--white); }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 20px;
+    text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.2s;
+  }
+
+  .faq-question:hover { background: var(--grey-light); }
+
+  .faq-chevron {
+    flex-shrink: 0;
+    width: 20px; height: 20px;
+    background: var(--teal-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--teal);
+    transition: transform 0.25s;
+  }
+
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    padding: 0 20px;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 200px;
+    padding: 0 20px 18px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    padding: 48px 5% 28px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 28px;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 12px;
+    max-width: 280px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+  }
+
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-bottom a {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+  }
+
+  .footer-bottom a:hover { color: var(--white); }
+
+  .powered-by {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .powered-by strong { color: rgba(255,255,255,0.6); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 0 4%; }
+
+    .nav-links { display: none; }
+
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 68px; left: 0; right: 0;
+      background: var(--navy);
+      padding: 20px 5%;
+      gap: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-mobile-btn { display: flex; }
+
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+
+    .hero-visual { display: none; }
+
+    .hero-stats { gap: 16px; }
+
+    .how-steps { grid-template-columns: 1fr; }
+
+    .how-steps::before { display: none; }
+
+    .services-grid { grid-template-columns: 1fr; }
+
+    .faq-grid { grid-template-columns: 1fr; }
+
+    .footer-top { grid-template-columns: 1fr; gap: 28px; }
+
+    .trust-bar-inner { gap: 20px; }
+
+    .email-form { flex-direction: column; }
+
+    .email-form input { min-width: unset; }
+  }
+
+  @media (max-width: 480px) {
+    section { padding: 56px 5%; }
+    .hero { padding: 90px 4% 48px; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-badge { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.2s; }
+  .hero-sub { animation-delay: 0.3s; }
+  .hero-actions { animation-delay: 0.4s; }
+  .hero-stats { animation-delay: 0.5s; }
+</style>
 </head>
 <body>
-  <h1>HomeCareApps — HelloWorld</h1>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">🏠</div>
+    <span class="nav-logo-text">homecare<span>apps</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="#early-access" class="nav-cta">Get Early Access</a></li>
+  </ul>
+  <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Now accepting early access registrations</div>
+      <h1>Hospital-grade nursing care, <span>delivered home.</span></h1>
+      <p class="hero-sub">Book a verified registered nurse for clinical home visits in Malaysia. Post-surgical wound care, IV therapy, catheter care and more — online, upfront, no WhatsApp negotiation.</p>
+      <div class="hero-actions">
+        <a href="#early-access" class="btn-primary">Get Early Access →</a>
+        <a href="#services" class="btn-secondary">View services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">39,000</span>
+          <span class="hero-stat-label">Verified nurses</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">89</span>
+          <span class="hero-stat-label">Hospital partners</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">5+</span>
+          <span class="hero-stat-label">Years operating</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="nurse-avatar">👩‍⚕️</div>
+          <div>
+            <div class="hero-card-name">Nurse Priya S.</div>
+            <div class="hero-card-role">Registered Nurse • Ward Specialist</div>
+          </div>
+          <div class="trust-score-badge">
+            <div class="trust-score-num">94</div>
+            <span class="trust-score-label">Trust Score</span>
+          </div>
+        </div>
+        <div class="hero-card-detail">
+          <div class="hero-card-row">
+            <div class="hero-card-icon">📍</div>
+            <div class="hero-card-row-text">
+              <strong>Your home, Bangsar</strong>
+              Arriving at 10:00 AM
+            </div>
+          </div>
+          <div class="hero-card-row">
+            <div class="hero-card-icon">🩹</div>
+            <div class="hero-card-row-text">
+              <strong>Post-surgical wound care</strong>
+              45–60 min • RM180
+            </div>
+          </div>
+          <div class="hero-card-row">
+            <div class="hero-card-icon">✅</div>
+            <div class="hero-card-row-text">
+              <strong>APC verified</strong>
+              Malaysian Nursing Board
+            </div>
+          </div>
+        </div>
+        <div class="hero-card-confirm">
+          ✓ Booking Confirmed
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <div class="trust-item-icon">🏥</div>
+      Backed by WeAssist
+    </div>
+    <div class="trust-item">
+      <div class="trust-item-icon">👩‍⚕️</div>
+      39,000 verified nurses
+    </div>
+    <div class="trust-item">
+      <div class="trust-item-icon">🏆</div>
+      JCI audit passed
+    </div>
+    <div class="trust-item">
+      <div class="trust-item-icon">🏛️</div>
+      EPF partner
+    </div>
+    <div class="trust-item">
+      <div class="trust-item-icon">📋</div>
+      APC-verified only
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how-it-works">
+  <div class="section-inner">
+    <div class="section-tag">How it works</div>
+    <h2 class="section-title">From booking to bedside in three steps</h2>
+    <p class="section-sub">No phone calls. No WhatsApp negotiations. Just select your care type, pay upfront, and a verified nurse comes to you.</p>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-num">1</div>
+        <h3>Book online</h3>
+        <p>Select your care type, preferred date and time, and enter your patient details and address. Takes under 5 minutes.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">2</div>
+        <h3>Nurse matched</h3>
+        <p>A verified registered nurse with the right specialisation is matched to your booking within 2 hours of confirmation.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">3</div>
+        <h3>Nurse visits your home</h3>
+        <p>Your nurse arrives at the scheduled time, performs the clinical procedure, and submits a post-visit report for your records.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-tag">Our services</div>
+    <h2 class="section-title">Clinical care, delivered to your door</h2>
+    <p class="section-sub">Every service is performed by a registered nurse holding a valid Annual Practising Certificate from the Malaysian Nursing Board.</p>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🩹</div>
+        <div class="service-price">From RM180</div>
+        <h3>Post-Surgical Wound Care</h3>
+        <p>Professional wound assessment, irrigation, and dressing change after your operation. Infection monitoring included.</p>
+        <div class="service-meta">
+          <span class="service-meta-item">⏱ 45–60 min</span>
+          <span class="service-meta-item">💉 Registered Nurse</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💧</div>
+        <div class="service-price">From RM250</div>
+        <h3>IV Therapy</h3>
+        <p>Safe peripheral IV insertion and medication administration at home. Standard peripheral only — no central line.</p>
+        <div class="service-meta">
+          <span class="service-meta-item">⏱ 60–90 min</span>
+          <span class="service-meta-item">💉 Registered Nurse</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏥</div>
+        <div class="service-price">From RM180</div>
+        <h3>Catheter Care</h3>
+        <p>Urinary catheter insertion, maintenance, bag change, and UTI monitoring carried out by a trained registered nurse.</p>
+        <div class="service-meta">
+          <span class="service-meta-item">⏱ 30–45 min</span>
+          <span class="service-meta-item">💉 Registered Nurse</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💊</div>
+        <div class="service-price">From RM120</div>
+        <h3>Medication Administration</h3>
+        <p>Oral and injection medications administered correctly and safely. Compliance monitoring and patient education included.</p>
+        <div class="service-meta">
+          <span class="service-meta-item">⏱ 20–30 min</span>
+          <span class="service-meta-item">💉 Registered Nurse</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">❤️</div>
+        <div class="service-price">From RM200</div>
+        <h3>Post-Discharge Monitoring</h3>
+        <p>Vital signs assessment and early deterioration detection in the critical days after hospital discharge.</p>
+        <div class="service-meta">
+          <span class="service-meta-item">⏱ 60–90 min</span>
+          <span class="service-meta-item">💉 Registered Nurse</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">👶</div>
+        <div class="service-price">From RM220</div>
+        <h3>Post-Natal Nursing Care</h3>
+        <p>Maternal and newborn clinical assessment for mothers recovering at home after delivery. Breastfeeding support included.</p>
+        <div class="service-meta">
+          <span class="service-meta-item">⏱ 60 min</span>
+          <span class="service-meta-item">💉 Registered Midwife</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<div class="positioning">
+  <div class="positioning-inner">
+    <h2>Not a caregiver.<br><span>A ward nurse.</span> In your home.</h2>
+    <p>HomeCareApps connects Malaysian families with registered nurses for clinical home visits. This is not personal care, companionship, or housekeeping. This is hospital-grade clinical nursing — the same standard you'd receive on a hospital ward — delivered to your door by a verified professional.</p>
+    <a href="#early-access" class="btn-primary" style="display:inline-flex;">Get Early Access →</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-title">Questions families ask</h2>
+    <p class="section-sub">Everything you need to know before booking your first home nursing visit.</p>
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is the difference between a nurse and a caregiver?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">A registered nurse holds a degree in nursing and is licensed by the Malaysian Nursing Board to perform clinical procedures — wound dressing, IV therapy, medication injection. A caregiver provides personal assistance like bathing and mobility. HomeCareApps only provides registered nurses.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Are your nurses registered with the Malaysian Nursing Board?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">Yes. Every nurse on HomeCareApps holds a valid Annual Practising Certificate (APC) from the Malaysian Nursing Board. We verify credentials before any nurse is approved and track APC expiry dates automatically.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What areas do you currently cover?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">We are launching in Kuala Lumpur and Petaling Jaya first. Register your email for early access and we will notify you the moment we are live in your area.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How quickly can I get a nurse?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">Once your booking is confirmed and payment is received, a nurse is matched within 2 hours. You will receive the nurse's name, photo, and Trust Score before they arrive at your home.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What happens if I need to cancel?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">Cancellations more than 24 hours before your visit receive a full refund. Cancellations under 24 hours receive a 50% refund. If the nurse does not show up, you receive a full automatic refund.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is this covered by insurance?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">Coverage depends on your insurance plan. We recommend checking with your insurer directly. We provide a detailed post-visit clinical report that can be submitted for reimbursement claims.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EARLY ACCESS -->
+<section class="early-access" id="early-access">
+  <div class="section-inner">
+    <div class="early-access-inner">
+      <div class="section-tag">Early access</div>
+      <h2 class="section-title">Home nursing is coming to your area</h2>
+      <p class="section-sub">We are launching verified nurse home visits across Klang Valley. Enter your email and we will notify you the moment we are live near you.</p>
+      <form class="email-form" onsubmit="handleSubmit(event)">
+        <input type="email" placeholder="Enter your email address" required id="emailInput">
+        <button type="submit" class="btn-primary">Notify me →</button>
+      </form>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">No spam. One email when we launch in your area.</p>
+      <div id="form-success" style="display:none;margin-top:16px;padding:14px 20px;background:#dcfce7;border-radius:10px;color:#166534;font-weight:600;font-size:14px;">
+        ✓ You're on the list. We'll be in touch soon.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="margin-bottom:4px;display:inline-flex;">
+          <div class="nav-logo-icon">🏠</div>
+          <span class="nav-logo-text">homecare<span>apps</span></span>
+        </a>
+        <p>Verified registered nurses for clinical home visits in Malaysia. A product by WeAssist — Malaysia's largest verified nurse staffing platform.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Wound Care</a>
+        <a href="#services">IV Therapy</a>
+        <a href="#services">Catheter Care</a>
+        <a href="#services">Medication Admin</a>
+        <a href="#services">Post-Natal Care</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about">About us</a>
+        <a href="/blog">Blog</a>
+        <a href="#early-access">Early access</a>
+        <a href="mailto:homecare@weassist.com.my">Contact</a>
+        <a href="/privacy">Privacy policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 HomeCareApps. All rights reserved.</span>
+      <div class="powered-by">A product by <strong>locum APPS</strong></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  const mobileBtn = document.getElementById('mobileBtn');
+  const navLinks = document.getElementById('navLinks');
+  mobileBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Email form
+  function handleSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('emailInput').value;
+    document.getElementById('form-success').style.display = 'block';
+    document.querySelector('.email-form').style.display = 'none';
+    console.log('Email captured:', email);
+  }
+</script>
+
 </body>
 </html>
