@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="[META DESCRIPTION — describe the services page here]">
+<title>Our Services — HomeCareApps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CSS VARIABLES — matches homecareapps.com brand
+   ============================================================ */
+:root {
+  --navy:       #0F1E63;
+  --blue:       #2563EB;
+  --teal:       #008A8A;
+  --teal-light: #C3E7E3;
+  --grey:       #475569;
+  --grey-light: #F1F5F9;
+  --white:      #ffffff;
+  --text:       #1e293b;
+  --text-muted: #64748b;
+  --border:     #e2e8f0;
+  --nav-h:      76px;
+  --sidebar-w:  280px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--grey-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, h5 { font-family: 'Plus Jakarta Sans', sans-serif; }
+img { max-width: 100%; display: block; }
+
+/* ============================================================
+   NAV — identical to homepage
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: rgba(15,30,99,0.97);
+  backdrop-filter: blur(12px);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  height: 56px;
+  width: auto;
+  background: white;
+  border-radius: 8px;
+  padding: 3px;
+  object-fit: contain;
+}
+
+.nav-logo-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--white);
+  letter-spacing: -0.3px;
+}
+.nav-logo-text span { color: var(--teal-light); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--white); }
+
+.nav-cta {
+  background: var(--teal) !important;
+  color: var(--white) !important;
+  padding: 9px 20px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+}
+.nav-cta:hover { background: #006f6f !important; }
+
+.nav-mobile-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+.nav-mobile-btn span {
+  display: block;
+  width: 24px; height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ============================================================
+   PAGE HERO
+   ============================================================ */
+.page-hero {
+  margin-top: var(--nav-h);
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2f7a 60%, #0d2060 100%);
+  padding: 56px 5% 52px;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(0,138,138,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.page-hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.page-hero-breadcrumb a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+.page-hero-breadcrumb a:hover { color: white; }
+.page-hero-breadcrumb span { color: rgba(255,255,255,0.25); font-size: 13px; }
+.page-hero-breadcrumb strong { color: rgba(255,255,255,0.8); font-size: 13px; font-weight: 500; }
+
+.page-hero h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+.page-hero h1 span { color: var(--teal-light); }
+
+.page-hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  max-width: 540px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.hero-service-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.hero-pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.hero-pill:hover {
+  background: rgba(0,138,138,0.25);
+  border-color: rgba(0,138,138,0.4);
+  color: var(--teal-light);
+}
+
+/* ============================================================
+   MOBILE TAB NAV (shows on mobile, hidden on desktop)
+   ============================================================ */
+.mobile-service-tabs {
+  display: none;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 100;
+}
+.mobile-service-tabs::-webkit-scrollbar { display: none; }
+
+.mobile-tabs-inner {
+  display: flex;
+  gap: 0;
+  min-width: max-content;
+  padding: 0 16px;
+}
+.mobile-tab {
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.mobile-tab:hover,
+.mobile-tab.active {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+}
+
+/* ============================================================
+   MAIN LAYOUT — sidebar + content
+   ============================================================ */
+.services-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 5%;
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+.sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(15,30,99,0.06);
+}
+
+.sidebar-header {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-header h3 {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.sidebar-nav { padding: 8px 0; }
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+}
+.sidebar-item:hover {
+  background: var(--grey-light);
+  color: var(--navy);
+  border-left-color: var(--teal-light);
+}
+.sidebar-item.active {
+  background: linear-gradient(90deg, rgba(0,138,138,0.06) 0%, transparent 100%);
+  color: var(--teal);
+  border-left-color: var(--teal);
+  font-weight: 600;
+}
+
+.sidebar-item-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: var(--grey-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.sidebar-item.active .sidebar-item-icon {
+  background: var(--teal-light);
+}
+
+.sidebar-item-text { flex: 1; line-height: 1.3; font-size: 13px; }
+
+.sidebar-cta {
+  margin: 8px 12px 12px;
+  background: var(--teal);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  display: block;
+  transition: background 0.2s;
+}
+.sidebar-cta:hover { background: #006f6f; }
+
+/* ============================================================
+   SERVICE SECTIONS
+   ============================================================ */
+.services-content { display: flex; flex-direction: column; gap: 28px; }
+
+.service-section {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  scroll-margin-top: calc(var(--nav-h) + 24px);
+  box-shadow: 0 2px 12px rgba(15,30,99,0.04);
+  transition: box-shadow 0.3s;
+}
+.service-section:target,
+.service-section.highlighted {
+  box-shadow: 0 0 0 2px var(--teal), 0 8px 32px rgba(0,138,138,0.12);
+}
+
+/* Section header strip */
+.service-section-header {
+  padding: 28px 32px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.service-section-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: var(--teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.service-section-title-area { flex: 1; }
+
+.service-section-label {
+  display: inline-block;
+  background: var(--teal-light);
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.service-section-title {
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.service-section-tagline {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.service-section-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.service-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--grey-light);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Section body */
+.service-section-body { padding: 28px 32px; }
+
+.service-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+/* Content block */
+.content-block { display: flex; flex-direction: column; gap: 8px; }
+
+.content-block-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.content-placeholder {
+  background: var(--grey-light);
+  border: 1.5px dashed var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 72px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.content-placeholder-tall { min-height: 120px; }
+
+.content-placeholder-sm { min-height: 48px; }
+
+/* Benefits list placeholder */
+.benefits-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.benefit-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--grey-light);
+  border: 1.5px dashed var(--border);
+  border-radius: 8px;
+}
+.benefit-dot {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+  color: var(--teal);
+  font-weight: 700;
+}
+.benefit-text {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* What to prepare */
+.prepare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.prepare-card {
+  background: var(--grey-light);
+  border: 1.5px dashed var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+.prepare-card-icon {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.prepare-card-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: block;
+  margin-bottom: 4px;
+}
+.prepare-card-value {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Divider */
+.section-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 32px 28px;
+}
+
+/* CTA row */
+.service-cta-row {
+  padding: 20px 32px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: linear-gradient(90deg, rgba(0,138,138,0.04) 0%, transparent 100%);
+  border-top: 1px solid var(--border);
+}
+
+.service-cta-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 380px;
+  line-height: 1.5;
+}
+
+.btn-enquire {
+  background: var(--teal);
+  color: white;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-enquire:hover {
+  background: #006f6f;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,138,138,0.3);
+}
+
+.btn-enquire-outline {
+  background: transparent;
+  color: var(--teal);
+  border: 1.5px solid var(--teal);
+  padding: 11px 22px;
+  border-radius: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+.btn-enquire-outline:hover {
+  background: var(--teal);
+  color: white;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--navy);
+  padding: 48px 5% 28px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 60px;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 28px;
+}
+.footer-brand img {
+  height: 56px;
+  background: white;
+  border-radius: 8px;
+  padding: 3px;
+  margin-bottom: 12px;
+}
+.footer-brand p { font-size: 14px; line-height: 1.7; max-width: 280px; }
+.footer-col h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px; font-weight: 700; color: white;
+  text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px;
+}
+.footer-col a {
+  display: block; color: rgba(255,255,255,0.55); text-decoration: none;
+  font-size: 14px; margin-bottom: 8px; transition: color 0.2s;
+}
+.footer-col a:hover { color: white; }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; flex-wrap: wrap; gap: 12px;
+}
+.powered-by { font-size: 12px; color: rgba(255,255,255,0.35); }
+.powered-by strong { color: rgba(255,255,255,0.6); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .services-layout {
+    grid-template-columns: 1fr;
+    padding-top: 24px;
+  }
+  .sidebar { display: none; }
+  .mobile-service-tabs { display: block; }
+  .service-body-grid { grid-template-columns: 1fr; }
+  .prepare-grid { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+}
+
+@media (max-width: 600px) {
+  .page-hero { padding: 40px 5% 36px; }
+  .service-section-header { flex-direction: column; gap: 14px; padding: 22px 20px 18px; }
+  .service-section-body { padding: 20px; }
+  .section-divider { margin: 0 20px 20px; }
+  .service-cta-row { padding: 16px 20px 20px; flex-direction: column; align-items: flex-start; }
+  .prepare-grid { grid-template-columns: 1fr; }
+  .hero-service-pills { display: none; }
+  .footer-top { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SCROLL PROGRESS INDICATOR
+   ============================================================ */
+.scroll-progress {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--blue));
+  z-index: 300;
+  transition: width 0.1s;
+  width: 0%;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.service-section {
+  animation: fadeInUp 0.4s ease both;
+}
+.service-section:nth-child(1) { animation-delay: 0.05s; }
+.service-section:nth-child(2) { animation-delay: 0.10s; }
+.service-section:nth-child(3) { animation-delay: 0.15s; }
+.service-section:nth-child(4) { animation-delay: 0.20s; }
+.service-section:nth-child(5) { animation-delay: 0.25s; }
+.service-section:nth-child(6) { animation-delay: 0.30s; }
+.service-section:nth-child(7) { animation-delay: 0.35s; }
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="Homecare_Icon.png" alt="HomeCareApps">
+    <!-- fallback text if logo not loaded -->
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/">Home</a></li>
+    <li><a href="/services" class="active">Services</a></li>
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="https://www.weassist.asia/about-us" target="_blank">About</a></li>
+    <li><a href="#enquire" class="nav-cta">Enquire</a></li>
+  </ul>
+  <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-breadcrumb">
+      <a href="/">Home</a>
+      <span>›</span>
+      <strong>Services</strong>
+    </div>
+    <h1>Clinical care, <span>delivered home.</span></h1>
+    <p class="page-hero-sub">
+      [HERO SUBHEADING — describe the services overview in 1–2 sentences. E.g. "Every service is performed by a verified registered nurse. Book online, pay upfront, nurse visits your home."]
+    </p>
+    <div class="hero-service-pills">
+      <a href="#wound-care" class="hero-pill">🩹 Wound Care</a>
+      <a href="#iv-therapy" class="hero-pill">💧 IV Therapy</a>
+      <a href="#catheter-care" class="hero-pill">🏥 Catheter Care</a>
+      <a href="#medication" class="hero-pill">💊 Medication</a>
+      <a href="#post-discharge" class="hero-pill">❤️ Post-Discharge</a>
+      <a href="#post-natal" class="hero-pill">👶 Post-Natal</a>
+      <a href="#advanced-nursing" class="hero-pill">🧑‍⚕️ Advanced Nursing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MOBILE TAB NAV
+     ============================================================ -->
+<div class="mobile-service-tabs" id="mobileServiceTabs">
+  <div class="mobile-tabs-inner">
+    <a href="#wound-care"      class="mobile-tab" data-target="wound-care">🩹 Wound Care</a>
+    <a href="#iv-therapy"      class="mobile-tab" data-target="iv-therapy">💧 IV Therapy</a>
+    <a href="#catheter-care"   class="mobile-tab" data-target="catheter-care">🏥 Catheter Care</a>
+    <a href="#medication"      class="mobile-tab" data-target="medication">💊 Medication</a>
+    <a href="#post-discharge"  class="mobile-tab" data-target="post-discharge">❤️ Post-Discharge</a>
+    <a href="#post-natal"      class="mobile-tab" data-target="post-natal">👶 Post-Natal</a>
+    <a href="#advanced-nursing" class="mobile-tab" data-target="advanced-nursing">🧑‍⚕️ Advanced</a>
+  </div>
+</div>
+
+<!-- ============================================================
+     MAIN LAYOUT
+     ============================================================ -->
+<div class="services-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h3>Our Services</h3>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav">
+      <a href="#wound-care"      class="sidebar-item active" data-target="wound-care">
+        <div class="sidebar-item-icon">🩹</div>
+        <span class="sidebar-item-text">Post-Surgical Wound Care</span>
+      </a>
+      <a href="#iv-therapy"      class="sidebar-item" data-target="iv-therapy">
+        <div class="sidebar-item-icon">💧</div>
+        <span class="sidebar-item-text">IV Therapy</span>
+      </a>
+      <a href="#catheter-care"   class="sidebar-item" data-target="catheter-care">
+        <div class="sidebar-item-icon">🏥</div>
+        <span class="sidebar-item-text">Catheter Care</span>
+      </a>
+      <a href="#medication"      class="sidebar-item" data-target="medication">
+        <div class="sidebar-item-icon">💊</div>
+        <span class="sidebar-item-text">Medication Administration</span>
+      </a>
+      <a href="#post-discharge"  class="sidebar-item" data-target="post-discharge">
+        <div class="sidebar-item-icon">❤️</div>
+        <span class="sidebar-item-text">Post-Discharge Monitoring</span>
+      </a>
+      <a href="#post-natal"      class="sidebar-item" data-target="post-natal">
+        <div class="sidebar-item-icon">👶</div>
+        <span class="sidebar-item-text">Post-Natal Nursing Care</span>
+      </a>
+      <a href="#advanced-nursing" class="sidebar-item" data-target="advanced-nursing">
+        <div class="sidebar-item-icon">🧑‍⚕️</div>
+        <span class="sidebar-item-text">Advanced Home Nursing</span>
+      </a>
+    </nav>
+    <a href="#enquire" class="sidebar-cta">Enquire Now →</a>
+  </aside>
+
+  <!-- SERVICE SECTIONS -->
+  <main class="services-content">
+
+    <!-- ====================================================
+         1. POST-SURGICAL WOUND CARE
+         ==================================================== -->
+    <section class="service-section" id="wound-care">
+      <div class="service-section-header">
+        <div class="service-section-icon">🩹</div>
+        <div class="service-section-title-area">
+          <span class="service-section-label">Wound Care</span>
+          <h2 class="service-section-title">Post-Surgical Wound Care</h2>
+          <p class="service-section-tagline">[Short tagline — e.g. "Professional wound dressing from a verified registered nurse"]</p>
+          <div class="service-section-meta">
+            <span class="service-meta-pill">⏱ [Duration]</span>
+            <span class="service-meta-pill">💰 [Price]</span>
+            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-section-body">
+        <div class="service-body-grid">
+          <div class="content-block">
+            <span class="content-block-label">Service Description</span>
+            <div class="content-placeholder content-placeholder-tall">
+              [SERVICE DESCRIPTION — Describe what the nurse does during this visit. Include procedures performed, assessment done, and clinical scope. 2–3 sentences.]
+            </div>
+          </div>
+          <div class="content-block">
+            <span class="content-block-label">Who This Is For</span>
+            <div class="content-placeholder content-placeholder-tall">
+              [WHO THIS IS FOR — Describe the patient profile. E.g. post-surgery patients, specific conditions, recovery stages. 2–3 sentences.]
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block" style="margin-bottom:24px;">
+          <span class="content-block-label">Key Benefits</span>
+          <div class="benefits-placeholder">
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1 — e.g. Reduces risk of infection]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2 — e.g. Professional clinical assessment]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3 — e.g. Detailed post-visit report provided]</span></div>
+          </div>
+        </div>
+
+        <div class="content-block" style="margin-bottom:28px;">
+          <span class="content-block-label">What to Prepare</span>
+          <div class="prepare-grid">
+            <div class="prepare-card">
+              <div class="prepare-card-icon">📦</div>
+              <span class="prepare-card-label">Supplies</span>
+              <span class="prepare-card-value">[e.g. Dressings provided by patient]</span>
+            </div>
+            <div class="prepare-card">
+              <div class="prepare-card-icon">🛏️</div>
+              <span class="prepare-card-label">Space</span>
+              <span class="prepare-card-value">[e.g. Clean flat surface for patient]</span>
+            </div>
+            <div class="prepare-card">
+              <div class="prepare-card-icon">📋</div>
+              <span class="prepare-card-label">Documents</span>
+              <span class="prepare-card-value">[e.g. Discharge summary if available]</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <span class="content-block-label">Important Notes</span>
+          <div class="content-placeholder content-placeholder-sm">
+            [IMPORTANT NOTES — Any clinical exclusions, limitations, or things families should know before booking. E.g. "Does not include supply of dressings."]
+          </div>
+        </div>
+      </div>
+
+      <div class="service-cta-row">
+        <p class="service-cta-note">[CTA SUPPORTING TEXT — e.g. "Have a question before booking? Our team is available to help."]</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="#enquire" class="btn-enquire">Enquiry →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         2. IV THERAPY
+         ==================================================== -->
+    <section class="service-section" id="iv-therapy">
+      <div class="service-section-header">
+        <div class="service-section-icon">💧</div>
+        <div class="service-section-title-area">
+          <span class="service-section-label">IV Therapy</span>
+          <h2 class="service-section-title">IV Therapy</h2>
+          <p class="service-section-tagline">[Short tagline — e.g. "Safe peripheral IV administration at home"]</p>
+          <div class="service-section-meta">
+            <span class="service-meta-pill">⏱ [Duration]</span>
+            <span class="service-meta-pill">💰 [Price]</span>
+            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-section-body">
+        <div class="service-body-grid">
+          <div class="content-block">
+            <span class="content-block-label">Service Description</span>
+            <div class="content-placeholder content-placeholder-tall">
+              [SERVICE DESCRIPTION — Describe the IV therapy procedure, scope, and what the nurse manages during the visit.]
+            </div>
+          </div>
+          <div class="content-block">
+            <span class="content-block-label">Who This Is For</span>
+            <div class="content-placeholder content-placeholder-tall">
+              [WHO THIS IS FOR — e.g. Patients prescribed IV antibiotics post-discharge, patients requiring IV fluid management at home.]
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block" style="margin-bottom:24px;">
+          <span class="content-block-label">Key Benefits</span>
+          <div class="benefits-placeholder">
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
+          </div>
+        </div>
+
+        <div class="content-block" style="margin-bottom:28px;">
+          <span class="content-block-label">What to Prepare</span>
+          <div class="prepare-grid">
+            <div class="prepare-card">
+              <div class="prepare-card-icon">💊</div>
+              <span class="prepare-card-label">Medication</span>
+              <span class="prepare-card-value">[e.g. IV medication from hospital pharmacy]</span>
+            </div>
+            <div class="prepare-card">
+              <div class="prepare-card-icon">🛏️</div>
+              <span class="prepare-card-label">Space</span>
+              <span class="prepare-card-value">[e.g. Comfortable resting area]</span>
+            </div>
+            <div class="prepare-card">
+              <div class="prepare-card-icon">📋</div>
+              <span class="prepare-card-label">Prescription</span>
+              <span class="prepare-card-value">[e.g. Doctor's prescription required]</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <span class="content-block-label">Important Notes</span>
+          <div class="content-placeholder content-placeholder-sm">
+            [IMPORTANT NOTES — e.g. "Standard peripheral IV only. Central line management is not available through this service."]
+          </div>
+        </div>
+      </div>
+
+      <div class="service-cta-row">
+        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
+        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         3. CATHETER CARE
+         ==================================================== -->
+    <section class="service-section" id="catheter-care">
+      <div class="service-section-header">
+        <div class="service-section-icon">🏥</div>
+        <div class="service-section-title-area">
+          <span class="service-section-label">Catheter Care</span>
+          <h2 class="service-section-title">Catheter Care</h2>
+          <p class="service-section-tagline">[Short tagline — e.g. "Urinary catheter care by a trained registered nurse"]</p>
+          <div class="service-section-meta">
+            <span class="service-meta-pill">⏱ [Duration]</span>
+            <span class="service-meta-pill">💰 [Price]</span>
+            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-section-body">
+        <div class="service-body-grid">
+          <div class="content-block">
+            <span class="content-block-label">Service Description</span>
+            <div class="content-placeholder content-placeholder-tall">
+              [SERVICE DESCRIPTION]
+            </div>
+          </div>
+          <div class="content-block">
+            <span class="content-block-label">Who This Is For</span>
+            <div class="content-placeholder content-placeholder-tall">
+              [WHO THIS IS FOR]
+            </div>
+          </div>
+        </div>
+        <div class="content-block" style="margin-bottom:24px;">
+          <span class="content-block-label">Key Benefits</span>
+          <div class="benefits-placeholder">
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
+          </div>
+        </div>
+        <div class="content-block" style="margin-bottom:28px;">
+          <span class="content-block-label">What to Prepare</span>
+          <div class="prepare-grid">
+            <div class="prepare-card"><div class="prepare-card-icon">📦</div><span class="prepare-card-label">Supplies</span><span class="prepare-card-value">[Placeholder]</span></div>
+            <div class="prepare-card"><div class="prepare-card-icon">🛏️</div><span class="prepare-card-label">Space</span><span class="prepare-card-value">[Placeholder]</span></div>
+            <div class="prepare-card"><div class="prepare-card-icon">📋</div><span class="prepare-card-label">Documents</span><span class="prepare-card-value">[Placeholder]</span></div>
+          </div>
+        </div>
+        <div class="content-block">
+          <span class="content-block-label">Important Notes</span>
+          <div class="content-placeholder content-placeholder-sm">[IMPORTANT NOTES]</div>
+        </div>
+      </div>
+      <div class="service-cta-row">
+        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
+        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         4. MEDICATION ADMINISTRATION
+         ==================================================== -->
+    <section class="service-section" id="medication">
+      <div class="service-section-header">
+        <div class="service-section-icon">💊</div>
+        <div class="service-section-title-area">
+          <span class="service-section-label">Medication</span>
+          <h2 class="service-section-title">Medication Administration</h2>
+          <p class="service-section-tagline">[Short tagline — e.g. "Safe and accurate medication delivery at home"]</p>
+          <div class="service-section-meta">
+            <span class="service-meta-pill">⏱ [Duration]</span>
+            <span class="service-meta-pill">💰 [Price]</span>
+            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-section-body">
+        <div class="service-body-grid">
+          <div class="content-block">
+            <span class="content-block-label">Service Description</span>
+            <div class="content-placeholder content-placeholder-tall">[SERVICE DESCRIPTION]</div>
+          </div>
+          <div class="content-block">
+            <span class="content-block-label">Who This Is For</span>
+            <div class="content-placeholder content-placeholder-tall">[WHO THIS IS FOR]</div>
+          </div>
+        </div>
+        <div class="content-block" style="margin-bottom:24px;">
+          <span class="content-block-label">Key Benefits</span>
+          <div class="benefits-placeholder">
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
+          </div>
+        </div>
+        <div class="content-block" style="margin-bottom:28px;">
+          <span class="content-block-label">What to Prepare</span>
+          <div class="prepare-grid">
+            <div class="prepare-card"><div class="prepare-card-icon">💊</div><span class="prepare-card-label">Medication</span><span class="prepare-card-value">[Placeholder]</span></div>
+            <div class="prepare-card"><div class="prepare-card-icon">📋</div><span class="prepare-card-label">Prescription</span><span class="prepare-card-value">[Placeholder]</span></div>
+            <div class="prepare-card"><div class="prepare-card-icon">🛏️</div><span class="prepare-card-label">Space</span><span class="prepare-card-value">[Placeholder]</span></div>
+          </div>
+        </div>
+        <div class="content-block">
+          <span class="content-block-label">Important Notes</span>
+          <div class="content-placeholder content-placeholder-sm">[IMPORTANT NOTES]</div>
+        </div>
+      </div>
+      <div class="service-cta-row">
+        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
+        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         5. POST-DISCHARGE MONITORING
+         ==================================================== -->
+    <section class="service-section" id="post-discharge">
+      <div class="service-section-header">
+        <div class="service-section-icon">❤️</div>
+        <div class="service-section-title-area">
+          <span class="service-section-label">Post-Discharge</span>
+          <h2 class="service-section-title">Post-Discharge Monitoring</h2>
+          <p class="service-section-tagline">[Short tagline — e.g. "Vital signs monitoring in the critical days after discharge"]</p>
+          <div class="service-section-meta">
+            <span class="service-meta-pill">⏱ [Duration]</span>
+            <span class="service-meta-pill">💰 [Price]</span>
+            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-section-body">
+        <div class="service-body-grid">
+          <div class="content-block">
+            <span class="content-block-label">Service Description</span>
+            <div class="content-placeholder content-placeholder-tall">[SERVICE DESCRIPTION]</div>
+          </div>
+          <div class="content-block">
+            <span class="content-block-label">Who This Is For</span>
+            <div class="content-placeholder content-placeholder-tall">[WHO THIS IS FOR]</div>
+          </div>
+        </div>
+        <div class="content-block" style="margin-bottom:24px;">
+          <span class="content-block-label">Key Benefits</span>
+          <div class="benefits-placeholder">
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
+          </div>
+        </div>
+        <div class="content-block" style="margin-bottom:28px;">
+          <span class="content-block-label">What to Prepare</span>
+          <div class="prepare-grid">
+            <div class="prepare-card"><div class="prepare-card-icon">📋</div><span class="prepare-card-label">Documents</span><span class="prepare-card-value">[Placeholder]</span></div>
+            <div class="prepare-card"><div class="prepare-card-icon">🛏️</div><span class="prepare-card-label">Space</span><span class="prepare-card-value">[Placeholder]</span></div>
+            <div class="prepare-card"><div class="prepare-card-icon">📞</div><span class="prepare-card-label">Contact</span><span class="prepare-card-value">[Placeholder]</span></div>
+          </div>
+        </div>
+        <div class="content-block">
+          <span class="content-block-label">Important Notes</span>
+          <div class="content-placeholder content-placeholder-sm">[IMPORTANT NOTES]</div>
+        </div>
+      </div>
+      <div class="service-cta-row">
+        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
+        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         6. POST-NATAL NURSING CARE
+         ==================================================== -->
+    <section class="service-section" id="post-natal">
+      <div class="service-section-header">
+        <div class="service-section-icon">👶</div>
+        <div class="service-section-title-area">
+          <span class="service-section-label">Post-Natal</span>
+          <h2 class="service-section-title">Post-Natal Nursing Care</h2>
+          <p class="service-section-tagline">[Short tagline — e.g. "Maternal and newborn care for mothers recovering at home"]</p>
+          <div class="service-section-meta">
+            <span class="service-meta-pill">⏱ [Duration]</span>
+            <span class="service-meta-pill">💰 [Price]</span>
+            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-section-body">
+        <div class="service-body-grid">
+          <div class="content-block">
+            <span class="content-block-label">Service Description</span>
+            <div class="content-placeholder content-placeholder-tall">[SERVICE DESCRIPTION]</div>
+          </div>
+          <div class="content-block">
+            <span class="content-block-label">Who This Is For</span>
+            <div class="content-placeholder content-placeholder-tall">[WHO THIS IS FOR]</div>
+          </div>
+        </div>
+        <div class="content-block" style="margin-bottom:24px;">
+          <span class="content-block-label">Key Benefits</span>
+          <div class="benefits-placeholder">
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
+          </div>
+        </div>
+        <div class="content-block" style="margin-bottom:28px;">
+          <span class="content-block-label">What to Prepare</span>
+          <div class="prepare-grid">
+            <div class="prepare-card"><div class="prepare-card-icon">🍼</div><span class="prepare-card-label">Baby Needs</span><span class="prepare-card-value">[Placeholder]</span></div>
+            <div class="prepare-card"><div class="prepare-card-icon">🛏️</div><span class="prepare-card-label">Space</span><span class="prepare-card-value">[Placeholder]</span></div>
+            <div class="prepare-card"><div class="prepare-card-icon">📋</div><span class="prepare-card-label">Documents</span><span class="prepare-card-value">[Placeholder]</span></div>
+          </div>
+        </div>
+        <div class="content-block">
+          <span class="content-block-label">Important Notes</span>
+          <div class="content-placeholder content-placeholder-sm">[IMPORTANT NOTES]</div>
+        </div>
+      </div>
+      <div class="service-cta-row">
+        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
+        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         7. ADVANCED HOME NURSING CARE
+         ==================================================== -->
+    <section class="service-section" id="advanced-nursing">
+      <div class="service-section-header">
+        <div class="service-section-icon">🧑‍⚕️</div>
+        <div class="service-section-title-area">
+          <span class="service-section-label">Advanced Nursing</span>
+          <h2 class="service-section-title">Advanced Home Nursing Care</h2>
+          <p class="service-section-tagline">[Short tagline — e.g. "Comprehensive clinical home visit including procedures and treatment plan execution"]</p>
+          <div class="service-section-meta">
+            <span class="service-meta-pill">⏱ [Duration]</span>
+            <span class="service-meta-pill">💰 Contact for pricing</span>
+            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-section-body">
+        <div class="service-body-grid">
+          <div class="content-block">
+            <span class="content-block-label">Service Description</span>
+            <div class="content-placeholder content-placeholder-tall">[SERVICE DESCRIPTION]</div>
+          </div>
+          <div class="content-block">
+            <span class="content-block-label">Who This Is For</span>
+            <div class="content-placeholder content-placeholder-tall">[WHO THIS IS FOR]</div>
+          </div>
+        </div>
+        <div class="content-block" style="margin-bottom:24px;">
+          <span class="content-block-label">Key Benefits</span>
+          <div class="benefits-placeholder">
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
+            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
+          </div>
+        </div>
+        <div class="content-block" style="margin-bottom:28px;">
+          <span class="content-block-label">What to Prepare</span>
+          <div class="prepare-grid">
+            <div class="prepare-card"><div class="prepare-card-icon">📋</div><span class="prepare-card-label">Doctor's Plan</span><span class="prepare-card-value">[Treatment plan required]</span></div>
+            <div class="prepare-card"><div class="prepare-card-icon">🛏️</div><span class="prepare-card-label">Space</span><span class="prepare-card-value">[Placeholder]</span></div>
+            <div class="prepare-card"><div class="prepare-card-icon">📞</div><span class="prepare-card-label">Contact</span><span class="prepare-card-value">[Placeholder]</span></div>
+          </div>
+        </div>
+        <div class="content-block">
+          <span class="content-block-label">Important Notes</span>
+          <div class="content-placeholder content-placeholder-sm">
+            [IMPORTANT NOTES — e.g. "Excludes medication administration and wound care, which are bookable separately."]
+          </div>
+        </div>
+      </div>
+      <div class="service-cta-row">
+        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
+        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" id="enquire">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="Homecare_Icon.png" alt="HomeCareApps">
+        <p>Verified registered nurses for clinical home visits in Malaysia. A product by WeAssist — Malaysia's largest verified nurse staffing platform.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#wound-care">Wound Care</a>
+        <a href="#iv-therapy">IV Therapy</a>
+        <a href="#catheter-care">Catheter Care</a>
+        <a href="#medication">Medication Admin</a>
+        <a href="#post-discharge">Post-Discharge</a>
+        <a href="#post-natal">Post-Natal Care</a>
+        <a href="#advanced-nursing">Advanced Nursing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/">Home</a>
+        <a href="https://www.weassist.asia/about-us" target="_blank">About us</a>
+        <a href="/blog">Blog</a>
+        <a href="mailto:homecare@weassist.com.my">Contact</a>
+        <a href="/privacy">Privacy policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HomeCareApps. All rights reserved.</span>
+      <span class="powered-by">A product by <strong>WeAssist</strong></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// SCROLL PROGRESS BAR
+// ============================================================
+const progressBar = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = pct + '%';
+});
+
+// ============================================================
+// ACTIVE SIDEBAR + MOBILE TAB on scroll
+// ============================================================
+const sections = document.querySelectorAll('.service-section');
+const sidebarItems = document.querySelectorAll('.sidebar-item');
+const mobileTabs = document.querySelectorAll('.mobile-tab');
+
+function setActive(id) {
+  sidebarItems.forEach(item => {
+    item.classList.toggle('active', item.dataset.target === id);
+  });
+  mobileTabs.forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.target === id);
+    if (tab.dataset.target === id) {
+      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  });
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      setActive(entry.target.id);
+    }
+  });
+}, {
+  rootMargin: '-20% 0px -60% 0px',
+  threshold: 0
+});
+
+sections.forEach(s => observer.observe(s));
+
+// ============================================================
+// MOBILE NAV TOGGLE
+// ============================================================
+const mobileBtn = document.getElementById('mobileBtn');
+const navLinks = document.getElementById('navLinks');
+mobileBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+</script>
+
+</body>
+</html>
