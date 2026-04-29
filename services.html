@@ -3,15 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="[META DESCRIPTION — describe the services page here]">
+<meta name="description" content="Home nursing services in Malaysia — post-surgical wound care, IV therapy, catheter care, medication administration, post-discharge monitoring, post-natal care. Verified registered nurses, Klang Valley.">
 <title>Our Services — HomeCareApps</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   CSS VARIABLES — matches homecareapps.com brand
-   ============================================================ */
 :root {
   --navy:       #0F1E63;
   --blue:       #2563EB;
@@ -26,696 +23,152 @@
   --nav-h:      76px;
   --sidebar-w:  280px;
 }
-
-/* ============================================================
-   RESET & BASE
-   ============================================================ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', sans-serif;
-  color: var(--text);
-  background: var(--grey-light);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--grey-light); line-height: 1.6; overflow-x: hidden; }
 h1, h2, h3, h4, h5 { font-family: 'Plus Jakarta Sans', sans-serif; }
 img { max-width: 100%; display: block; }
 
-/* ============================================================
-   NAV — identical to homepage
-   ============================================================ */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 200;
-  background: rgba(15,30,99,0.97);
-  backdrop-filter: blur(12px);
-  height: var(--nav-h);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5%;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.nav-logo img {
-  height: 56px;
-  width: auto;
-  background: white;
-  border-radius: 8px;
-  padding: 3px;
-  object-fit: contain;
-}
-
-.nav-logo-text {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  color: var(--white);
-  letter-spacing: -0.3px;
-}
-.nav-logo-text span { color: var(--teal-light); }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  list-style: none;
-}
-.nav-links a {
-  color: rgba(255,255,255,0.75);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.nav-links a:hover,
-.nav-links a.active { color: var(--white); }
-
-.nav-cta {
-  background: var(--teal) !important;
-  color: var(--white) !important;
-  padding: 9px 20px !important;
-  border-radius: 8px !important;
-  font-weight: 600 !important;
-}
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(15,30,99,0.97); backdrop-filter: blur(12px); height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo img { height: 56px; width: auto; background: white; border-radius: 8px; padding: 3px; object-fit: contain; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--white); }
+.nav-cta { background: var(--teal) !important; color: var(--white) !important; padding: 9px 20px !important; border-radius: 8px !important; font-weight: 600 !important; }
 .nav-cta:hover { background: #006f6f !important; }
-
-.nav-mobile-btn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-  padding: 4px;
-}
-.nav-mobile-btn span {
-  display: block;
-  width: 24px; height: 2px;
-  background: white;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
+.nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+.nav-mobile-btn span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: 0.3s; }
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 76px; left: 0; right: 0;
-    background: var(--navy);
-    padding: 20px 5%;
-    gap: 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    z-index: 199;
-  }
+  .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 76px; left: 0; right: 0; background: var(--navy); padding: 20px 5%; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 199; }
   .nav-mobile-btn { display: flex; }
 }
 
-/* ============================================================
-   PAGE HERO
-   ============================================================ */
-.page-hero {
-  margin-top: var(--nav-h);
-  background: linear-gradient(135deg, var(--navy) 0%, #1a2f7a 60%, #0d2060 100%);
-  padding: 56px 5% 52px;
-  position: relative;
-  overflow: hidden;
-}
-.page-hero::before {
-  content: '';
-  position: absolute;
-  top: -120px; right: -120px;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(0,138,138,0.18) 0%, transparent 70%);
-  pointer-events: none;
-}
-.page-hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.page-hero-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-.page-hero-breadcrumb a {
-  color: rgba(255,255,255,0.5);
-  text-decoration: none;
-  font-size: 13px;
-  transition: color 0.2s;
-}
+/* PAGE HERO */
+.page-hero { margin-top: var(--nav-h); background: linear-gradient(135deg, var(--navy) 0%, #1a2f7a 60%, #0d2060 100%); padding: 56px 5% 52px; position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; top: -120px; right: -120px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,138,138,0.18) 0%, transparent 70%); pointer-events: none; }
+.page-hero-inner { max-width: 1200px; margin: 0 auto; }
+.page-hero-breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.page-hero-breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: color 0.2s; }
 .page-hero-breadcrumb a:hover { color: white; }
 .page-hero-breadcrumb span { color: rgba(255,255,255,0.25); font-size: 13px; }
 .page-hero-breadcrumb strong { color: rgba(255,255,255,0.8); font-size: 13px; font-weight: 500; }
-
-.page-hero h1 {
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 800;
-  color: white;
-  letter-spacing: -1px;
-  margin-bottom: 12px;
-  line-height: 1.1;
-}
+.page-hero h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: white; letter-spacing: -1px; margin-bottom: 12px; line-height: 1.1; }
 .page-hero h1 span { color: var(--teal-light); }
+.page-hero-sub { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 540px; line-height: 1.7; margin-bottom: 28px; }
 
-.page-hero-sub {
-  font-size: 16px;
-  color: rgba(255,255,255,0.65);
-  max-width: 540px;
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
+/* HERO PILLS — SVG icon + label */
+.hero-service-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.hero-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); padding: 5px 14px; border-radius: 100px; font-size: 12px; font-weight: 500; text-decoration: none; transition: all 0.2s; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
+.hero-pill svg { flex-shrink: 0; }
+.hero-pill:hover { background: rgba(0,138,138,0.25); border-color: rgba(0,138,138,0.4); color: var(--teal-light); }
 
-.hero-service-pills {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.hero-pill {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.7);
-  padding: 5px 14px;
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-.hero-pill:hover {
-  background: rgba(0,138,138,0.25);
-  border-color: rgba(0,138,138,0.4);
-  color: var(--teal-light);
-}
-
-/* ============================================================
-   MOBILE TAB NAV (shows on mobile, hidden on desktop)
-   ============================================================ */
-.mobile-service-tabs {
-  display: none;
-  background: white;
-  border-bottom: 1px solid var(--border);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  position: sticky;
-  top: var(--nav-h);
-  z-index: 100;
-}
+/* MOBILE TABS */
+.mobile-service-tabs { display: none; background: white; border-bottom: 1px solid var(--border); overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; position: sticky; top: var(--nav-h); z-index: 100; }
 .mobile-service-tabs::-webkit-scrollbar { display: none; }
+.mobile-tabs-inner { display: flex; gap: 0; min-width: max-content; padding: 0 16px; }
+.mobile-tab { padding: 14px 16px; font-size: 13px; font-weight: 600; color: var(--text-muted); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; transition: all 0.2s; font-family: 'Plus Jakarta Sans', sans-serif; display: inline-flex; align-items: center; gap: 6px; }
+.mobile-tab:hover, .mobile-tab.active { color: var(--teal); border-bottom-color: var(--teal); }
 
-.mobile-tabs-inner {
-  display: flex;
-  gap: 0;
-  min-width: max-content;
-  padding: 0 16px;
-}
-.mobile-tab {
-  padding: 14px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  white-space: nowrap;
-  transition: all 0.2s;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-.mobile-tab:hover,
-.mobile-tab.active {
-  color: var(--teal);
-  border-bottom-color: var(--teal);
-}
+/* LAYOUT */
+.services-layout { max-width: 1200px; margin: 0 auto; padding: 40px 5%; display: grid; grid-template-columns: var(--sidebar-w) 1fr; gap: 32px; align-items: start; }
 
-/* ============================================================
-   MAIN LAYOUT — sidebar + content
-   ============================================================ */
-.services-layout {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 5%;
-  display: grid;
-  grid-template-columns: var(--sidebar-w) 1fr;
-  gap: 32px;
-  align-items: start;
-}
-
-/* ============================================================
-   SIDEBAR
-   ============================================================ */
-.sidebar {
-  position: sticky;
-  top: calc(var(--nav-h) + 24px);
-  background: white;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(15,30,99,0.06);
-}
-
-.sidebar-header {
-  padding: 18px 20px 14px;
-  border-bottom: 1px solid var(--border);
-}
-.sidebar-header h3 {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-}
-
+/* SIDEBAR */
+.sidebar { position: sticky; top: calc(var(--nav-h) + 24px); background: white; border-radius: 16px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 2px 12px rgba(15,30,99,0.06); }
+.sidebar-header { padding: 18px 20px 14px; border-bottom: 1px solid var(--border); }
+.sidebar-header h3 { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; }
 .sidebar-nav { padding: 8px 0; }
-
-.sidebar-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 20px;
-  text-decoration: none;
-  color: var(--text-muted);
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s;
-  border-left: 3px solid transparent;
-  cursor: pointer;
-}
-.sidebar-item:hover {
-  background: var(--grey-light);
-  color: var(--navy);
-  border-left-color: var(--teal-light);
-}
-.sidebar-item.active {
-  background: linear-gradient(90deg, rgba(0,138,138,0.06) 0%, transparent 100%);
-  color: var(--teal);
-  border-left-color: var(--teal);
-  font-weight: 600;
-}
-
-.sidebar-item-icon {
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  background: var(--grey-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  flex-shrink: 0;
-  transition: background 0.2s;
-}
-.sidebar-item.active .sidebar-item-icon {
-  background: var(--teal-light);
-}
-
+.sidebar-item { display: flex; align-items: center; gap: 12px; padding: 12px 20px; text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; transition: all 0.2s; border-left: 3px solid transparent; cursor: pointer; }
+.sidebar-item:hover { background: var(--grey-light); color: var(--navy); border-left-color: var(--teal-light); }
+.sidebar-item.active { background: linear-gradient(90deg, rgba(0,138,138,0.06) 0%, transparent 100%); color: var(--teal); border-left-color: var(--teal); font-weight: 600; }
+.sidebar-item-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--grey-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
+.sidebar-item-icon svg { stroke: var(--text-muted); transition: stroke 0.2s; }
+.sidebar-item.active .sidebar-item-icon { background: var(--teal-light); }
+.sidebar-item.active .sidebar-item-icon svg { stroke: var(--teal); }
+.sidebar-item:hover .sidebar-item-icon svg { stroke: var(--navy); }
 .sidebar-item-text { flex: 1; line-height: 1.3; font-size: 13px; }
-
-.sidebar-cta {
-  margin: 8px 12px 12px;
-  background: var(--teal);
-  color: white;
-  padding: 12px 16px;
-  border-radius: 10px;
-  text-align: center;
-  text-decoration: none;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  display: block;
-  transition: background 0.2s;
-}
+.sidebar-cta { margin: 8px 12px 12px; background: var(--teal); color: white; padding: 12px 16px; border-radius: 10px; text-align: center; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 13px; display: block; transition: background 0.2s; }
 .sidebar-cta:hover { background: #006f6f; }
 
-/* ============================================================
-   SERVICE SECTIONS
-   ============================================================ */
+/* SERVICE SECTIONS */
 .services-content { display: flex; flex-direction: column; gap: 28px; }
-
-.service-section {
-  background: white;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  overflow: hidden;
-  scroll-margin-top: calc(var(--nav-h) + 24px);
-  box-shadow: 0 2px 12px rgba(15,30,99,0.04);
-  transition: box-shadow 0.3s;
-}
-.service-section:target,
-.service-section.highlighted {
-  box-shadow: 0 0 0 2px var(--teal), 0 8px 32px rgba(0,138,138,0.12);
-}
-
-/* Section header strip */
-.service-section-header {
-  padding: 28px 32px 24px;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.service-section-icon {
-  width: 56px; height: 56px;
-  border-radius: 14px;
-  background: var(--teal-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  flex-shrink: 0;
-}
-
+.service-section { background: white; border-radius: 16px; border: 1px solid var(--border); overflow: hidden; scroll-margin-top: calc(var(--nav-h) + 24px); box-shadow: 0 2px 12px rgba(15,30,99,0.04); transition: box-shadow 0.3s; }
+.service-section:target, .service-section.highlighted { box-shadow: 0 0 0 2px var(--teal), 0 8px 32px rgba(0,138,138,0.12); }
+.service-section-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 20px; }
+.service-section-icon { width: 56px; height: 56px; border-radius: 14px; background: var(--teal-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .service-section-title-area { flex: 1; }
+.service-section-label { display: inline-block; background: var(--teal-light); color: var(--teal); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-family: 'Plus Jakarta Sans', sans-serif; }
+.service-section-title { font-size: clamp(20px, 2.5vw, 26px); font-weight: 800; color: var(--navy); letter-spacing: -0.5px; margin-bottom: 6px; line-height: 1.2; }
+.service-section-tagline { font-size: 14px; color: var(--text-muted); font-style: italic; }
+.service-section-meta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+.service-meta-pill { display: inline-flex; align-items: center; gap: 5px; background: var(--grey-light); color: var(--navy); font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif; }
+.service-meta-pill svg { flex-shrink: 0; }
 
-.service-section-label {
-  display: inline-block;
-  background: var(--teal-light);
-  color: var(--teal);
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 100px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-.service-section-title {
-  font-size: clamp(20px, 2.5vw, 26px);
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: -0.5px;
-  margin-bottom: 6px;
-  line-height: 1.2;
-}
-
-.service-section-tagline {
-  font-size: 14px;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-.service-section-meta {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 12px;
-}
-.service-meta-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: var(--grey-light);
-  color: var(--navy);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 100px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-/* Section body */
+/* SECTION BODY — clean layout */
 .service-section-body { padding: 28px 32px; }
 
-.service-body-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-bottom: 28px;
-}
+.service-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.service-info-box { background: var(--grey-light); border-radius: 12px; padding: 20px; }
+.service-info-box-label { font-size: 11px; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 12px; font-family: 'Plus Jakarta Sans', sans-serif; }
+.service-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.service-list li { font-size: 14px; color: var(--text); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+.service-list li svg { flex-shrink: 0; margin-top: 2px; }
 
-/* Content block */
-.content-block { display: flex; flex-direction: column; gap: 8px; }
+.service-prepare-row { background: var(--grey-light); border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; }
+.service-prepare-label { font-size: 11px; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 10px; font-family: 'Plus Jakarta Sans', sans-serif; }
+.service-prepare-items { display: flex; gap: 24px; flex-wrap: wrap; }
+.service-prepare-item { font-size: 13px; color: var(--text); display: flex; align-items: center; gap: 6px; }
+.service-prepare-item svg { flex-shrink: 0; color: var(--teal); }
 
-.content-block-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
+.service-note-bar { background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 12px 16px; }
+.service-note-bar p { font-size: 13px; color: #92400e; line-height: 1.6; display: flex; align-items: flex-start; gap: 8px; }
+.service-note-bar svg { flex-shrink: 0; margin-top: 1px; }
 
-.content-placeholder {
-  background: var(--grey-light);
-  border: 1.5px dashed var(--border);
-  border-radius: 10px;
-  padding: 16px 18px;
-  color: var(--text-muted);
-  font-size: 13px;
-  line-height: 1.6;
-  min-height: 72px;
-  display: flex;
-  align-items: flex-start;
-}
+/* CTA ROW */
+.service-cta-row { padding: 20px 32px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: linear-gradient(90deg, rgba(0,138,138,0.04) 0%, transparent 100%); border-top: 1px solid var(--border); }
+.service-cta-note { font-size: 13px; color: var(--text-muted); max-width: 380px; line-height: 1.5; }
+.btn-enquire { background: var(--teal); color: white; padding: 13px 28px; border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px; text-decoration: none; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; white-space: nowrap; }
+.btn-enquire:hover { background: #006f6f; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,138,138,0.3); }
+.btn-enquire svg { flex-shrink: 0; }
 
-.content-placeholder-tall { min-height: 120px; }
-
-.content-placeholder-sm { min-height: 48px; }
-
-/* Benefits list placeholder */
-.benefits-placeholder {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.benefit-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  background: var(--grey-light);
-  border: 1.5px dashed var(--border);
-  border-radius: 8px;
-}
-.benefit-dot {
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  background: var(--teal-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  flex-shrink: 0;
-  color: var(--teal);
-  font-weight: 700;
-}
-.benefit-text {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-/* What to prepare */
-.prepare-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 28px;
-}
-
-.prepare-card {
-  background: var(--grey-light);
-  border: 1.5px dashed var(--border);
-  border-radius: 10px;
-  padding: 14px;
-  text-align: center;
-}
-.prepare-card-icon {
-  font-size: 22px;
-  margin-bottom: 6px;
-}
-.prepare-card-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  display: block;
-  margin-bottom: 4px;
-}
-.prepare-card-value {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-/* Divider */
-.section-divider {
-  height: 1px;
-  background: var(--border);
-  margin: 0 32px 28px;
-}
-
-/* CTA row */
-.service-cta-row {
-  padding: 20px 32px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  background: linear-gradient(90deg, rgba(0,138,138,0.04) 0%, transparent 100%);
-  border-top: 1px solid var(--border);
-}
-
-.service-cta-note {
-  font-size: 13px;
-  color: var(--text-muted);
-  max-width: 380px;
-  line-height: 1.5;
-}
-
-.btn-enquire {
-  background: var(--teal);
-  color: white;
-  padding: 13px 28px;
-  border-radius: 10px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-.btn-enquire:hover {
-  background: #006f6f;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0,138,138,0.3);
-}
-
-.btn-enquire-outline {
-  background: transparent;
-  color: var(--teal);
-  border: 1.5px solid var(--teal);
-  padding: 11px 22px;
-  border-radius: 10px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.2s;
-}
-.btn-enquire-outline:hover {
-  background: var(--teal);
-  color: white;
-}
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-.footer {
-  background: var(--navy);
-  padding: 48px 5% 28px;
-  color: rgba(255,255,255,0.6);
-  margin-top: 60px;
-}
+/* FOOTER */
+.footer { background: var(--navy); padding: 48px 5% 28px; color: rgba(255,255,255,0.6); margin-top: 60px; }
 .footer-inner { max-width: 1200px; margin: 0 auto; }
-.footer-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 48px;
-  padding-bottom: 36px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  margin-bottom: 28px;
-}
-.footer-brand img {
-  height: 56px;
-  background: white;
-  border-radius: 8px;
-  padding: 3px;
-  margin-bottom: 12px;
-}
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 28px; }
+.footer-brand img { height: 56px; background: white; border-radius: 8px; padding: 3px; margin-bottom: 12px; }
 .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 280px; }
-.footer-col h4 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px; font-weight: 700; color: white;
-  text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px;
-}
-.footer-col a {
-  display: block; color: rgba(255,255,255,0.55); text-decoration: none;
-  font-size: 14px; margin-bottom: 8px; transition: color 0.2s;
-}
+.footer-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; margin-bottom: 8px; transition: color 0.2s; }
 .footer-col a:hover { color: white; }
-.footer-bottom {
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 13px; flex-wrap: wrap; gap: 12px;
-}
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 13px; flex-wrap: wrap; gap: 12px; }
 .powered-by { font-size: 12px; color: rgba(255,255,255,0.35); }
 .powered-by strong { color: rgba(255,255,255,0.6); }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
+/* SCROLL PROGRESS */
+.scroll-progress { position: fixed; top: var(--nav-h); left: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--blue)); z-index: 300; transition: width 0.1s; width: 0%; }
+
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .services-layout {
-    grid-template-columns: 1fr;
-    padding-top: 24px;
-  }
+  .services-layout { grid-template-columns: 1fr; padding-top: 24px; }
   .sidebar { display: none; }
   .mobile-service-tabs { display: block; }
-  .service-body-grid { grid-template-columns: 1fr; }
-  .prepare-grid { grid-template-columns: 1fr 1fr; }
+  .service-two-col { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 28px; }
 }
-
 @media (max-width: 600px) {
   .page-hero { padding: 40px 5% 36px; }
   .service-section-header { flex-direction: column; gap: 14px; padding: 22px 20px 18px; }
   .service-section-body { padding: 20px; }
-  .section-divider { margin: 0 20px 20px; }
   .service-cta-row { padding: 16px 20px 20px; flex-direction: column; align-items: flex-start; }
-  .prepare-grid { grid-template-columns: 1fr; }
-  .hero-service-pills { display: none; }
+  .service-prepare-items { flex-direction: column; gap: 10px; }
   .footer-top { grid-template-columns: 1fr; }
 }
 
-/* ============================================================
-   SCROLL PROGRESS INDICATOR
-   ============================================================ */
-.scroll-progress {
-  position: fixed;
-  top: var(--nav-h);
-  left: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--teal), var(--blue));
-  z-index: 300;
-  transition: width 0.1s;
-  width: 0%;
-}
-
-/* ============================================================
-   ANIMATIONS
-   ============================================================ */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.service-section {
-  animation: fadeInUp 0.4s ease both;
-}
+/* ANIMATIONS */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.service-section { animation: fadeInUp 0.4s ease both; }
 .service-section:nth-child(1) { animation-delay: 0.05s; }
 .service-section:nth-child(2) { animation-delay: 0.10s; }
 .service-section:nth-child(3) { animation-delay: 0.15s; }
@@ -727,21 +180,17 @@ img { max-width: 100%; display: block; }
 </head>
 <body>
 
-<!-- SCROLL PROGRESS BAR -->
 <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- ============================================================
-     NAV
-     ============================================================ -->
+<!-- NAV -->
 <nav class="nav">
   <a href="/" class="nav-logo">
     <img src="Homecare_Icon.png" alt="HomeCareApps">
-    <!-- fallback text if logo not loaded -->
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="/">Home</a></li>
     <li><a href="/services" class="active">Services</a></li>
-    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="/blog">Blog</a></li>
     <li><a href="https://www.weassist.asia/about-us" target="_blank">About</a></li>
     <li><a href="#enquire" class="nav-cta">Enquire</a></li>
   </ul>
@@ -750,86 +199,138 @@ img { max-width: 100%; display: block; }
   </button>
 </nav>
 
-<!-- ============================================================
-     PAGE HERO
-     ============================================================ -->
+<!-- PAGE HERO -->
 <section class="page-hero">
   <div class="page-hero-inner">
     <div class="page-hero-breadcrumb">
-      <a href="/">Home</a>
-      <span>›</span>
-      <strong>Services</strong>
+      <a href="/">Home</a><span>›</span><strong>Services</strong>
     </div>
     <h1>Clinical care, <span>delivered home.</span></h1>
-    <p class="page-hero-sub">
-      [HERO SUBHEADING — describe the services overview in 1–2 sentences. E.g. "Every service is performed by a verified registered nurse. Book online, pay upfront, nurse visits your home."]
-    </p>
+    <p class="page-hero-sub">Every service is performed by a verified registered nurse holding a valid Annual Practising Certificate. Book online, pay upfront, nurse visits your home across Klang Valley.</p>
     <div class="hero-service-pills">
-      <a href="#wound-care" class="hero-pill">🩹 Wound Care</a>
-      <a href="#iv-therapy" class="hero-pill">💧 IV Therapy</a>
-      <a href="#catheter-care" class="hero-pill">🏥 Catheter Care</a>
-      <a href="#medication" class="hero-pill">💊 Medication</a>
-      <a href="#post-discharge" class="hero-pill">❤️ Post-Discharge</a>
-      <a href="#post-natal" class="hero-pill">👶 Post-Natal</a>
-      <a href="#advanced-nursing" class="hero-pill">🧑‍⚕️ Advanced Nursing</a>
+      <a href="#wound-care" class="hero-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        Wound Care
+      </a>
+      <a href="#iv-therapy" class="hero-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v6l3 3-3 3v6"/><path d="M18 2v6l-3 3 3 3v6"/><line x1="6" y1="8" x2="18" y2="8"/><line x1="6" y1="16" x2="18" y2="16"/></svg>
+        IV Therapy
+      </a>
+      <a href="#catheter-care" class="hero-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Catheter Care
+      </a>
+      <a href="#medication" class="hero-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        Medication
+      </a>
+      <a href="#post-discharge" class="hero-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Post-Discharge
+      </a>
+      <a href="#post-natal" class="hero-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Post-Natal
+      </a>
+      <a href="#advanced-nursing" class="hero-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="12" y1="11" x2="12" y2="15"/><line x1="10" y1="13" x2="14" y2="13"/></svg>
+        Advanced Nursing
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     MOBILE TAB NAV
-     ============================================================ -->
+<!-- MOBILE TABS -->
 <div class="mobile-service-tabs" id="mobileServiceTabs">
   <div class="mobile-tabs-inner">
-    <a href="#wound-care"      class="mobile-tab" data-target="wound-care">🩹 Wound Care</a>
-    <a href="#iv-therapy"      class="mobile-tab" data-target="iv-therapy">💧 IV Therapy</a>
-    <a href="#catheter-care"   class="mobile-tab" data-target="catheter-care">🏥 Catheter Care</a>
-    <a href="#medication"      class="mobile-tab" data-target="medication">💊 Medication</a>
-    <a href="#post-discharge"  class="mobile-tab" data-target="post-discharge">❤️ Post-Discharge</a>
-    <a href="#post-natal"      class="mobile-tab" data-target="post-natal">👶 Post-Natal</a>
-    <a href="#advanced-nursing" class="mobile-tab" data-target="advanced-nursing">🧑‍⚕️ Advanced</a>
+    <a href="#wound-care" class="mobile-tab" data-target="wound-care">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+      Wound Care
+    </a>
+    <a href="#iv-therapy" class="mobile-tab" data-target="iv-therapy">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v6l3 3-3 3v6"/><path d="M18 2v6l-3 3 3 3v6"/><line x1="6" y1="8" x2="18" y2="8"/><line x1="6" y1="16" x2="18" y2="16"/></svg>
+      IV Therapy
+    </a>
+    <a href="#catheter-care" class="mobile-tab" data-target="catheter-care">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      Catheter Care
+    </a>
+    <a href="#medication" class="mobile-tab" data-target="medication">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+      Medication
+    </a>
+    <a href="#post-discharge" class="mobile-tab" data-target="post-discharge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Post-Discharge
+    </a>
+    <a href="#post-natal" class="mobile-tab" data-target="post-natal">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      Post-Natal
+    </a>
+    <a href="#advanced-nursing" class="mobile-tab" data-target="advanced-nursing">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="12" y1="11" x2="12" y2="15"/><line x1="10" y1="13" x2="14" y2="13"/></svg>
+      Advanced
+    </a>
   </div>
 </div>
 
-<!-- ============================================================
-     MAIN LAYOUT
-     ============================================================ -->
+<!-- LAYOUT -->
 <div class="services-layout">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div class="sidebar-header">
-      <h3>Our Services</h3>
-    </div>
+    <div class="sidebar-header"><h3>Our Services</h3></div>
     <nav class="sidebar-nav" id="sidebarNav">
-      <a href="#wound-care"      class="sidebar-item active" data-target="wound-care">
-        <div class="sidebar-item-icon">🩹</div>
+
+      <a href="#wound-care" class="sidebar-item active" data-target="wound-care">
+        <div class="sidebar-item-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
         <span class="sidebar-item-text">Post-Surgical Wound Care</span>
       </a>
-      <a href="#iv-therapy"      class="sidebar-item" data-target="iv-therapy">
-        <div class="sidebar-item-icon">💧</div>
+
+      <a href="#iv-therapy" class="sidebar-item" data-target="iv-therapy">
+        <div class="sidebar-item-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v6l3 3-3 3v6"/><path d="M18 2v6l-3 3 3 3v6"/><line x1="6" y1="8" x2="18" y2="8"/><line x1="6" y1="16" x2="18" y2="16"/></svg>
+        </div>
         <span class="sidebar-item-text">IV Therapy</span>
       </a>
-      <a href="#catheter-care"   class="sidebar-item" data-target="catheter-care">
-        <div class="sidebar-item-icon">🏥</div>
+
+      <a href="#catheter-care" class="sidebar-item" data-target="catheter-care">
+        <div class="sidebar-item-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
         <span class="sidebar-item-text">Catheter Care</span>
       </a>
-      <a href="#medication"      class="sidebar-item" data-target="medication">
-        <div class="sidebar-item-icon">💊</div>
+
+      <a href="#medication" class="sidebar-item" data-target="medication">
+        <div class="sidebar-item-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
         <span class="sidebar-item-text">Medication Administration</span>
       </a>
-      <a href="#post-discharge"  class="sidebar-item" data-target="post-discharge">
-        <div class="sidebar-item-icon">❤️</div>
+
+      <a href="#post-discharge" class="sidebar-item" data-target="post-discharge">
+        <div class="sidebar-item-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
         <span class="sidebar-item-text">Post-Discharge Monitoring</span>
       </a>
-      <a href="#post-natal"      class="sidebar-item" data-target="post-natal">
-        <div class="sidebar-item-icon">👶</div>
+
+      <a href="#post-natal" class="sidebar-item" data-target="post-natal">
+        <div class="sidebar-item-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
         <span class="sidebar-item-text">Post-Natal Nursing Care</span>
       </a>
+
       <a href="#advanced-nursing" class="sidebar-item" data-target="advanced-nursing">
-        <div class="sidebar-item-icon">🧑‍⚕️</div>
+        <div class="sidebar-item-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="12" y1="11" x2="12" y2="15"/><line x1="10" y1="13" x2="14" y2="13"/></svg>
+        </div>
         <span class="sidebar-item-text">Advanced Home Nursing</span>
       </a>
+
     </nav>
     <a href="#enquire" class="sidebar-cta">Enquire Now →</a>
   </aside>
@@ -837,452 +338,408 @@ img { max-width: 100%; display: block; }
   <!-- SERVICE SECTIONS -->
   <main class="services-content">
 
-    <!-- ====================================================
-         1. POST-SURGICAL WOUND CARE
-         ==================================================== -->
+    <!-- 1. WOUND CARE -->
     <section class="service-section" id="wound-care">
       <div class="service-section-header">
-        <div class="service-section-icon">🩹</div>
+        <div class="service-section-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
         <div class="service-section-title-area">
           <span class="service-section-label">Wound Care</span>
-          <h2 class="service-section-title">Post-Surgical Wound Care</h2>
-          <p class="service-section-tagline">[Short tagline — e.g. "Professional wound dressing from a verified registered nurse"]</p>
+          <h2 class="service-section-title">Post-Surgical Wound Care at Home</h2>
+          <p class="service-section-tagline">Professional wound dressing and infection monitoring by a verified registered nurse — across Klang Valley.</p>
           <div class="service-section-meta">
-            <span class="service-meta-pill">⏱ [Duration]</span>
-            <span class="service-meta-pill">💰 [Price]</span>
-            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+            <span class="service-meta-pill">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              45–60 min
+            </span>
+            <span class="service-meta-pill">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              From RM180
+            </span>
+            <span class="service-meta-pill">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Registered Ward Nurse
+            </span>
           </div>
         </div>
       </div>
-
       <div class="service-section-body">
-        <div class="service-body-grid">
-          <div class="content-block">
-            <span class="content-block-label">Service Description</span>
-            <div class="content-placeholder content-placeholder-tall">
-              [SERVICE DESCRIPTION — Describe what the nurse does during this visit. Include procedures performed, assessment done, and clinical scope. 2–3 sentences.]
-            </div>
+        <p style="font-size:15px;color:var(--text);line-height:1.8;margin-bottom:20px;">Our registered nurse visits your home to assess the wound, cleanse the site, and apply a fresh sterile dressing. Every visit includes infection monitoring and a post-visit clinical report emailed to you — shareable with your doctor or specialist.</p>
+        <div class="service-two-col">
+          <div class="service-info-box">
+            <p class="service-info-box-label">What the nurse does</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full wound assessment</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cleansing and sterile dressing change</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Infection monitoring</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Post-visit clinical report</li>
+            </ul>
           </div>
-          <div class="content-block">
-            <span class="content-block-label">Who This Is For</span>
-            <div class="content-placeholder content-placeholder-tall">
-              [WHO THIS IS FOR — Describe the patient profile. E.g. post-surgery patients, specific conditions, recovery stages. 2–3 sentences.]
-            </div>
-          </div>
-        </div>
-
-        <div class="content-block" style="margin-bottom:24px;">
-          <span class="content-block-label">Key Benefits</span>
-          <div class="benefits-placeholder">
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1 — e.g. Reduces risk of infection]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2 — e.g. Professional clinical assessment]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3 — e.g. Detailed post-visit report provided]</span></div>
+          <div class="service-info-box">
+            <p class="service-info-box-label">Suitable for</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Post-surgery patients (abdominal, C-section, orthopaedic)</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Diabetic foot ulcers</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Pressure sores</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Post-discharge wound care</li>
+            </ul>
           </div>
         </div>
-
-        <div class="content-block" style="margin-bottom:28px;">
-          <span class="content-block-label">What to Prepare</span>
-          <div class="prepare-grid">
-            <div class="prepare-card">
-              <div class="prepare-card-icon">📦</div>
-              <span class="prepare-card-label">Supplies</span>
-              <span class="prepare-card-value">[e.g. Dressings provided by patient]</span>
-            </div>
-            <div class="prepare-card">
-              <div class="prepare-card-icon">🛏️</div>
-              <span class="prepare-card-label">Space</span>
-              <span class="prepare-card-value">[e.g. Clean flat surface for patient]</span>
-            </div>
-            <div class="prepare-card">
-              <div class="prepare-card-icon">📋</div>
-              <span class="prepare-card-label">Documents</span>
-              <span class="prepare-card-value">[e.g. Discharge summary if available]</span>
-            </div>
+        <div class="service-prepare-row">
+          <p class="service-prepare-label">What to prepare</p>
+          <div class="service-prepare-items">
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg> Prescribed dressings from hospital pharmacy</span>
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Clean flat surface with good lighting</span>
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Hospital discharge summary (if available)</span>
           </div>
         </div>
-
-        <div class="content-block">
-          <span class="content-block-label">Important Notes</span>
-          <div class="content-placeholder content-placeholder-sm">
-            [IMPORTANT NOTES — Any clinical exclusions, limitations, or things families should know before booking. E.g. "Does not include supply of dressings."]
-          </div>
+        <div class="service-note-bar">
+          <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Dressings and topical medications are not supplied — obtain from your hospital pharmacy on discharge. Peripheral wounds only.</p>
         </div>
       </div>
-
       <div class="service-cta-row">
-        <p class="service-cta-note">[CTA SUPPORTING TEXT — e.g. "Have a question before booking? Our team is available to help."]</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="#enquire" class="btn-enquire">Enquiry →</a>
-        </div>
+        <p class="service-cta-note">Need wound care at home in KL or PJ? Our verified registered nurses are available across Klang Valley.</p>
+        <a href="#enquire" class="btn-enquire">Enquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
       </div>
     </section>
 
-    <!-- ====================================================
-         2. IV THERAPY
-         ==================================================== -->
+    <!-- 2. IV THERAPY -->
     <section class="service-section" id="iv-therapy">
       <div class="service-section-header">
-        <div class="service-section-icon">💧</div>
+        <div class="service-section-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v6l3 3-3 3v6"/><path d="M18 2v6l-3 3 3 3v6"/><line x1="6" y1="8" x2="18" y2="8"/><line x1="6" y1="16" x2="18" y2="16"/></svg>
+        </div>
         <div class="service-section-title-area">
           <span class="service-section-label">IV Therapy</span>
-          <h2 class="service-section-title">IV Therapy</h2>
-          <p class="service-section-tagline">[Short tagline — e.g. "Safe peripheral IV administration at home"]</p>
+          <h2 class="service-section-title">IV Therapy at Home in Malaysia</h2>
+          <p class="service-section-tagline">Safe peripheral IV insertion and medication administration by a verified registered nurse — at your home in Klang Valley.</p>
           <div class="service-section-meta">
-            <span class="service-meta-pill">⏱ [Duration]</span>
-            <span class="service-meta-pill">💰 [Price]</span>
-            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60–90 min</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> From RM250</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Registered Ward Nurse</span>
           </div>
         </div>
       </div>
-
       <div class="service-section-body">
-        <div class="service-body-grid">
-          <div class="content-block">
-            <span class="content-block-label">Service Description</span>
-            <div class="content-placeholder content-placeholder-tall">
-              [SERVICE DESCRIPTION — Describe the IV therapy procedure, scope, and what the nurse manages during the visit.]
-            </div>
+        <p style="font-size:15px;color:var(--text);line-height:1.8;margin-bottom:20px;">Our registered nurse performs peripheral IV insertion, manages IV fluid or antibiotic administration, monitors the cannula site, and ensures the procedure is completed safely in your home. Standard peripheral IV only — no central line management.</p>
+        <div class="service-two-col">
+          <div class="service-info-box">
+            <p class="service-info-box-label">What the nurse does</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Peripheral IV cannula insertion</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> IV fluid or antibiotic administration</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cannula site care and monitoring</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Post-visit clinical report</li>
+            </ul>
           </div>
-          <div class="content-block">
-            <span class="content-block-label">Who This Is For</span>
-            <div class="content-placeholder content-placeholder-tall">
-              [WHO THIS IS FOR — e.g. Patients prescribed IV antibiotics post-discharge, patients requiring IV fluid management at home.]
-            </div>
-          </div>
-        </div>
-
-        <div class="content-block" style="margin-bottom:24px;">
-          <span class="content-block-label">Key Benefits</span>
-          <div class="benefits-placeholder">
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
+          <div class="service-info-box">
+            <p class="service-info-box-label">Suitable for</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Patients prescribed IV antibiotics post-discharge</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> IV fluid or hydration management</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Patients preferring home-based treatment</li>
+            </ul>
           </div>
         </div>
-
-        <div class="content-block" style="margin-bottom:28px;">
-          <span class="content-block-label">What to Prepare</span>
-          <div class="prepare-grid">
-            <div class="prepare-card">
-              <div class="prepare-card-icon">💊</div>
-              <span class="prepare-card-label">Medication</span>
-              <span class="prepare-card-value">[e.g. IV medication from hospital pharmacy]</span>
-            </div>
-            <div class="prepare-card">
-              <div class="prepare-card-icon">🛏️</div>
-              <span class="prepare-card-label">Space</span>
-              <span class="prepare-card-value">[e.g. Comfortable resting area]</span>
-            </div>
-            <div class="prepare-card">
-              <div class="prepare-card-icon">📋</div>
-              <span class="prepare-card-label">Prescription</span>
-              <span class="prepare-card-value">[e.g. Doctor's prescription required]</span>
-            </div>
+        <div class="service-prepare-row">
+          <p class="service-prepare-label">What to prepare</p>
+          <div class="service-prepare-items">
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg> IV medication from hospital pharmacy</span>
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg> Doctor's prescription</span>
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Comfortable resting area</span>
           </div>
         </div>
-
-        <div class="content-block">
-          <span class="content-block-label">Important Notes</span>
-          <div class="content-placeholder content-placeholder-sm">
-            [IMPORTANT NOTES — e.g. "Standard peripheral IV only. Central line management is not available through this service."]
-          </div>
+        <div class="service-note-bar">
+          <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Standard peripheral IV only. Central line management is not available through this service.</p>
         </div>
       </div>
-
       <div class="service-cta-row">
-        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
-        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+        <p class="service-cta-note">Need IV therapy at home in KL or PJ? Our verified registered nurses cover Klang Valley.</p>
+        <a href="#enquire" class="btn-enquire">Enquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
       </div>
     </section>
 
-    <!-- ====================================================
-         3. CATHETER CARE
-         ==================================================== -->
+    <!-- 3. CATHETER CARE -->
     <section class="service-section" id="catheter-care">
       <div class="service-section-header">
-        <div class="service-section-icon">🏥</div>
+        <div class="service-section-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><line x1="8" y1="2" x2="16" y2="2"/><line x1="12" y1="2" x2="12" y2="4"/></svg>
+        </div>
         <div class="service-section-title-area">
           <span class="service-section-label">Catheter Care</span>
-          <h2 class="service-section-title">Catheter Care</h2>
-          <p class="service-section-tagline">[Short tagline — e.g. "Urinary catheter care by a trained registered nurse"]</p>
+          <h2 class="service-section-title">Catheter Care at Home in Malaysia</h2>
+          <p class="service-section-tagline">Urinary catheter insertion, maintenance, and UTI monitoring by a trained registered nurse.</p>
           <div class="service-section-meta">
-            <span class="service-meta-pill">⏱ [Duration]</span>
-            <span class="service-meta-pill">💰 [Price]</span>
-            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 30–45 min</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> From RM180</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Registered Ward Nurse</span>
           </div>
         </div>
       </div>
-
       <div class="service-section-body">
-        <div class="service-body-grid">
-          <div class="content-block">
-            <span class="content-block-label">Service Description</span>
-            <div class="content-placeholder content-placeholder-tall">
-              [SERVICE DESCRIPTION]
-            </div>
+        <p style="font-size:15px;color:var(--text);line-height:1.8;margin-bottom:20px;">Our registered nurse manages urinary catheter insertion, routine maintenance, drainage bag change, and monitors for signs of UTI or blockage. A clinical report is provided after every visit.</p>
+        <div class="service-two-col">
+          <div class="service-info-box">
+            <p class="service-info-box-label">What the nurse does</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Catheter insertion or replacement</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Drainage bag change</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> UTI and blockage monitoring</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Family education on catheter care</li>
+            </ul>
           </div>
-          <div class="content-block">
-            <span class="content-block-label">Who This Is For</span>
-            <div class="content-placeholder content-placeholder-tall">
-              [WHO THIS IS FOR]
-            </div>
-          </div>
-        </div>
-        <div class="content-block" style="margin-bottom:24px;">
-          <span class="content-block-label">Key Benefits</span>
-          <div class="benefits-placeholder">
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
+          <div class="service-info-box">
+            <p class="service-info-box-label">Suitable for</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Post-surgical catheter management</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Elderly patients with urinary retention</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Long-term catheter maintenance</li>
+            </ul>
           </div>
         </div>
-        <div class="content-block" style="margin-bottom:28px;">
-          <span class="content-block-label">What to Prepare</span>
-          <div class="prepare-grid">
-            <div class="prepare-card"><div class="prepare-card-icon">📦</div><span class="prepare-card-label">Supplies</span><span class="prepare-card-value">[Placeholder]</span></div>
-            <div class="prepare-card"><div class="prepare-card-icon">🛏️</div><span class="prepare-card-label">Space</span><span class="prepare-card-value">[Placeholder]</span></div>
-            <div class="prepare-card"><div class="prepare-card-icon">📋</div><span class="prepare-card-label">Documents</span><span class="prepare-card-value">[Placeholder]</span></div>
+        <div class="service-prepare-row">
+          <p class="service-prepare-label">What to prepare</p>
+          <div class="service-prepare-items">
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/></svg> Catheter kit (if replacement needed — obtain from pharmacy)</span>
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Clean accessible space for patient</span>
           </div>
         </div>
-        <div class="content-block">
-          <span class="content-block-label">Important Notes</span>
-          <div class="content-placeholder content-placeholder-sm">[IMPORTANT NOTES]</div>
+        <div class="service-note-bar">
+          <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Urinary catheter only. Catheter kit may need to be obtained from pharmacy prior to visit.</p>
         </div>
       </div>
       <div class="service-cta-row">
-        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
-        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+        <p class="service-cta-note">Need catheter care at home in Klang Valley? Our verified nurses are ready to help.</p>
+        <a href="#enquire" class="btn-enquire">Enquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
       </div>
     </section>
 
-    <!-- ====================================================
-         4. MEDICATION ADMINISTRATION
-         ==================================================== -->
+    <!-- 4. MEDICATION ADMINISTRATION -->
     <section class="service-section" id="medication">
       <div class="service-section-header">
-        <div class="service-section-icon">💊</div>
+        <div class="service-section-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
         <div class="service-section-title-area">
           <span class="service-section-label">Medication</span>
-          <h2 class="service-section-title">Medication Administration</h2>
-          <p class="service-section-tagline">[Short tagline — e.g. "Safe and accurate medication delivery at home"]</p>
+          <h2 class="service-section-title">Medication Administration at Home</h2>
+          <p class="service-section-tagline">Safe and accurate medication delivery by a registered nurse — oral, IM injection, and insulin at your home.</p>
           <div class="service-section-meta">
-            <span class="service-meta-pill">⏱ [Duration]</span>
-            <span class="service-meta-pill">💰 [Price]</span>
-            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 20–30 min</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> From RM120</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Registered Ward Nurse</span>
           </div>
         </div>
       </div>
       <div class="service-section-body">
-        <div class="service-body-grid">
-          <div class="content-block">
-            <span class="content-block-label">Service Description</span>
-            <div class="content-placeholder content-placeholder-tall">[SERVICE DESCRIPTION]</div>
+        <p style="font-size:15px;color:var(--text);line-height:1.8;margin-bottom:20px;">Our registered nurse administers prescribed medications correctly and safely, including oral medications, intramuscular injections, and insulin. Compliance monitoring and patient education are included in every visit.</p>
+        <div class="service-two-col">
+          <div class="service-info-box">
+            <p class="service-info-box-label">What the nurse does</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Oral medication administration</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Intramuscular injection</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Insulin administration</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Medication compliance monitoring</li>
+            </ul>
           </div>
-          <div class="content-block">
-            <span class="content-block-label">Who This Is For</span>
-            <div class="content-placeholder content-placeholder-tall">[WHO THIS IS FOR]</div>
-          </div>
-        </div>
-        <div class="content-block" style="margin-bottom:24px;">
-          <span class="content-block-label">Key Benefits</span>
-          <div class="benefits-placeholder">
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
-          </div>
-        </div>
-        <div class="content-block" style="margin-bottom:28px;">
-          <span class="content-block-label">What to Prepare</span>
-          <div class="prepare-grid">
-            <div class="prepare-card"><div class="prepare-card-icon">💊</div><span class="prepare-card-label">Medication</span><span class="prepare-card-value">[Placeholder]</span></div>
-            <div class="prepare-card"><div class="prepare-card-icon">📋</div><span class="prepare-card-label">Prescription</span><span class="prepare-card-value">[Placeholder]</span></div>
-            <div class="prepare-card"><div class="prepare-card-icon">🛏️</div><span class="prepare-card-label">Space</span><span class="prepare-card-value">[Placeholder]</span></div>
+          <div class="service-info-box">
+            <p class="service-info-box-label">Suitable for</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Patients requiring IM injections at home</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Diabetic patients needing insulin</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Post-discharge medication schedules</li>
+            </ul>
           </div>
         </div>
-        <div class="content-block">
-          <span class="content-block-label">Important Notes</span>
-          <div class="content-placeholder content-placeholder-sm">[IMPORTANT NOTES]</div>
+        <div class="service-prepare-row">
+          <p class="service-prepare-label">What to prepare</p>
+          <div class="service-prepare-items">
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/></svg> Prescribed medications obtained from pharmacy</span>
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg> Doctor's prescription</span>
+          </div>
+        </div>
+        <div class="service-note-bar">
+          <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Oral and IM medication only. Medications must be prescribed by a licensed doctor and obtained by the patient.</p>
         </div>
       </div>
       <div class="service-cta-row">
-        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
-        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+        <p class="service-cta-note">Need medication administration at home in KL or PJ? Our nurses are available across Klang Valley.</p>
+        <a href="#enquire" class="btn-enquire">Enquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
       </div>
     </section>
 
-    <!-- ====================================================
-         5. POST-DISCHARGE MONITORING
-         ==================================================== -->
+    <!-- 5. POST-DISCHARGE MONITORING -->
     <section class="service-section" id="post-discharge">
       <div class="service-section-header">
-        <div class="service-section-icon">❤️</div>
+        <div class="service-section-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
         <div class="service-section-title-area">
           <span class="service-section-label">Post-Discharge</span>
-          <h2 class="service-section-title">Post-Discharge Monitoring</h2>
-          <p class="service-section-tagline">[Short tagline — e.g. "Vital signs monitoring in the critical days after discharge"]</p>
+          <h2 class="service-section-title">Post-Discharge Monitoring at Home</h2>
+          <p class="service-section-tagline">Vital signs assessment and early deterioration detection in the critical days after hospital discharge.</p>
           <div class="service-section-meta">
-            <span class="service-meta-pill">⏱ [Duration]</span>
-            <span class="service-meta-pill">💰 [Price]</span>
-            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60–90 min</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> From RM200</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Registered Ward / ICU Nurse</span>
           </div>
         </div>
       </div>
       <div class="service-section-body">
-        <div class="service-body-grid">
-          <div class="content-block">
-            <span class="content-block-label">Service Description</span>
-            <div class="content-placeholder content-placeholder-tall">[SERVICE DESCRIPTION]</div>
+        <p style="font-size:15px;color:var(--text);line-height:1.8;margin-bottom:20px;">Our registered nurse conducts a comprehensive post-discharge assessment — vital signs, wound inspection, medication review, and early deterioration detection. A clinical report is sent after every visit and can be shared with your specialist.</p>
+        <div class="service-two-col">
+          <div class="service-info-box">
+            <p class="service-info-box-label">What the nurse does</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Blood pressure, pulse, temperature, SpO2</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> General clinical assessment</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Early deterioration detection</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Post-visit report and family education</li>
+            </ul>
           </div>
-          <div class="content-block">
-            <span class="content-block-label">Who This Is For</span>
-            <div class="content-placeholder content-placeholder-tall">[WHO THIS IS FOR]</div>
-          </div>
-        </div>
-        <div class="content-block" style="margin-bottom:24px;">
-          <span class="content-block-label">Key Benefits</span>
-          <div class="benefits-placeholder">
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
-          </div>
-        </div>
-        <div class="content-block" style="margin-bottom:28px;">
-          <span class="content-block-label">What to Prepare</span>
-          <div class="prepare-grid">
-            <div class="prepare-card"><div class="prepare-card-icon">📋</div><span class="prepare-card-label">Documents</span><span class="prepare-card-value">[Placeholder]</span></div>
-            <div class="prepare-card"><div class="prepare-card-icon">🛏️</div><span class="prepare-card-label">Space</span><span class="prepare-card-value">[Placeholder]</span></div>
-            <div class="prepare-card"><div class="prepare-card-icon">📞</div><span class="prepare-card-label">Contact</span><span class="prepare-card-value">[Placeholder]</span></div>
+          <div class="service-info-box">
+            <p class="service-info-box-label">Suitable for</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Post-surgical recovery (general)</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Post-cardiac or cardiac surgery patients</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Elderly patients at risk of deterioration</li>
+            </ul>
           </div>
         </div>
-        <div class="content-block">
-          <span class="content-block-label">Important Notes</span>
-          <div class="content-placeholder content-placeholder-sm">[IMPORTANT NOTES]</div>
+        <div class="service-prepare-row">
+          <p class="service-prepare-label">What to prepare</p>
+          <div class="service-prepare-items">
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg> Hospital discharge summary</span>
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Comfortable resting area</span>
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Emergency contact details ready</span>
+          </div>
+        </div>
+        <div class="service-note-bar">
+          <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Cardiac or post-surgical high-acuity monitoring (from RM280) requires an ICU-trained nurse — please mention this during enquiry.</p>
         </div>
       </div>
       <div class="service-cta-row">
-        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
-        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+        <p class="service-cta-note">Need post-discharge monitoring at home in KL or PJ? Our nurses cover Klang Valley.</p>
+        <a href="#enquire" class="btn-enquire">Enquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
       </div>
     </section>
 
-    <!-- ====================================================
-         6. POST-NATAL NURSING CARE
-         ==================================================== -->
+    <!-- 6. POST-NATAL CARE -->
     <section class="service-section" id="post-natal">
       <div class="service-section-header">
-        <div class="service-section-icon">👶</div>
+        <div class="service-section-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
         <div class="service-section-title-area">
           <span class="service-section-label">Post-Natal</span>
-          <h2 class="service-section-title">Post-Natal Nursing Care</h2>
-          <p class="service-section-tagline">[Short tagline — e.g. "Maternal and newborn care for mothers recovering at home"]</p>
+          <h2 class="service-section-title">Post-Natal Nursing Care at Home</h2>
+          <p class="service-section-tagline">Maternal and newborn clinical assessment for mothers recovering at home after delivery — across Klang Valley.</p>
           <div class="service-section-meta">
-            <span class="service-meta-pill">⏱ [Duration]</span>
-            <span class="service-meta-pill">💰 [Price]</span>
-            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60 min</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> From RM220</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Registered Midwife</span>
           </div>
         </div>
       </div>
       <div class="service-section-body">
-        <div class="service-body-grid">
-          <div class="content-block">
-            <span class="content-block-label">Service Description</span>
-            <div class="content-placeholder content-placeholder-tall">[SERVICE DESCRIPTION]</div>
+        <p style="font-size:15px;color:var(--text);line-height:1.8;margin-bottom:20px;">Our registered midwife visits your home to assess both mother and newborn — vital signs, wound inspection for C-section or episiotomy, newborn weight and feeding assessment, and breastfeeding support. A clinical report is provided after each visit.</p>
+        <div class="service-two-col">
+          <div class="service-info-box">
+            <p class="service-info-box-label">What the nurse does</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Maternal vital signs and wound assessment</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Newborn assessment and weight check</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Breastfeeding support and education</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Post-visit clinical report</li>
+            </ul>
           </div>
-          <div class="content-block">
-            <span class="content-block-label">Who This Is For</span>
-            <div class="content-placeholder content-placeholder-tall">[WHO THIS IS FOR]</div>
-          </div>
-        </div>
-        <div class="content-block" style="margin-bottom:24px;">
-          <span class="content-block-label">Key Benefits</span>
-          <div class="benefits-placeholder">
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
-          </div>
-        </div>
-        <div class="content-block" style="margin-bottom:28px;">
-          <span class="content-block-label">What to Prepare</span>
-          <div class="prepare-grid">
-            <div class="prepare-card"><div class="prepare-card-icon">🍼</div><span class="prepare-card-label">Baby Needs</span><span class="prepare-card-value">[Placeholder]</span></div>
-            <div class="prepare-card"><div class="prepare-card-icon">🛏️</div><span class="prepare-card-label">Space</span><span class="prepare-card-value">[Placeholder]</span></div>
-            <div class="prepare-card"><div class="prepare-card-icon">📋</div><span class="prepare-card-label">Documents</span><span class="prepare-card-value">[Placeholder]</span></div>
+          <div class="service-info-box">
+            <p class="service-info-box-label">Suitable for</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Mothers recovering from normal delivery</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Post-caesarean section recovery</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> First-time mothers needing breastfeeding support</li>
+            </ul>
           </div>
         </div>
-        <div class="content-block">
-          <span class="content-block-label">Important Notes</span>
-          <div class="content-placeholder content-placeholder-sm">[IMPORTANT NOTES]</div>
+        <div class="service-prepare-row">
+          <p class="service-prepare-label">What to prepare</p>
+          <div class="service-prepare-items">
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Comfortable space for mother and baby</span>
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg> Hospital discharge summary</span>
+          </div>
+        </div>
+        <div class="service-note-bar">
+          <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> This service is performed by a registered midwife. Maternal and neonatal scope only — not a confinement nanny service.</p>
         </div>
       </div>
       <div class="service-cta-row">
-        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
-        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+        <p class="service-cta-note">Need post-natal nursing care at home in KL or PJ? Our registered midwives cover Klang Valley.</p>
+        <a href="#enquire" class="btn-enquire">Enquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
       </div>
     </section>
 
-    <!-- ====================================================
-         7. ADVANCED HOME NURSING CARE
-         ==================================================== -->
+    <!-- 7. ADVANCED HOME NURSING -->
     <section class="service-section" id="advanced-nursing">
       <div class="service-section-header">
-        <div class="service-section-icon">🧑‍⚕️</div>
+        <div class="service-section-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+        </div>
         <div class="service-section-title-area">
           <span class="service-section-label">Advanced Nursing</span>
           <h2 class="service-section-title">Advanced Home Nursing Care</h2>
-          <p class="service-section-tagline">[Short tagline — e.g. "Comprehensive clinical home visit including procedures and treatment plan execution"]</p>
+          <p class="service-section-tagline">Comprehensive clinical home visit including vital signs, clinical review, and execution of a doctor's treatment plan.</p>
           <div class="service-section-meta">
-            <span class="service-meta-pill">⏱ [Duration]</span>
-            <span class="service-meta-pill">💰 Contact for pricing</span>
-            <span class="service-meta-pill">👩‍⚕️ [Nurse type]</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 30–45 min</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13"/></svg> Contact for pricing</span>
+            <span class="service-meta-pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Licensed Nurse+</span>
           </div>
         </div>
       </div>
       <div class="service-section-body">
-        <div class="service-body-grid">
-          <div class="content-block">
-            <span class="content-block-label">Service Description</span>
-            <div class="content-placeholder content-placeholder-tall">[SERVICE DESCRIPTION]</div>
+        <p style="font-size:15px;color:var(--text);line-height:1.8;margin-bottom:20px;">Our licensed nurse visits your home to conduct a full clinical review, assess vital signs, and execute a doctor's prescribed treatment plan. Includes basic procedures such as IV line insertion, blood drawing, catheter insertion, and feeding tube management.</p>
+        <div class="service-two-col">
+          <div class="service-info-box">
+            <p class="service-info-box-label">What the nurse does</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full vital signs assessment</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> IV line insertion and blood drawing</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Catheter and feeding tube insertion</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Treatment plan execution per doctor's orders</li>
+            </ul>
           </div>
-          <div class="content-block">
-            <span class="content-block-label">Who This Is For</span>
-            <div class="content-placeholder content-placeholder-tall">[WHO THIS IS FOR]</div>
-          </div>
-        </div>
-        <div class="content-block" style="margin-bottom:24px;">
-          <span class="content-block-label">Key Benefits</span>
-          <div class="benefits-placeholder">
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 1]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 2]</span></div>
-            <div class="benefit-row"><div class="benefit-dot">✓</div><span class="benefit-text">[Benefit 3]</span></div>
-          </div>
-        </div>
-        <div class="content-block" style="margin-bottom:28px;">
-          <span class="content-block-label">What to Prepare</span>
-          <div class="prepare-grid">
-            <div class="prepare-card"><div class="prepare-card-icon">📋</div><span class="prepare-card-label">Doctor's Plan</span><span class="prepare-card-value">[Treatment plan required]</span></div>
-            <div class="prepare-card"><div class="prepare-card-icon">🛏️</div><span class="prepare-card-label">Space</span><span class="prepare-card-value">[Placeholder]</span></div>
-            <div class="prepare-card"><div class="prepare-card-icon">📞</div><span class="prepare-card-label">Contact</span><span class="prepare-card-value">[Placeholder]</span></div>
+          <div class="service-info-box">
+            <p class="service-info-box-label">Suitable for</p>
+            <ul class="service-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Patients with a doctor's home care plan</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Complex post-discharge cases</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Patients needing multiple procedures in one visit</li>
+            </ul>
           </div>
         </div>
-        <div class="content-block">
-          <span class="content-block-label">Important Notes</span>
-          <div class="content-placeholder content-placeholder-sm">
-            [IMPORTANT NOTES — e.g. "Excludes medication administration and wound care, which are bookable separately."]
+        <div class="service-prepare-row">
+          <p class="service-prepare-label">What to prepare</p>
+          <div class="service-prepare-items">
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg> Doctor's treatment plan or letter</span>
+            <span class="service-prepare-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Clean accessible space</span>
           </div>
+        </div>
+        <div class="service-note-bar">
+          <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Excludes medication administration and wound care — bookable separately above. Requires nurse with IV, CBD, and RT proficiency.</p>
         </div>
       </div>
       <div class="service-cta-row">
-        <p class="service-cta-note">[CTA SUPPORTING TEXT]</p>
-        <a href="#enquire" class="btn-enquire">Enquiry →</a>
+        <p class="service-cta-note">Need advanced home nursing in KL or PJ? Contact us to discuss your requirements.</p>
+        <a href="#enquire" class="btn-enquire">Enquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
       </div>
     </section>
 
   </main>
 </div>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
+<!-- FOOTER -->
 <footer class="footer" id="enquire">
   <div class="footer-inner">
     <div class="footer-top">
@@ -1317,9 +774,6 @@ img { max-width: 100%; display: block; }
 </footer>
 
 <script>
-// ============================================================
-// SCROLL PROGRESS BAR
-// ============================================================
 const progressBar = document.getElementById('scrollProgress');
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
@@ -1328,45 +782,27 @@ window.addEventListener('scroll', () => {
   progressBar.style.width = pct + '%';
 });
 
-// ============================================================
-// ACTIVE SIDEBAR + MOBILE TAB on scroll
-// ============================================================
 const sections = document.querySelectorAll('.service-section');
 const sidebarItems = document.querySelectorAll('.sidebar-item');
 const mobileTabs = document.querySelectorAll('.mobile-tab');
 
 function setActive(id) {
-  sidebarItems.forEach(item => {
-    item.classList.toggle('active', item.dataset.target === id);
-  });
+  sidebarItems.forEach(item => item.classList.toggle('active', item.dataset.target === id));
   mobileTabs.forEach(tab => {
     tab.classList.toggle('active', tab.dataset.target === id);
-    if (tab.dataset.target === id) {
-      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-    }
+    if (tab.dataset.target === id) tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   });
 }
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      setActive(entry.target.id);
-    }
-  });
-}, {
-  rootMargin: '-20% 0px -60% 0px',
-  threshold: 0
-});
+  entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); });
+}, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
 
 sections.forEach(s => observer.observe(s));
 
-// ============================================================
-// MOBILE NAV TOGGLE
-// ============================================================
 const mobileBtn = document.getElementById('mobileBtn');
 const navLinks = document.getElementById('navLinks');
 mobileBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
 </script>
-
 </body>
 </html>
