@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Discharged from a Malaysian hospital and unsure what comes next? This guide covers what to expect in the first 72 hours at home, warning signs to watch, and when a home nurse is necessary.">
+<meta name="keywords" content="after hospital discharge Malaysia, post-discharge care Malaysia, home nursing after surgery Malaysia, nurse home visit KL, home care after operation Malaysia, hospital discharge checklist Malaysia">
+<link rel="canonical" href="https://homecareapps.com/blog/what-to-do-after-hospital-discharge-malaysia.html">
+<title>What to Do After Hospital Discharge in Malaysia — A Family Guide | HomeCareApps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:       #0F1E63;
+  --blue:       #2563EB;
+  --teal:       #008A8A;
+  --teal-light: #C3E7E3;
+  --grey:       #475569;
+  --grey-light: #F1F5F9;
+  --white:      #ffffff;
+  --text:       #1e293b;
+  --text-muted: #64748b;
+  --border:     #e2e8f0;
+  --nav-h:      76px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(15,30,99,0.97); backdrop-filter: blur(12px);
+  height: var(--nav-h); display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo img { height: 56px; width: auto; background: white; border-radius: 8px; padding: 3px; object-fit: contain; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--teal) !important; color: var(--white) !important; padding: 9px 20px !important; border-radius: 8px !important; font-weight: 600 !important; }
+.nav-cta:hover { background: #006f6f !important; }
+.nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+.nav-mobile-btn span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; }
+
+/* POST HERO */
+.post-hero {
+  margin-top: var(--nav-h);
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2f7a 60%, #0d2060 100%);
+  padding: 52px 5% 48px;
+  position: relative; overflow: hidden;
+}
+.post-hero::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(0,138,138,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.post-hero-inner { max-width: 760px; margin: 0 auto; }
+.post-breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+.post-breadcrumb a:hover { color: white; }
+.post-breadcrumb span { color: rgba(255,255,255,0.25); font-size: 13px; }
+.post-breadcrumb strong { color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; }
+.post-category-tag {
+  display: inline-block; background: var(--teal-light); color: var(--teal);
+  font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  font-family: 'Plus Jakarta Sans', sans-serif; margin-bottom: 16px;
+}
+.post-hero h1 {
+  font-size: clamp(24px, 3.5vw, 38px); font-weight: 800;
+  color: white; letter-spacing: -1px; line-height: 1.2; margin-bottom: 16px;
+}
+.post-meta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.post-meta-item { font-size: 13px; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: 5px; }
+.post-meta-divider { width: 1px; height: 14px; background: rgba(255,255,255,0.2); }
+
+/* READING PROGRESS */
+.reading-progress {
+  position: fixed; top: var(--nav-h); left: 0;
+  height: 3px; background: linear-gradient(90deg, var(--teal), var(--blue));
+  z-index: 300; width: 0%; transition: width 0.1s;
+}
+
+/* POST LAYOUT */
+.post-layout {
+  max-width: 1200px; margin: 0 auto;
+  padding: 52px 5%;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 52px;
+  align-items: start;
+}
+
+/* ARTICLE */
+.post-article { max-width: 720px; }
+
+.post-lead {
+  font-family: 'Lora', serif;
+  font-size: 18px; color: var(--text); line-height: 1.8;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-body { font-family: 'Lora', serif; font-size: 16px; line-height: 1.85; color: var(--text); }
+
+.post-body h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(20px, 2.5vw, 26px); font-weight: 800;
+  color: var(--navy); letter-spacing: -0.5px;
+  margin: 40px 0 16px; line-height: 1.3;
+}
+
+.post-body h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px; font-weight: 700; color: var(--navy);
+  margin: 28px 0 12px;
+}
+
+.post-body p { margin-bottom: 20px; }
+
+.post-body ul, .post-body ol { margin: 0 0 20px 24px; }
+.post-body li { margin-bottom: 8px; line-height: 1.7; }
+
+.post-body strong { font-weight: 700; color: var(--navy); }
+
+.post-body a { color: var(--teal); text-decoration: underline; text-decoration-color: var(--teal-light); transition: text-decoration-color 0.2s; }
+.post-body a:hover { text-decoration-color: var(--teal); }
+
+.post-callout {
+  background: linear-gradient(135deg, #f0fdfa 0%, #e0f7fa 100%);
+  border-left: 4px solid var(--teal);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px; margin: 28px 0;
+}
+.post-callout-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px; font-weight: 700; color: var(--teal);
+  text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px;
+}
+.post-callout p { font-size: 15px; color: var(--text); margin: 0; font-family: 'Inter', sans-serif; }
+
+.post-warning {
+  background: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 12px 12px 0;
+  padding: 16px 20px; margin: 24px 0;
+}
+.post-warning p { font-size: 14px; color: #92400e; margin: 0; font-family: 'Inter', sans-serif; }
+
+.post-divider { height: 1px; background: var(--border); margin: 36px 0; }
+
+.post-cta-block {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2f7a 100%);
+  border-radius: 16px; padding: 28px;
+  margin: 36px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+}
+.post-cta-block h4 { font-size: 18px; font-weight: 800; color: white; margin-bottom: 6px; letter-spacing: -0.3px; }
+.post-cta-block p { font-size: 14px; color: rgba(255,255,255,0.65); margin: 0; max-width: 360px; font-family: 'Inter', sans-serif; }
+.btn-cta-inline {
+  background: var(--teal); color: white;
+  padding: 12px 24px; border-radius: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700; font-size: 14px;
+  text-decoration: none; white-space: nowrap;
+  transition: background 0.2s; flex-shrink: 0;
+}
+.btn-cta-inline:hover { background: #006f6f; }
+
+/* Discharge checklist table */
+.discharge-table {
+  width: 100%; border-collapse: collapse;
+  margin: 24px 0; font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+.discharge-table th {
+  background: var(--navy); color: white;
+  padding: 12px 16px; text-align: left;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px; font-weight: 600;
+}
+.discharge-table td {
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+  vertical-align: top; line-height: 1.6;
+}
+.discharge-table tr:last-child td { border-bottom: none; }
+.discharge-table tr:nth-child(even) td { background: var(--grey-light); }
+.discharge-table .check { color: var(--teal); font-weight: 700; font-size: 16px; }
+
+.post-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-tag {
+  background: var(--grey-light); color: var(--text-muted);
+  font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 100px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.author-box {
+  background: var(--grey-light);
+  border-radius: 16px; padding: 24px;
+  display: flex; gap: 16px; align-items: flex-start;
+  margin-top: 36px;
+}
+.author-avatar {
+  width: 52px; height: 52px;
+  background: var(--teal); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.author-avatar svg { width: 26px; height: 26px; }
+.author-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.author-role { font-size: 12px; color: var(--teal); font-weight: 600; margin-bottom: 8px; }
+.author-bio { font-size: 13px; color: var(--text-muted); line-height: 1.6; font-family: 'Inter', sans-serif; }
+
+/* SIDEBAR */
+.post-sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: calc(var(--nav-h) + 24px); }
+
+.toc-widget {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+}
+.toc-header { padding: 14px 18px; border-bottom: 1px solid var(--border); }
+.toc-header h3 { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.7px; }
+.toc-body { padding: 12px 0; }
+.toc-item {
+  display: block; padding: 8px 18px;
+  font-size: 13px; color: var(--text-muted); font-weight: 500;
+  text-decoration: none; border-left: 3px solid transparent;
+  transition: all 0.2s; line-height: 1.4; font-family: 'Inter', sans-serif;
+}
+.toc-item:hover, .toc-item.active { color: var(--teal); border-left-color: var(--teal); background: linear-gradient(90deg, rgba(0,138,138,0.05) 0%, transparent 100%); }
+
+.share-widget {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; padding: 18px;
+}
+.share-widget h3 { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 14px; }
+.share-buttons { display: flex; gap: 8px; }
+.share-btn {
+  flex: 1; padding: 9px 8px; border-radius: 8px;
+  font-size: 12px; font-weight: 600; text-align: center;
+  cursor: pointer; border: 1px solid var(--border);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.2s; text-decoration: none; display: block; color: var(--text);
+}
+.share-btn:hover { border-color: var(--teal); color: var(--teal); }
+
+.sidebar-cta-widget {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2f7a 100%);
+  border-radius: 16px; padding: 22px 18px; text-align: center;
+}
+.sidebar-cta-widget h3 { font-size: 15px; font-weight: 800; color: white; margin-bottom: 8px; line-height: 1.3; }
+.sidebar-cta-widget p { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 16px; line-height: 1.5; font-family: 'Inter', sans-serif; }
+.btn-sidebar-cta {
+  display: block; background: var(--teal); color: white;
+  padding: 12px; border-radius: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 13px;
+  text-decoration: none; transition: background 0.2s;
+}
+.btn-sidebar-cta:hover { background: #006f6f; }
+
+/* RELATED POSTS */
+.related-posts { max-width: 1200px; margin: 0 auto; padding: 0 5% 60px; }
+.related-posts-header { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); font-family: 'Plus Jakarta Sans', sans-serif; }
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.related-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  text-decoration: none; color: inherit; transition: all 0.25s;
+}
+.related-card:hover { border-color: var(--teal); box-shadow: 0 8px 32px rgba(0,138,138,0.1); transform: translateY(-2px); }
+.related-card-image { height: 120px; display: flex; align-items: center; justify-content: center; }
+.related-card-image.teal-bg { background: linear-gradient(135deg, #e0f2fe 0%, var(--teal-light) 100%); }
+.related-card-image.navy-bg { background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); }
+.related-card-image.warm-bg { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+.related-card-body { padding: 16px; }
+.related-card-body h4 { font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4; margin-bottom: 8px; }
+.related-card-body .read-link { font-size: 12px; font-weight: 600; color: var(--teal); font-family: 'Plus Jakarta Sans', sans-serif; }
+
+/* FOOTER */
+.footer { background: var(--navy); padding: 48px 5% 28px; color: rgba(255,255,255,0.6); margin-top: 20px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 28px; }
+.footer-brand img { height: 56px; background: white; border-radius: 8px; padding: 3px; margin-bottom: 12px; }
+.footer-brand p { font-size: 14px; line-height: 1.7; max-width: 280px; }
+.footer-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; margin-bottom: 8px; transition: color 0.2s; }
+.footer-col a:hover { color: white; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 13px; flex-wrap: wrap; gap: 12px; }
+.powered-by { font-size: 12px; color: rgba(255,255,255,0.35); }
+.powered-by strong { color: rgba(255,255,255,0.6); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .post-layout { grid-template-columns: 1fr; }
+  .post-sidebar { position: static; }
+  .toc-widget { display: none; }
+  .related-grid { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 600px) {
+  .post-hero { padding: 36px 5% 32px; }
+  .related-grid { grid-template-columns: 1fr; }
+  .post-cta-block { flex-direction: column; }
+  .nav-links { display: none; }
+  .nav-links.open { display: flex; flex-direction: column; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--navy); padding: 20px 5%; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 199; }
+  .nav-mobile-btn { display: flex; }
+  .discharge-table { font-size: 13px; }
+  .discharge-table th, .discharge-table td { padding: 10px 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="Homecare_Icon.png" alt="HomeCareApps">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/">Home</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://www.weassist.asia/about-us" target="_blank">About</a></li>
+    <li><a href="/#early-access" class="nav-cta">Get Early Access</a></li>
+  </ul>
+  <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- POST HERO -->
+<section class="post-hero">
+  <div class="post-hero-inner">
+    <div class="post-breadcrumb">
+      <a href="/">Home</a>
+      <span>›</span>
+      <a href="/blog">Blog</a>
+      <span>›</span>
+      <strong>After Hospital Discharge in Malaysia</strong>
+    </div>
+    <span class="post-category-tag">Post-Hospital Care</span>
+    <h1>What to Do After Hospital Discharge in Malaysia — A Practical Family Guide</h1>
+    <div class="post-meta-row">
+      <span class="post-meta-item">HomeCareApps Editorial</span>
+      <div class="post-meta-divider"></div>
+      <span class="post-meta-item">April 2026</span>
+      <div class="post-meta-divider"></div>
+      <span class="post-meta-item">9 min read</span>
+    </div>
+  </div>
+</section>
+
+<!-- POST LAYOUT -->
+<div class="post-layout">
+
+  <article class="post-article">
+
+    <p class="post-lead">
+      Hospital discharge in Malaysia often happens faster than families expect. A patient may be medically stable enough to leave the ward, but that does not mean they are fully recovered — and the gap between leaving hospital and reaching safe, stable recovery at home is where complications most often occur. This guide walks you through exactly what to do in the first 72 hours after discharge, what warning signs to watch for, and when calling a registered nurse to your home is not optional.
+    </p>
+
+    <div class="post-body" id="postBody">
+
+      <h2 id="section-1">Why the Period After Discharge Is High-Risk</h2>
+
+      <p>Research published in medical literature consistently identifies the first 30 days after hospital discharge as the highest-risk period for complications and readmission. In Malaysia, the Ministry of Health's hospital discharge processes are designed to ensure patients are medically stable before leaving — but "medically stable" and "ready to manage independently at home" are not the same thing.</p>
+
+      <p>Patients discharged after surgery, cardiac events, infections requiring IV antibiotics, or significant illness are often still in an active recovery phase. Wounds may still require regular dressing changes. Medication regimens may be complex. Mobility is often limited. Without proper post-discharge support, small problems — a wound that is not dressed correctly, a missed medication dose, an early sign of infection — can escalate rapidly and result in readmission.</p>
+
+      <div class="post-callout">
+        <div class="post-callout-label">Key Point</div>
+        <p>Hospital readmission within 30 days of discharge is considered a clinical quality indicator. In Malaysia, readmission often results from inadequate wound care, medication non-compliance, or failure to detect early signs of infection or deterioration at home. All of these are preventable with appropriate nursing support.</p>
+      </div>
+
+      <h2 id="section-2">What to Collect Before Leaving the Hospital</h2>
+
+      <p>Before your family member is discharged, ensure you have collected and fully understood the following from the ward team. Do not leave the hospital without these items — many Malaysian families find that questions they did not ask in the ward are difficult to resolve once they are home.</p>
+
+      <table class="discharge-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>What to Ask</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Discharge Summary</strong></td>
+            <td>Request a written discharge summary from the treating doctor. This should include the diagnosis, procedures performed, and any ongoing treatment plan.</td>
+          </tr>
+          <tr>
+            <td><strong>Medication List</strong></td>
+            <td>Get a complete list of all medications — names, doses, timing, and duration. Ask which medications are new and which were existing. Ask about potential side effects to watch for.</td>
+          </tr>
+          <tr>
+            <td><strong>Wound Care Instructions</strong></td>
+            <td>If there is a wound or surgical site, ask the nurse to demonstrate the dressing change procedure before discharge. Request a written protocol you can reference at home.</td>
+          </tr>
+          <tr>
+            <td><strong>Follow-Up Appointment</strong></td>
+            <td>Confirm the date, time, and location of the follow-up outpatient appointment. Ask which clinic or specialist the patient should attend.</td>
+          </tr>
+          <tr>
+            <td><strong>Activity Restrictions</strong></td>
+            <td>Ask what activities the patient can and cannot do — walking, stairs, lifting, bathing, driving. Ask how long restrictions apply.</td>
+          </tr>
+          <tr>
+            <td><strong>Diet and Fluid Guidance</strong></td>
+            <td>Relevant for post-surgical patients, cardiac patients, and those with diabetes or renal conditions. Ask if a specific diet is required.</td>
+          </tr>
+          <tr>
+            <td><strong>When to Seek Help</strong></td>
+            <td>Ask the doctor explicitly: what signs or symptoms should prompt you to call the hospital or go to the emergency department?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="section-3">The First 72 Hours at Home</h2>
+
+      <p>The first three days at home are the most critical. During this period, the patient's body is adjusting to being outside the structured environment of the ward. Pain management, medication routines, wound care, and mobility support all need to be established — often by family members who have no clinical training.</p>
+
+      <h3>Setting Up the Home Environment</h3>
+
+      <p>Before the patient arrives home, prepare the physical environment to reduce fall risk and support recovery:</p>
+      <ul>
+        <li>Clear walking paths of loose rugs, cables, and obstacles</li>
+        <li>Place a firm chair with armrests in the main living area</li>
+        <li>If the patient cannot manage stairs, arrange sleeping accommodation on the ground floor</li>
+        <li>Ensure the bathroom has non-slip matting and that the toilet is accessible</li>
+        <li>Place a small table near the patient's rest area for medications, water, and a phone within reach</li>
+      </ul>
+
+      <h3>Medication Management</h3>
+
+      <p>Medication errors at home are a significant cause of post-discharge complications. To reduce risk, organise all medications clearly on the day of discharge. A pill organiser labelled by day and time is a practical tool. Set phone alarms for each medication time. If the patient is taking multiple medications including blood thinners, diabetes medications, or cardiac drugs, ask the pharmacist to review the regimen for interactions — this service is available at most hospital outpatient pharmacies in Malaysia.</p>
+
+      <h3>Wound Care at Home</h3>
+
+      <p>If the patient has a surgical wound, catheter, IV line, or drain, these require regular, clinically correct management. Many Malaysian families attempt wound dressing changes without proper training — this significantly increases the risk of infection. A registered nurse performing a home visit can carry out dressing changes to the correct clinical standard, assess the wound for early signs of infection, and document the healing progression for the treating doctor.</p>
+
+      <div class="post-cta-block">
+        <div>
+          <h4>Need a nurse for post-discharge care at home?</h4>
+          <p>HomeCareApps connects Malaysian families with verified registered nurses for home visits — wound care, post-discharge monitoring, medication administration, and more.</p>
+        </div>
+        <a href="/#early-access" class="nav-cta">Get Early Access</a>
+      </div>
+
+      <h2 id="section-4">Warning Signs That Require Immediate Attention</h2>
+
+      <p>Every family caring for a recently discharged patient should know the clinical warning signs that require prompt medical attention. The following symptoms should not be managed at home — they require either a call to the treating hospital or a visit to the nearest emergency department.</p>
+
+      <ul>
+        <li><strong>Fever above 38 degrees Celsius</strong> — particularly in post-surgical patients, this may indicate infection</li>
+        <li><strong>Wound that is red, warm, swollen, or producing discharge</strong> — signs of possible surgical site infection</li>
+        <li><strong>Chest pain or difficulty breathing</strong> — requires immediate emergency assessment</li>
+        <li><strong>Confusion or sudden change in behaviour</strong> — particularly concerning in elderly patients or those who have had neurological procedures</li>
+        <li><strong>Inability to pass urine for more than eight hours</strong> — especially relevant for patients with catheters or those who have had urological procedures</li>
+        <li><strong>Severe pain that is not controlled by prescribed medication</strong></li>
+        <li><strong>Swelling, redness, or pain in the calf</strong> — possible deep vein thrombosis, which requires urgent assessment</li>
+        <li><strong>Vomiting that prevents oral medication from being taken</strong></li>
+      </ul>
+
+      <div class="post-warning">
+        <p>This article is for informational purposes only and does not constitute medical advice. If you are concerned about a patient's condition after discharge, contact the treating hospital directly or bring the patient to the nearest emergency department. Do not delay seeking care while searching online for information.</p>
+      </div>
+
+      <h2 id="section-5">When to Arrange a Home Nursing Visit</h2>
+
+      <p>Not every post-discharge patient requires daily nursing visits. However, certain clinical situations make professional home nursing support strongly advisable rather than optional. Consider arranging a home nursing visit if any of the following apply:</p>
+
+      <ul>
+        <li>The patient has a surgical wound that requires regular dressing changes</li>
+        <li>The patient has been discharged with a urinary catheter or nasogastric tube</li>
+        <li>The patient requires IV medication to be continued at home</li>
+        <li>The patient has diabetes and the surgical wound is on the foot or lower limb</li>
+        <li>The patient is elderly and living alone, or with carers who have no clinical training</li>
+        <li>The patient has been discharged after a cardiac event and requires vital signs monitoring</li>
+        <li>The family is uncertain whether the wound or condition is progressing normally</li>
+      </ul>
+
+      <p>In Malaysia, a registered nurse performing a home visit can carry out clinical assessments, perform procedures such as wound dressing, catheter care, and medication administration, and communicate findings to the treating doctor. This is substantively different from the support a family caregiver or maid can provide, and should not be treated as the same service.</p>
+
+      <h2 id="conclusion">The Bottom Line</h2>
+
+      <p>Hospital discharge marks the beginning of recovery — not the end of clinical need. The weeks following discharge are the period when families most often feel uncertain and unsupported, and when patients are most vulnerable to complications that could return them to hospital. Having a clear plan, the right information, and access to professional nursing support at home significantly reduces that risk.</p>
+
+      <p>If your family member has recently been discharged from a Malaysian hospital and you are uncertain about any aspect of their care at home — wound management, medication, catheter care, or vital signs monitoring — HomeCareApps can connect you with a verified registered nurse who will visit your home and provide the clinical support your family member needs.</p>
+
+    </div>
+
+    <!-- TAGS -->
+    <div class="post-tags">
+      <span class="post-tag">Post-Discharge Care</span>
+      <span class="post-tag">Home Nursing Malaysia</span>
+      <span class="post-tag">Post-Surgery Recovery</span>
+      <span class="post-tag">Hospital Discharge</span>
+      <span class="post-tag">Wound Care at Home</span>
+    </div>
+
+    <!-- AUTHOR -->
+    <div class="author-box">
+      <div class="author-avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </div>
+      <div>
+        <div class="author-name">HomeCareApps Editorial Team</div>
+        <div class="author-role">Clinical Content, WeAssist</div>
+        <p class="author-bio">Our editorial content is reviewed by registered nurses and clinicians from the WeAssist network. We write for Malaysian families — accessible, accurate, and free of unnecessary jargon.</p>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="post-sidebar">
+
+    <div class="toc-widget">
+      <div class="toc-header"><h3>In this article</h3></div>
+      <div class="toc-body">
+        <a href="#section-1" class="toc-item">Why post-discharge is high-risk</a>
+        <a href="#section-2" class="toc-item">What to collect before leaving hospital</a>
+        <a href="#section-3" class="toc-item">The first 72 hours at home</a>
+        <a href="#section-4" class="toc-item">Warning signs to watch for</a>
+        <a href="#section-5" class="toc-item">When to arrange home nursing</a>
+        <a href="#conclusion" class="toc-item">The bottom line</a>
+      </div>
+    </div>
+
+    <div class="share-widget">
+      <h3>Share this article</h3>
+      <div class="share-buttons">
+        <a href="#" class="share-btn" onclick="shareWhatsApp(); return false;">WhatsApp</a>
+        <a href="#" class="share-btn" onclick="shareFacebook(); return false;">Facebook</a>
+        <a href="#" class="share-btn" onclick="copyLink(); return false;">Copy link</a>
+      </div>
+    </div>
+
+    <div class="sidebar-cta-widget">
+      <h3>Need a nurse at home after discharge?</h3>
+      <p>Verified registered nurses for wound care, monitoring, and post-discharge support across Klang Valley.</p>
+      <a href="/#early-access" class="btn-sidebar-cta">Get Early Access</a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- RELATED POSTS -->
+<div class="related-posts">
+  <p class="related-posts-header">Related Articles</p>
+  <div class="related-grid">
+
+    <a href="/blog/post-surgical-wound-care-home-malaysia.html" class="related-card">
+      <div class="related-card-image teal-bg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="related-card-body">
+        <h4>Post-surgical wound care at home: what Malaysian families need to know</h4>
+        <span class="read-link">Read article</span>
+      </div>
+    </a>
+
+    <a href="/blog/when-elderly-parent-needs-nurse-not-caregiver.html" class="related-card">
+      <div class="related-card-image navy-bg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="related-card-body">
+        <h4>When does your elderly parent need a registered nurse, not a caregiver?</h4>
+        <span class="read-link">Read article</span>
+      </div>
+    </a>
+
+    <a href="/blog/iv-therapy-home-malaysia.html" class="related-card">
+      <div class="related-card-image warm-bg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <div class="related-card-body">
+        <h4>IV therapy at home in Malaysia: is it possible, and is it safe?</h4>
+        <span class="read-link">Read article</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="Homecare_Icon.png" alt="HomeCareApps">
+        <p>Verified registered nurses for clinical home visits in Malaysia. A product by WeAssist — Malaysia's largest verified nurse staffing platform.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/#services">Wound Care</a>
+        <a href="/#services">IV Therapy</a>
+        <a href="/#services">Catheter Care</a>
+        <a href="/#services">Medication Admin</a>
+        <a href="/#services">Post-Natal Care</a>
+        <a href="/#services">Advanced Nursing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/">Home</a>
+        <a href="https://www.weassist.asia/about-us" target="_blank">About Us</a>
+        <a href="/blog">Blog</a>
+        <a href="mailto:homecare@weassist.com.my">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HomeCareApps. All rights reserved.</span>
+      <span class="powered-by">A product by <strong>WeAssist</strong></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const mobileBtn = document.getElementById('mobileBtn');
+const navLinks = document.getElementById('navLinks');
+mobileBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+window.addEventListener('scroll', () => {
+  const article = document.getElementById('postBody');
+  if (!article) return;
+  const pct = Math.min(100, Math.max(0,
+    ((window.scrollY - article.offsetTop + window.innerHeight * 0.3) / article.offsetHeight) * 100
+  ));
+  document.getElementById('readingProgress').style.width = pct + '%';
+});
+
+const tocItems = document.querySelectorAll('.toc-item');
+const headings = document.querySelectorAll('.post-body h2, .post-body h3');
+window.addEventListener('scroll', () => {
+  let current = '';
+  headings.forEach(h => { if (window.scrollY >= h.offsetTop - 120) current = h.id; });
+  tocItems.forEach(item => item.classList.toggle('active', item.getAttribute('href') === '#' + current));
+});
+
+function shareWhatsApp() {
+  window.open('https://wa.me/?text=' + encodeURIComponent(document.title + ' ' + window.location.href));
+}
+function shareFacebook() {
+  window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href));
+}
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied to clipboard.'));
+}
+</script>
+
+</body>
+</html>
