@@ -4,401 +4,132 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Guides for Malaysian families on home nursing, post-discharge care, wound care, and when to call a registered nurse at home.">
-<meta name="keywords" content="home nursing Malaysia, post discharge care Malaysia, wound care at home, home nursing guide">
-<title>Blog & Guides — HomeCareApps</title>
+<title>Blog &amp; Guides — HomeCareApps</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy:       #0F1E63;
-  --blue:       #2563EB;
-  --teal:       #008A8A;
-  --teal-light: #C3E7E3;
-  --grey:       #475569;
-  --grey-light: #F1F5F9;
-  --white:      #ffffff;
-  --text:       #1e293b;
-  --text-muted: #64748b;
-  --border:     #e2e8f0;
-  --nav-h:      76px;
-}
-
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', sans-serif;
-  color: var(--text);
-  background: var(--white);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
-
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: rgba(15,30,99,0.97);
-  backdrop-filter: blur(12px);
-  height: var(--nav-h);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-logo img { height: 56px; width: auto; background: white; border-radius: 8px; padding: 3px; object-fit: contain; }
-.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-.nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: var(--white); }
-.nav-cta { background: var(--teal) !important; color: var(--white) !important; padding: 9px 20px !important; border-radius: 8px !important; font-weight: 600 !important; }
-.nav-cta:hover { background: #006f6f !important; }
-.nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
-.nav-mobile-btn span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; }
-
-/* ── PAGE HERO ── */
-.page-hero {
-  margin-top: var(--nav-h);
-  background: linear-gradient(135deg, var(--navy) 0%, #1a2f7a 60%, #0d2060 100%);
-  padding: 56px 5% 52px;
-  position: relative;
-  overflow: hidden;
-}
-.page-hero::before {
-  content: '';
-  position: absolute; top: -100px; right: -100px;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(0,138,138,0.18) 0%, transparent 70%);
-  pointer-events: none;
-}
-.page-hero-inner { max-width: 1200px; margin: 0 auto; }
-.page-hero-breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
-.page-hero-breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: color 0.2s; }
-.page-hero-breadcrumb a:hover { color: white; }
-.page-hero-breadcrumb span { color: rgba(255,255,255,0.25); font-size: 13px; }
-.page-hero-breadcrumb strong { color: rgba(255,255,255,0.8); font-size: 13px; font-weight: 500; }
-.page-hero h1 {
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 800; color: white;
-  letter-spacing: -1px; margin-bottom: 12px; line-height: 1.1;
-}
-.page-hero h1 span { color: var(--teal-light); }
-.page-hero-sub {
-  font-size: 16px; color: rgba(255,255,255,0.65);
-  max-width: 540px; line-height: 1.7; margin-bottom: 28px;
-}
-
-/* ── CATEGORY FILTER ── */
-.category-bar {
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  padding: 0 5%;
-  position: sticky;
-  top: var(--nav-h);
-  z-index: 100;
-}
-.category-bar-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.category-bar-inner::-webkit-scrollbar { display: none; }
-.cat-btn {
-  padding: 16px 20px;
-  font-size: 13px; font-weight: 600;
-  color: var(--text-muted);
-  background: none; border: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  white-space: nowrap;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  transition: all 0.2s;
-}
-.cat-btn:hover { color: var(--navy); }
-.cat-btn.active { color: var(--teal); border-bottom-color: var(--teal); }
-
-/* ── MAIN LAYOUT ── */
-.blog-layout {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 48px 5%;
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 40px;
-  align-items: start;
-}
-
-/* ── FEATURED POST ── */
-.featured-post {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  overflow: hidden;
-  margin-bottom: 32px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  transition: box-shadow 0.25s;
-  text-decoration: none;
-  color: inherit;
-}
-.featured-post:hover {
-  box-shadow: 0 12px 48px rgba(15,30,99,0.1);
-}
-.featured-post-image {
-  background: linear-gradient(135deg, var(--navy) 0%, #1a2f7a 100%);
-  min-height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 80px;
-  position: relative;
-  overflow: hidden;
-}
-.featured-post-image::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(0,138,138,0.3) 0%, transparent 60%);
-}
-.featured-post-body { padding: 36px 32px; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
-.post-category-tag {
-  display: inline-block;
-  background: var(--teal-light); color: var(--teal);
-  font-size: 11px; font-weight: 700;
-  padding: 3px 10px; border-radius: 100px;
-  text-transform: uppercase; letter-spacing: 0.5px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  width: fit-content;
-}
-.post-category-tag.educational { background: #EDE9FE; color: #6D28D9; }
-.post-category-tag.condition { background: #FEF3C7; color: #92400E; }
-.post-category-tag.transactional { background: var(--teal-light); color: var(--teal); }
-
-.featured-label {
-  font-size: 11px; font-weight: 700; color: var(--text-muted);
-  text-transform: uppercase; letter-spacing: 0.8px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-.featured-post-body h2 {
-  font-size: clamp(18px, 2vw, 24px); font-weight: 800;
-  color: var(--navy); letter-spacing: -0.5px; line-height: 1.3;
-}
-.featured-post-body p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
-.post-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-.post-meta-item { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
-.read-more {
-  display: inline-flex; align-items: center; gap: 6px;
-  color: var(--teal); font-weight: 700; font-size: 14px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  margin-top: 4px;
-}
-
-/* ── POSTS SECTION HEADER ── */
-.posts-section-label {
-  font-size: 11px; font-weight: 700; color: var(--text-muted);
-  text-transform: uppercase; letter-spacing: 0.8px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
-}
-
-/* ── POSTS GRID ── */
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-bottom: 32px;
-}
-
-.post-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.25s;
-  position: relative;
-}
-.post-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--teal), var(--blue));
-  opacity: 0; transition: opacity 0.25s;
-}
-.post-card:hover { border-color: var(--teal); box-shadow: 0 8px 32px rgba(0,138,138,0.1); transform: translateY(-2px); }
-.post-card:hover::before { opacity: 1; }
-
-.post-card-image {
-  height: 140px;
-  background: linear-gradient(135deg, var(--grey-light) 0%, #e2e8f0 100%);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 48px;
-  position: relative;
-  overflow: hidden;
-}
-.post-card-image.teal-bg { background: linear-gradient(135deg, #e0f2fe 0%, var(--teal-light) 100%); }
-.post-card-image.navy-bg { background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); }
-.post-card-image.warm-bg { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
-.post-card-image.green-bg { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); }
-.post-card-image.pink-bg { background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); }
-
-.post-card-body { padding: 20px 20px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.post-card-body h3 { font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.4; }
-.post-card-body p { font-size: 13px; color: var(--text-muted); line-height: 1.6; flex: 1; }
-.post-card-footer {
-  padding: 12px 20px 16px;
-  display: flex; align-items: center; justify-content: space-between;
-  border-top: 1px solid var(--border);
-}
-.post-read-link { font-size: 13px; font-weight: 600; color: var(--teal); font-family: 'Plus Jakarta Sans', sans-serif; }
-
-/* ── LOAD MORE ── */
-.load-more-row { text-align: center; margin-top: 8px; }
-.btn-load-more {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: transparent; color: var(--navy);
-  border: 1.5px solid var(--border);
-  padding: 12px 28px; border-radius: 10px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 600; font-size: 14px;
-  cursor: pointer; transition: all 0.2s;
-}
-.btn-load-more:hover { border-color: var(--teal); color: var(--teal); }
-
-/* ── SIDEBAR ── */
-.blog-sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: calc(var(--nav-h) + 60px); }
-
-.sidebar-widget {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-}
-.sidebar-widget-header {
-  padding: 16px 20px 14px;
-  border-bottom: 1px solid var(--border);
-}
-.sidebar-widget-header h3 { font-size: 13px; font-weight: 700; color: var(--navy); }
-.sidebar-widget-body { padding: 16px 20px; }
-
-/* Popular posts */
-.popular-post {
-  display: flex; gap: 12px; align-items: flex-start;
-  padding: 10px 0; border-bottom: 1px solid var(--border);
-  text-decoration: none; color: inherit;
-  transition: opacity 0.2s;
-}
-.popular-post:last-child { border-bottom: none; padding-bottom: 0; }
-.popular-post:hover { opacity: 0.75; }
-.popular-post-num {
-  width: 24px; height: 24px;
-  background: var(--grey-light); color: var(--text-muted);
-  border-radius: 6px; display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  flex-shrink: 0; margin-top: 2px;
-}
-.popular-post-title { font-size: 13px; font-weight: 600; color: var(--navy); line-height: 1.4; }
-
-/* Categories widget */
-.cat-list { display: flex; flex-direction: column; gap: 6px; }
-.cat-list-item {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 8px 12px; border-radius: 8px;
-  text-decoration: none; color: var(--text-muted);
-  font-size: 13px; font-weight: 500;
-  transition: all 0.2s;
-}
-.cat-list-item:hover { background: var(--grey-light); color: var(--navy); }
-.cat-count {
-  background: var(--grey-light); color: var(--text-muted);
-  font-size: 11px; font-weight: 700;
-  padding: 2px 8px; border-radius: 100px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-/* Newsletter widget */
-.newsletter-widget { background: linear-gradient(135deg, var(--navy) 0%, #1a2f7a 100%); }
-.newsletter-widget .sidebar-widget-header { border-color: rgba(255,255,255,0.1); }
-.newsletter-widget .sidebar-widget-header h3 { color: white; }
-.newsletter-widget .sidebar-widget-body { display: flex; flex-direction: column; gap: 12px; }
-.newsletter-widget p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
-.newsletter-input {
-  width: 100%; padding: 10px 14px;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 8px; background: rgba(255,255,255,0.08);
-  color: white; font-size: 13px; font-family: 'Inter', sans-serif;
-  outline: none; transition: border-color 0.2s;
-}
-.newsletter-input::placeholder { color: rgba(255,255,255,0.4); }
-.newsletter-input:focus { border-color: var(--teal); }
-.btn-newsletter {
-  width: 100%; padding: 11px;
-  background: var(--teal); color: white; border: none;
-  border-radius: 8px; cursor: pointer;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700; font-size: 13px;
-  transition: background 0.2s;
-}
-.btn-newsletter:hover { background: #006f6f; }
-
-/* ── FOOTER ── */
-.footer { background: var(--navy); padding: 48px 5% 28px; color: rgba(255,255,255,0.6); margin-top: 60px; }
-.footer-inner { max-width: 1200px; margin: 0 auto; }
-.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 28px; }
-.footer-brand img { height: 56px; background: white; border-radius: 8px; padding: 3px; margin-bottom: 12px; }
-.footer-brand p { font-size: 14px; line-height: 1.7; max-width: 280px; }
-.footer-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
-.footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; margin-bottom: 8px; transition: color 0.2s; }
-.footer-col a:hover { color: white; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 13px; flex-wrap: wrap; gap: 12px; }
-.powered-by { font-size: 12px; color: rgba(255,255,255,0.35); }
-.powered-by strong { color: rgba(255,255,255,0.6); }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
-  .blog-layout { grid-template-columns: 1fr; }
-  .blog-sidebar { position: static; flex-direction: row; flex-wrap: wrap; }
-  .blog-sidebar .sidebar-widget { flex: 1; min-width: 260px; }
-}
-@media (max-width: 768px) {
-  .featured-post { grid-template-columns: 1fr; }
-  .featured-post-image { min-height: 160px; }
-  .posts-grid { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr; gap: 28px; }
-  .nav-links { display: none; }
-  .nav-links.open { display: flex; flex-direction: column; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--navy); padding: 20px 5%; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 199; }
-  .nav-mobile-btn { display: flex; }
-}
-@media (max-width: 600px) {
-  .blog-sidebar { flex-direction: column; }
-  .blog-sidebar .sidebar-widget { min-width: unset; }
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-.featured-post { animation: fadeInUp 0.5s ease both 0.1s; }
-.post-card:nth-child(1) { animation: fadeInUp 0.4s ease both 0.15s; }
-.post-card:nth-child(2) { animation: fadeInUp 0.4s ease both 0.2s; }
-.post-card:nth-child(3) { animation: fadeInUp 0.4s ease both 0.25s; }
-.post-card:nth-child(4) { animation: fadeInUp 0.4s ease both 0.3s; }
-.post-card:nth-child(5) { animation: fadeInUp 0.4s ease both 0.35s; }
-.post-card:nth-child(6) { animation: fadeInUp 0.4s ease both 0.4s; }
+:root{--navy:#0F1E63;--blue:#2563EB;--teal:#008A8A;--teal-light:#C3E7E3;--grey-light:#F1F5F9;--white:#ffffff;--text:#1e293b;--text-muted:#64748b;--border:#e2e8f0;--nav-h:76px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,30,99,0.97);backdrop-filter:blur(12px);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 5%;border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:56px;width:auto;background:white;border-radius:8px;padding:3px;object-fit:contain}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--teal)!important;color:var(--white)!important;padding:9px 20px!important;border-radius:8px!important;font-weight:600!important}
+.nav-cta:hover{background:#006f6f!important}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.nav-mobile-btn span{display:block;width:24px;height:2px;background:white;border-radius:2px}
+.page-hero{margin-top:var(--nav-h);background:linear-gradient(135deg,var(--navy) 0%,#1a2f7a 60%,#0d2060 100%);padding:56px 5% 52px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,138,138,0.18) 0%,transparent 70%);pointer-events:none}
+.page-hero-inner{max-width:1200px;margin:0 auto}
+.page-hero-breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:20px}
+.page-hero-breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px}
+.page-hero-breadcrumb a:hover{color:white}
+.page-hero-breadcrumb span{color:rgba(255,255,255,0.25);font-size:13px}
+.page-hero-breadcrumb strong{color:rgba(255,255,255,0.8);font-size:13px;font-weight:500}
+.page-hero h1{font-size:clamp(28px,4vw,44px);font-weight:800;color:white;letter-spacing:-1px;margin-bottom:12px;line-height:1.1}
+.page-hero h1 span{color:var(--teal-light)}
+.page-hero-sub{font-size:16px;color:rgba(255,255,255,0.65);max-width:540px;line-height:1.7}
+.category-bar{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;position:sticky;top:var(--nav-h);z-index:100}
+.category-bar-inner{max-width:1200px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+.category-bar-inner::-webkit-scrollbar{display:none}
+.cat-btn{padding:16px 20px;font-size:13px;font-weight:600;color:var(--text-muted);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif;transition:all 0.2s}
+.cat-btn:hover{color:var(--navy)}
+.cat-btn.active{color:var(--teal);border-bottom-color:var(--teal)}
+.blog-layout{max-width:1200px;margin:0 auto;padding:48px 5%;display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start}
+.featured-post{background:var(--white);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:32px;display:grid;grid-template-columns:1fr 1fr;transition:box-shadow 0.25s;text-decoration:none;color:inherit}
+.featured-post:hover{box-shadow:0 12px 48px rgba(15,30,99,0.1)}
+.featured-post-image{background:linear-gradient(135deg,var(--navy) 0%,#1a2f7a 100%);min-height:280px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.featured-post-image::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(0,138,138,0.3) 0%,transparent 60%)}
+.featured-post-image svg{width:64px;height:64px;position:relative;z-index:1}
+.featured-post-body{padding:36px 32px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.post-category-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:0.5px;font-family:'Plus Jakarta Sans',sans-serif;width:fit-content}
+.post-category-tag.transactional{background:var(--teal-light);color:var(--teal)}
+.post-category-tag.educational{background:#EDE9FE;color:#6D28D9}
+.post-category-tag.condition{background:#FEF3C7;color:#92400E}
+.post-category-tag.safety{background:#FEE2E2;color:#B91C1C}
+.post-category-tag.cost{background:#D1FAE5;color:#065F46}
+.featured-label{font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-family:'Plus Jakarta Sans',sans-serif}
+.featured-post-body h2{font-size:clamp(18px,2vw,24px);font-weight:800;color:var(--navy);letter-spacing:-0.5px;line-height:1.3}
+.featured-post-body p{font-size:14px;color:var(--text-muted);line-height:1.7}
+.post-meta-item{font-size:12px;color:var(--text-muted)}
+.read-more{display:inline-flex;align-items:center;gap:6px;color:var(--teal);font-weight:700;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;margin-top:4px}
+.posts-section-label{font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.posts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:32px}
+.post-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all 0.25s;position:relative}
+.post-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--blue));opacity:0;transition:opacity 0.25s}
+.post-card:hover{border-color:var(--teal);box-shadow:0 8px 32px rgba(0,138,138,0.1);transform:translateY(-2px)}
+.post-card:hover::before{opacity:1}
+.post-card-image{height:140px;display:flex;align-items:center;justify-content:center}
+.post-card-image svg{width:44px;height:44px}
+.post-card-image.teal-bg{background:linear-gradient(135deg,#e0f2fe 0%,var(--teal-light) 100%)}
+.post-card-image.navy-bg{background:linear-gradient(135deg,#e0e7ff 0%,#c7d2fe 100%)}
+.post-card-image.warm-bg{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%)}
+.post-card-image.green-bg{background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%)}
+.post-card-image.pink-bg{background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%)}
+.post-card-body{padding:20px 20px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.post-card-body h3{font-size:15px;font-weight:700;color:var(--navy);line-height:1.4}
+.post-card-body p{font-size:13px;color:var(--text-muted);line-height:1.6;flex:1}
+.post-card-footer{padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border)}
+.post-read-link{font-size:13px;font-weight:600;color:var(--teal);font-family:'Plus Jakarta Sans',sans-serif}
+.post-card.hidden{display:none}
+.load-more-row{text-align:center;margin-top:8px;margin-bottom:16px}
+.btn-load-more{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--navy);border:1.5px solid var(--border);padding:12px 28px;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s}
+.btn-load-more:hover{border-color:var(--teal);color:var(--teal)}
+.blog-sidebar{display:flex;flex-direction:column;gap:24px;position:sticky;top:calc(var(--nav-h) + 60px)}
+.sidebar-widget{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.sidebar-widget-header{padding:16px 20px 14px;border-bottom:1px solid var(--border)}
+.sidebar-widget-header h3{font-size:13px;font-weight:700;color:var(--navy)}
+.sidebar-widget-body{padding:16px 20px}
+.popular-post{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:opacity 0.2s}
+.popular-post:last-child{border-bottom:none;padding-bottom:0}
+.popular-post:hover{opacity:0.75}
+.popular-post-num{width:24px;height:24px;background:var(--grey-light);color:var(--text-muted);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;flex-shrink:0;margin-top:2px}
+.popular-post-title{font-size:13px;font-weight:600;color:var(--navy);line-height:1.4}
+.cat-list{display:flex;flex-direction:column;gap:6px}
+.cat-list-item{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:8px;color:var(--text-muted);font-size:13px;font-weight:500;transition:all 0.2s;cursor:pointer;background:none;border:none;width:100%;text-align:left;font-family:'Inter',sans-serif}
+.cat-list-item:hover{background:var(--grey-light);color:var(--navy)}
+.cat-count{background:var(--grey-light);color:var(--text-muted);font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif}
+.newsletter-widget{background:linear-gradient(135deg,var(--navy) 0%,#1a2f7a 100%)}
+.newsletter-widget .sidebar-widget-header{border-color:rgba(255,255,255,0.1)}
+.newsletter-widget .sidebar-widget-header h3{color:white}
+.newsletter-widget .sidebar-widget-body{display:flex;flex-direction:column;gap:12px}
+.newsletter-widget p{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6}
+.newsletter-input{width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:8px;background:rgba(255,255,255,0.08);color:white;font-size:13px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s}
+.newsletter-input::placeholder{color:rgba(255,255,255,0.4)}
+.newsletter-input:focus{border-color:var(--teal)}
+.btn-newsletter{width:100%;padding:11px;background:var(--teal);color:white;border:none;border-radius:8px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;transition:background 0.2s}
+.btn-newsletter:hover{background:#006f6f}
+.footer{background:var(--navy);padding:48px 5% 28px;color:rgba(255,255,255,0.6);margin-top:60px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:28px}
+.footer-brand img{height:56px;background:white;border-radius:8px;padding:3px;margin-bottom:12px}
+.footer-brand p{font-size:14px;line-height:1.7;max-width:280px}
+.footer-col h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:14px}
+.footer-col a{display:block;color:rgba(255,255,255,0.55);text-decoration:none;font-size:14px;margin-bottom:8px;transition:color 0.2s}
+.footer-col a:hover{color:white}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:12px}
+.powered-by{font-size:12px;color:rgba(255,255,255,0.35)}
+.powered-by strong{color:rgba(255,255,255,0.6)}
+@media(max-width:1024px){.blog-layout{grid-template-columns:1fr}.blog-sidebar{position:static;flex-direction:row;flex-wrap:wrap}.blog-sidebar .sidebar-widget{flex:1;min-width:260px}}
+@media(max-width:768px){.featured-post{grid-template-columns:1fr}.featured-post-image{min-height:160px}.posts-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr;gap:28px}.nav-links{display:none}.nav-links.open{display:flex;flex-direction:column;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--navy);padding:20px 5%;gap:16px;border-bottom:1px solid rgba(255,255,255,0.1);z-index:199}.nav-mobile-btn{display:flex}}
+@media(max-width:600px){.blog-sidebar{flex-direction:column}.blog-sidebar .sidebar-widget{min-width:unset}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.featured-post{animation:fadeInUp 0.5s ease both 0.1s}
+.post-card:nth-child(1){animation:fadeInUp 0.4s ease both 0.15s}
+.post-card:nth-child(2){animation:fadeInUp 0.4s ease both 0.2s}
+.post-card:nth-child(3){animation:fadeInUp 0.4s ease both 0.25s}
+.post-card:nth-child(4){animation:fadeInUp 0.4s ease both 0.3s}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo">
-    <img src="Homecare_Icon.png" alt="HomeCareApps">
-  </a>
+  <a href="/" class="nav-logo"><img src="/Homecare_Icon.png" alt="HomeCareApps"></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="/">Home</a></li>
     <li><a href="/services">Services</a></li>
@@ -406,265 +137,257 @@ nav {
     <li><a href="https://www.weassist.asia/about-us" target="_blank">About</a></li>
     <li><a href="/#early-access" class="nav-cta">Get Early Access</a></li>
   </ul>
-  <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- PAGE HERO -->
 <section class="page-hero">
   <div class="page-hero-inner">
     <div class="page-hero-breadcrumb">
-      <a href="/">Home</a>
-      <span>›</span>
-      <strong>Blog & Guides</strong>
+      <a href="/">Home</a><span>›</span><strong>Blog &amp; Guides</strong>
     </div>
     <h1>Guides for <span>Malaysian families</span></h1>
     <p class="page-hero-sub">Everything you need to know about home nursing, post-discharge care, and when to call a registered nurse — written for families, not clinicians.</p>
   </div>
 </section>
 
-<!-- CATEGORY FILTER -->
 <div class="category-bar">
   <div class="category-bar-inner">
     <button class="cat-btn active" data-cat="all">All Articles</button>
-    <button class="cat-btn" data-cat="educational">Educational</button>
     <button class="cat-btn" data-cat="transactional">Care Guides</button>
+    <button class="cat-btn" data-cat="educational">Educational</button>
     <button class="cat-btn" data-cat="condition">Condition-specific</button>
+    <button class="cat-btn" data-cat="safety">Safety</button>
+    <button class="cat-btn" data-cat="cost">Cost &amp; Access</button>
   </div>
 </div>
 
-<!-- MAIN LAYOUT -->
 <div class="blog-layout">
-
-  <!-- POSTS COLUMN -->
   <div class="blog-posts-column">
 
-    <!-- FEATURED POST -->
-<a href="/blog/post-20-doctor-home-visit-after-discharge-malaysia.html" class="featured-post" data-cat="transactional">
-  <div class="featured-post-image">🏥</div>
-  <div class="featured-post-body">
-    <span class="featured-label">Featured Article</span>
-    <span class="post-category-tag transactional">Care Guide</span>
-    <h2>When to book a doctor home visit after hospital discharge in Malaysia</h2>
-    <p>The first 7 days after discharge are critical. Here’s when delaying follow-up care becomes risky — and when to act immediately.</p>
-    <div class="post-meta">
-      <span class="post-meta-item">📅 Latest</span>
-      <span class="post-meta-item">⏱ 5 min read</span>
-    </div>
-    <span class="read-more">Read article →</span>
-  </div>
-</a>
+    <!-- ── FEATURED ── -->
+    <a href="/blog/post-03-post-op-pain-management.html" class="featured-post" data-cat="transactional">
+      <div class="featured-post-image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="featured-post-body">
+        <span class="featured-label">Featured Article</span>
+        <span class="post-category-tag transactional">Care Guide</span>
+        <h2>Safe post-op pain management at home vs risking hospital readmission</h2>
+        <p>Five practical tips to manage post-surgical pain safely at home — and the warning signs that mean a complication, not normal recovery.</p>
+        <span class="post-meta-item">8 min read</span>
+        <span class="read-more">Read article →</span>
+      </div>
+    </a>
 
+    <p class="posts-section-label">All Articles — <span id="articleCount">15</span> guides</p>
 
-    <!-- POSTS GRID -->
-    <p class="posts-section-label">Latest Articles</p>
     <div class="posts-grid" id="postsGrid">
 
-   <a href="/blog/post-03-post-op-pain-management.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image navy-bg">🩹</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Post-operative pain management at home</h3>
-      <p>How to manage pain safely after discharge and when to escalate care.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 01 — uses long title filename from repo -->
+      <a href="/blog/How Soon After Hospital Discharge in Malaysia Do I Need a Home Nursing Visit for Wound Care.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image teal-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>How soon after hospital discharge do I need a home nursing visit for wound care?</h3>
+          <p>The gap between discharge and first wound care visit matters more than most families realise.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">6 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 04 -->
-  <a href="/blog/post-04-home-nursing-costs-malaysia.html" class="post-card" data-cat="educational">
-    <div class="post-card-image green-bg">💰</div>
-    <div class="post-card-body">
-      <span class="post-category-tag educational">Educational</span>
-      <h3>Home nursing costs in Malaysia: what to expect</h3>
-      <p>Understand pricing structures and what affects the cost of care at home.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 02 -->
+      <a href="/blog/What to Do After Hospital Discharge in Malaysia.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image navy-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>What to do after hospital discharge in Malaysia</h3>
+          <p>A step-by-step guide for families managing a patient's recovery at home after discharge.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">6 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 05 -->
-  <a href="/blog/post-05-urgent-home-nursing-penang.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image teal-bg">🚨</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Urgent home nursing in Penang: what families should do</h3>
-      <p>What qualifies as urgent care and how quickly you can arrange a nurse.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 03 -->
+      <a href="/blog/post-03-post-op-pain-management.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image warm-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Safe post-op pain management at home vs risking hospital readmission</h3>
+          <p>Five practical tips for managing post-surgical pain safely — and warning signs that mean a complication.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">8 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 06 -->
-  <a href="/blog/post-06-elderly-nursing-malaysia-before-fall.html" class="post-card" data-cat="condition">
-    <div class="post-card-image warm-bg">👴</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Early signs elderly need nursing before a fall</h3>
-      <p>Identify mobility decline early to prevent injuries and hospitalisation.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 04 -->
+      <a href="/blog/post-04-home-nursing-costs-malaysia.html" class="post-card" data-cat="cost">
+        <div class="post-card-image green-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Post-surgery home nursing costs in Malaysia: affordable options to avoid hospital return</h3>
+          <p>Full pricing breakdown from RM120 to RM280 — and why home nursing costs far less than a readmission.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">8 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 07 -->
-  <a href="/blog/post-07-doctor-home-visits-bedridden-seniors-johor.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image navy-bg">🩺</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Doctor home visits for bedridden seniors in Johor</h3>
-      <p>When transporting a patient is unsafe and home visits become necessary.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 05 -->
+      <a href="/blog/post-05-urgent-home-nursing-penang.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image teal-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Urgent home nursing for recently discharged patients in Penang: decision guide</h3>
+          <p>When is home nursing urgent versus scheduled? A clear guide for Penang families post-discharge.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">8 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 08 -->
-  <a href="/blog/post-08-safe-daily-care-aging-parents-kl.html" class="post-card" data-cat="educational">
-    <div class="post-card-image teal-bg">🏠</div>
-    <div class="post-card-body">
-      <span class="post-category-tag educational">Educational</span>
-      <h3>Safe daily care for aging parents in KL</h3>
-      <p>Simple routines that reduce risk and improve quality of life at home.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 06 -->
+      <a href="/blog/post-06-elderly-nursing-malaysia-before-fall.html" class="post-card" data-cat="educational">
+        <div class="post-card-image warm-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag educational">Educational</span>
+          <h3>Home nursing for elderly parents in Malaysia: signs it is time to hire before a fall</h3>
+          <p>Most falls are preventable. These are the physical and behavioural warning signs to act on.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">7 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 09 -->
-  <a href="/blog/post-09-elderly-nursing-dementia-safety-malaysia.html" class="post-card" data-cat="condition">
-    <div class="post-card-image warm-bg">🧠</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Dementia care safety at home in Malaysia</h3>
-      <p>How to reduce wandering, confusion risks, and accidents.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 7 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 07 -->
+      <a href="/blog/post-07-doctor-home-visits-bedridden-seniors-johor.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image navy-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Doctor home visits for bedridden seniors in Johor Bahru: when clinic transport is no longer safe</h3>
+          <p>When mobility decline makes clinic visits a clinical risk — and what home nursing provides instead.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">7 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 10 -->
-  <a href="/blog/post-10-heart-condition-home-care-malaysian-seniors.html" class="post-card" data-cat="condition">
-    <div class="post-card-image warm-bg">❤️</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Home care for heart conditions in seniors</h3>
-      <p>Monitoring symptoms and preventing complications at home.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 7 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 08 -->
+      <a href="/blog/post-08-safe-daily-care-aging-parents-kl.html" class="post-card" data-cat="educational">
+        <div class="post-card-image teal-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag educational">Educational</span>
+          <h3>Safe daily care for aging parents at home in KL: why waiting risks health emergencies</h3>
+          <p>The three most missed clinical gaps in family caregiving — and what regular nursing visits add.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">7 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 11 -->
-  <a href="/blog/post-11-wound-dressing-iv-therapy-home-malaysia.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image navy-bg">💉</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Wound dressing and IV therapy at home</h3>
-      <p>Clinical procedures safely delivered by registered nurses at home.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 7 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 09 -->
+      <a href="/blog/post-09-elderly-nursing-dementia-safety-malaysia.html" class="post-card" data-cat="condition">
+        <div class="post-card-image navy-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Elderly nursing in Malaysia: quick decisions for dementia safety at home</h3>
+          <p>How dementia changes clinical risk at home — and why early nursing involvement is protective.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">7 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 12 -->
-  <a href="/blog/post-12-diabetes-insulin-nursing-selangor.html" class="post-card" data-cat="condition">
-    <div class="post-card-image green-bg">🩺</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Insulin and diabetes nursing at home</h3>
-      <p>Managing blood sugar safely with professional nursing support.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 10 -->
+      <a href="/blog/post-10-heart-condition-home-care-malaysian-seniors.html" class="post-card" data-cat="condition">
+        <div class="post-card-image warm-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Heart condition home care for Malaysian seniors: home visits to prevent hospital trips</h3>
+          <p>Structured cardiac monitoring at home — what an ICU-trained nurse assesses and when to go to hospital.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">8 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 13 -->
-  <a href="/blog/post-13-blood-pressure-ecg-home-malaysia.html" class="post-card" data-cat="condition">
-    <div class="post-card-image navy-bg">📈</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Blood pressure monitoring and ECG at home</h3>
-      <p>Track cardiovascular health without repeated clinic visits.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 11 -->
+      <a href="/blog/post-11-wound-dressing-iv-therapy-home-malaysia.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image teal-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Wound dressing and IV therapy at home in Malaysia: safer and cheaper than clinics?</h3>
+          <p>A factual comparison of infection exposure, waiting time, cost and documentation between clinic and home.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">8 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 14 -->
-  <a href="/blog/post-14-catheter-care-home-nurses-kl.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image teal-bg">🩹</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Catheter care at home by nurses in KL</h3>
-      <p>Prevent infections and complications with proper catheter management.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 12 -->
+      <a href="/blog/post-12-diabetes-insulin-nursing-selangor.html" class="post-card" data-cat="condition">
+        <div class="post-card-image green-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Home nursing for diabetes insulin shots in Selangor: urgent booking guide</h3>
+          <p>Which diabetic patients need professional nursing support — and when to book within 24 hours.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">7 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 15 -->
-  <a href="/blog/post-15-nebuliser-treatments-penang.html" class="post-card" data-cat="condition">
-    <div class="post-card-image teal-bg">🫁</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Nebuliser treatments at home in Penang</h3>
-      <p>Respiratory care for asthma and COPD patients at home.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 13 — hidden until Load More -->
+      <a href="/blog/post-13-blood-pressure-ecg-home-malaysia.html" class="post-card hidden" data-cat="condition">
+        <div class="post-card-image navy-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Safe blood pressure checks and ECG at home in Malaysia: avoid the ER</h3>
+          <p>When an elevated home blood pressure reading does not require emergency attendance.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">7 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 16 -->
-  <a href="/blog/post-16-elderly-fall-warning-home-nursing-malaysia.html" class="post-card" data-cat="condition">
-    <div class="post-card-image warm-bg">👴</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Warning signs elderly need home nursing before a fall</h3>
-      <p>Most falls are preventable if early warning signs are identified.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 14 -->
+      <a href="/blog/post-14-catheter-care-home-nurses-kl.html" class="post-card hidden" data-cat="transactional">
+        <div class="post-card-image teal-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Post-surgery catheter care by home nurses in KL: when to call for immediate help</h3>
+          <p>Four warning signs that require calling for help immediately — and what families can manage between visits.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">8 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 17 -->
-  <a href="/blog/post-17-home-doctor-vs-clinic-post-surgery-kl.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image navy-bg">🚗</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Home doctor vs clinic visit after surgery in KL</h3>
-      <p>Compare safety risks and recovery outcomes.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <!-- 15 -->
+      <a href="/blog/post-15-nebuliser-treatments-penang.html" class="post-card hidden" data-cat="condition">
+        <div class="post-card-image warm-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5-2 4-2 4 2 4 2"/><line x1="12" y1="8" x2="12" y2="8.01"/></svg>
+        </div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>In-home nebuliser treatments for chronic illness in Penang: cost vs hospital risks</h3>
+          <p>When home nebulisation is safe — and the six signs that mean you must go to the ER instead.</p>
+        </div>
+        <div class="post-card-footer"><span class="post-meta-item">7 min read</span><span class="post-read-link">Read →</span></div>
+      </a>
 
-  <!-- 18 -->
-  <a href="/blog/post-18-home-nurse-checklist-chronic-illness-johor.html" class="post-card" data-cat="condition">
-    <div class="post-card-image green-bg">🩺</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Checklist for hiring a home nurse during flare-ups</h3>
-      <p>Know when symptoms require professional intervention.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
-
-  <!-- 19 -->
-  <a href="/blog/post-19-postnatal-home-care-infection-malaysia.html" class="post-card" data-cat="condition">
-    <div class="post-card-image pink-bg">👶</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Postnatal infection risks and home care timing</h3>
-      <p>Prevent complications with early monitoring and support.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
-
-  <!-- 20 -->
-  <a href="/blog/post-20-doctor-home-visit-after-discharge-malaysia.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image teal-bg">🏥</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>When to book a doctor home visit after discharge</h3>
-      <p>The first week after discharge is critical for recovery.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
-
-
-    </div>
+    </div><!-- /postsGrid -->
 
     <div class="load-more-row">
-      <button class="btn-load-more" id="loadMoreBtn">Load more articles</button>
+      <button class="btn-load-more" id="loadMoreBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        Load more articles
+      </button>
     </div>
-  </div>
+
+  </div><!-- /blog-posts-column -->
 
   <!-- SIDEBAR -->
   <aside class="blog-sidebar">
@@ -672,22 +395,32 @@ nav {
     <div class="sidebar-widget">
       <div class="sidebar-widget-header"><h3>Popular Articles</h3></div>
       <div class="sidebar-widget-body">
-        <a href="/blog-post.html" class="popular-post">
+
+        <a href="/blog/post-03-post-op-pain-management.html" class="popular-post">
           <div class="popular-post-num">1</div>
-          <span class="popular-post-title">What is the difference between a nurse and a caregiver?</span>
+          <span class="popular-post-title">Safe post-op pain management at home vs risking hospital readmission</span>
         </a>
-        <a href="/blog-post.html" class="popular-post">
+
+        <a href="/blog/post-04-home-nursing-costs-malaysia.html" class="popular-post">
           <div class="popular-post-num">2</div>
-          <span class="popular-post-title">Post-surgical wound care at home: what families need to know</span>
+          <span class="popular-post-title">Post-surgery home nursing costs in Malaysia: affordable options explained</span>
         </a>
-        <a href="/blog-post.html" class="popular-post">
+
+        <a href="/blog/post-11-wound-dressing-iv-therapy-home-malaysia.html" class="popular-post">
           <div class="popular-post-num">3</div>
-          <span class="popular-post-title">IV therapy at home in Malaysia: is it possible, is it safe?</span>
+          <span class="popular-post-title">Wound dressing and IV therapy at home: safer and cheaper than clinics?</span>
         </a>
-        <a href="/blog-post.html" class="popular-post">
+
+        <a href="/blog/post-06-elderly-nursing-malaysia-before-fall.html" class="popular-post">
           <div class="popular-post-num">4</div>
-          <span class="popular-post-title">When does your elderly parent need a nurse, not a caregiver?</span>
+          <span class="popular-post-title">Signs your elderly parent needs home nursing before a fall happens</span>
         </a>
+
+        <a href="/blog/post-05-urgent-home-nursing-penang.html" class="popular-post">
+          <div class="popular-post-num">5</div>
+          <span class="popular-post-title">Urgent home nursing in Penang: decision guide for recently discharged patients</span>
+        </a>
+
       </div>
     </div>
 
@@ -695,10 +428,12 @@ nav {
       <div class="sidebar-widget-header"><h3>Browse by Category</h3></div>
       <div class="sidebar-widget-body">
         <div class="cat-list">
-          <a href="#" class="cat-list-item" onclick="filterCat('all');return false;">All Articles <span class="cat-count">12</span></a>
-          <a href="#" class="cat-list-item" onclick="filterCat('educational');return false;">Educational <span class="cat-count">6</span></a>
-          <a href="#" class="cat-list-item" onclick="filterCat('transactional');return false;">Care Guides <span class="cat-count">4</span></a>
-          <a href="#" class="cat-list-item" onclick="filterCat('condition');return false;">Condition-specific <span class="cat-count">3</span></a>
+          <button class="cat-list-item" onclick="filterCat('all')">All Articles <span class="cat-count">15</span></button>
+          <button class="cat-list-item" onclick="filterCat('transactional')">Care Guides <span class="cat-count">7</span></button>
+          <button class="cat-list-item" onclick="filterCat('condition')">Condition-specific <span class="cat-count">4</span></button>
+          <button class="cat-list-item" onclick="filterCat('educational')">Educational <span class="cat-count">2</span></button>
+          <button class="cat-list-item" onclick="filterCat('cost')">Cost &amp; Access <span class="cat-count">1</span></button>
+          <button class="cat-list-item" onclick="filterCat('safety')">Safety <span class="cat-count">1</span></button>
         </div>
       </div>
     </div>
@@ -709,7 +444,7 @@ nav {
         <p>New guides every week on home nursing, care tips, and clinical advice for Malaysian families.</p>
         <form action="https://formspree.io/f/xaqavwww" method="POST">
           <input type="email" name="email" class="newsletter-input" placeholder="Your email address" required style="margin-bottom:10px;">
-          <button type="submit" class="btn-newsletter">Subscribe →</button>
+          <button type="submit" class="btn-newsletter">Subscribe</button>
         </form>
       </div>
     </div>
@@ -717,12 +452,11 @@ nav {
   </aside>
 </div>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="Homecare_Icon.png" alt="HomeCareApps">
+        <img src="/Homecare_Icon.png" alt="HomeCareApps">
         <p>Verified registered nurses for clinical home visits in Malaysia. A product by WeAssist — Malaysia's largest verified nurse staffing platform.</p>
       </div>
       <div class="footer-col">
@@ -751,34 +485,50 @@ nav {
 </footer>
 
 <script>
-// Mobile nav
-const mobileBtn = document.getElementById('mobileBtn');
-const navLinks = document.getElementById('navLinks');
-mobileBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+const mobileBtn=document.getElementById('mobileBtn');
+const navLinks=document.getElementById('navLinks');
+mobileBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
 
-// Category filter
-function filterCat(cat) {
-  const cards = document.querySelectorAll('.post-card, .featured-post');
-  const btns = document.querySelectorAll('.cat-btn');
+const INITIAL=12;
+const allCards=Array.from(document.querySelectorAll('.post-card'));
+const loadMoreBtn=document.getElementById('loadMoreBtn');
 
-  btns.forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
-
-  cards.forEach(card => {
-    const match = cat === 'all' || card.dataset.cat === cat;
-    card.style.display = match ? '' : 'none';
+function resetLoadMore(){
+  allCards.forEach((c,i)=>{
+    if(i<INITIAL){c.classList.remove('hidden');c.style.display='';}
+    else{c.classList.add('hidden');c.style.display='none';}
   });
+  loadMoreBtn.disabled=false;
+  loadMoreBtn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg> Load more articles';
+  loadMoreBtn.style.opacity='1';
+  loadMoreBtn.style.display='';
 }
 
-document.querySelectorAll('.cat-btn').forEach(btn => {
-  btn.addEventListener('click', () => filterCat(btn.dataset.cat));
+function filterCat(cat){
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));
+  const featured=document.querySelector('.featured-post');
+  if(featured)featured.style.display=(cat==='all'||featured.dataset.cat===cat)?'':'none';
+  allCards.forEach(c=>{
+    const match=cat==='all'||c.dataset.cat===cat;
+    c.classList.remove('hidden');
+    c.style.display=match?'':'none';
+  });
+  const count=cat==='all'?15:allCards.filter(c=>c.dataset.cat===cat).length;
+  document.getElementById('articleCount').textContent=count;
+  loadMoreBtn.style.display=cat==='all'?'':'none';
+  if(cat==='all')resetLoadMore();
+}
+
+document.querySelectorAll('.cat-btn').forEach(b=>b.addEventListener('click',()=>filterCat(b.dataset.cat)));
+
+loadMoreBtn.addEventListener('click',function(){
+  allCards.filter(c=>c.classList.contains('hidden')).forEach(c=>{c.classList.remove('hidden');c.style.display='';});
+  this.innerHTML='All articles loaded';
+  this.disabled=true;
+  this.style.opacity='0.5';
 });
 
-// Load more (placeholder — shows alert, replace with real pagination later)
-document.getElementById('loadMoreBtn').addEventListener('click', function() {
-  this.textContent = 'No more articles yet — check back soon';
-  this.disabled = true;
-  this.style.opacity = '0.5';
-});
+resetLoadMore();
 </script>
 
 </body>
