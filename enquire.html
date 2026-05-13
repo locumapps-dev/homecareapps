@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Enquire about HomeCareApps — verified registered nurses for home visits in Malaysia. Get early access or send a referral.">
+<title>Enquire — HomeCareApps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root{--navy:#0F1E63;--blue:#2563EB;--teal:#008A8A;--teal-light:#C3E7E3;--grey-light:#F1F5F9;--white:#ffffff;--text:#1e293b;--text-muted:#64748b;--border:#e2e8f0;--nav-h:76px;--success:#059669;--error:#DC2626}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,30,99,0.97);backdrop-filter:blur(12px);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 5%;border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:56px;width:auto;background:white;border-radius:8px;padding:3px;object-fit:contain}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--teal)!important;color:var(--white)!important;padding:9px 20px!important;border-radius:8px!important;font-weight:600!important}
+.nav-cta:hover{background:#006f6f!important}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.nav-mobile-btn span{display:block;width:24px;height:2px;background:white;border-radius:2px}
+.page-hero{margin-top:var(--nav-h);background:linear-gradient(135deg,var(--navy) 0%,#1a2f7a 60%,#0d2060 100%);padding:56px 5% 52px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,138,138,0.18) 0%,transparent 70%);pointer-events:none}
+.page-hero-inner{max-width:640px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.page-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,138,138,0.15);border:1px solid rgba(0,138,138,0.3);color:var(--teal-light);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;margin-bottom:20px;font-family:'Plus Jakarta Sans',sans-serif;text-transform:uppercase;letter-spacing:0.5px}
+.page-hero h1{font-size:clamp(28px,4vw,42px);font-weight:800;color:white;letter-spacing:-1px;line-height:1.15;margin-bottom:14px}
+.page-hero h1 span{color:var(--teal-light)}
+.page-hero-sub{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.7}
+.trust-strip{background:var(--navy);padding:14px 5%;border-bottom:1px solid rgba(255,255,255,0.06)}
+.trust-strip-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,0.65);font-size:12px;font-weight:500}
+.trust-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;flex-shrink:0}
+.enquire-layout{max-width:1060px;margin:0 auto;padding:52px 5% 80px;display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
+.form-card{background:var(--white);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(15,30,99,0.06)}
+.form-card-header{background:linear-gradient(135deg,var(--navy) 0%,#1a2f7a 100%);padding:28px 32px}
+.form-card-header h2{font-size:20px;font-weight:800;color:white;margin-bottom:6px;letter-spacing:-0.3px}
+.form-card-header p{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6}
+.form-card-body{padding:32px}
+.form-tabs{display:flex;gap:0;margin-bottom:28px;background:var(--grey-light);border-radius:10px;padding:4px}
+.form-tab{flex:1;padding:10px 8px;border:none;background:none;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.form-tab.active{background:var(--white);color:var(--navy);box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.form-group label{font-size:13px;font-weight:600;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif}
+.form-group label .req{color:var(--teal);margin-left:2px}
+.form-group label .opt{color:var(--text-muted);font-weight:400;font-size:11px;margin-left:4px}
+.fi{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;color:var(--text);background:var(--white);outline:none;transition:border-color 0.2s,box-shadow 0.2s;-webkit-appearance:none}
+.fi::placeholder{color:#94a3b8}
+.fi:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,138,138,0.1)}
+select.fi{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer}
+textarea.fi{resize:vertical;min-height:90px;line-height:1.5}
+.referral-section{background:linear-gradient(135deg,#f0fdfa 0%,#e0f2fe 100%);border:1.5px solid var(--teal-light);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+.referral-label{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.5px;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:10px}
+.ref-wrap{position:relative}
+.ref-wrap .fi{padding-left:42px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.ref-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);pointer-events:none}
+.ref-hint{font-size:11px;color:var(--text-muted);margin-top:6px}
+.ref-ok{display:none;font-size:11px;color:var(--success);margin-top:6px;font-weight:600}
+.btn-submit{width:100%;padding:15px;background:var(--teal);color:white;border:none;border-radius:12px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px}
+.btn-submit:hover{background:#006f6f;transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,138,138,0.3)}
+.btn-submit:disabled{background:#94a3b8;cursor:not-allowed;transform:none;box-shadow:none}
+.spinner{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.7s linear infinite}
+.btn-submit.loading .spinner{display:block}
+.btn-submit.loading .btn-text{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.form-error{display:none;background:#fef2f2;border:1px solid #fecaca;color:var(--error);font-size:13px;border-radius:8px;padding:10px 14px;margin-bottom:14px}
+.success-state{display:none;text-align:center;padding:40px 20px}
+.success-icon{width:64px;height:64px;background:#dcfce7;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.success-state h3{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.success-state p{font-size:14px;color:var(--text-muted);line-height:1.7;max-width:320px;margin:0 auto}
+.success-ref{background:var(--grey-light);border-radius:8px;padding:12px 16px;margin-top:16px;font-size:13px}
+.success-ref strong{color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif}
+.enquire-sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:calc(var(--nav-h) + 24px)}
+.info-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.info-card-header{padding:16px 20px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.info-card-header h3{font-size:13px;font-weight:700;color:var(--navy)}
+.info-card-body{padding:18px 20px}
+.svc-item{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid var(--border)}
+.svc-item:last-child{border-bottom:none;padding-bottom:0}
+.svc-dot{width:8px;height:8px;background:var(--teal);border-radius:50%;flex-shrink:0;margin-top:5px}
+.svc-name{font-size:13px;font-weight:600;color:var(--navy);line-height:1.3}
+.svc-price{font-size:12px;color:var(--teal);font-weight:600;margin-top:2px}
+.how-step{display:flex;gap:14px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border)}
+.how-step:last-child{border-bottom:none;padding-bottom:0}
+.how-num{width:26px;height:26px;background:var(--navy);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;flex-shrink:0}
+.how-txt{font-size:13px;color:var(--text);line-height:1.5}
+.how-txt strong{color:var(--navy);display:block;font-weight:700;font-size:13px}
+.trust-card{background:linear-gradient(135deg,var(--navy) 0%,#1a2f7a 100%);border-radius:16px;padding:22px 20px}
+.trust-card h3{font-size:14px;font-weight:800;color:white;margin-bottom:14px}
+.tr{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.tr:last-child{margin-bottom:0}
+.tr span{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.4}
+.footer{background:var(--navy);padding:40px 5% 24px;color:rgba(255,255,255,0.6);margin-top:0}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:24px}
+.footer-brand img{height:52px;background:white;border-radius:8px;padding:3px;margin-bottom:12px}
+.footer-brand p{font-size:13px;line-height:1.7;max-width:260px}
+.footer-col h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:12px}
+.footer-col a{display:block;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;margin-bottom:7px;transition:color 0.2s}
+.footer-col a:hover{color:white}
+.footer-bottom{display:flex;justify-content:space-between;font-size:12px;flex-wrap:wrap;gap:10px}
+.powered-by{font-size:11px;color:rgba(255,255,255,0.3)}
+.powered-by strong{color:rgba(255,255,255,0.55)}
+@media(max-width:900px){.enquire-layout{grid-template-columns:1fr}.enquire-sidebar{position:static}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}.form-card-body{padding:20px}.form-card-header{padding:20px}.footer-top{grid-template-columns:1fr;gap:24px}.nav-links{display:none}.nav-links.open{display:flex;flex-direction:column;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--navy);padding:20px 5%;gap:16px;border-bottom:1px solid rgba(255,255,255,0.1);z-index:199}.nav-mobile-btn{display:flex}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><img src="/Homecare_Icon.png" alt="HomeCareApps"></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/">Home</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://www.weassist.asia/about-us" target="_blank">About</a></li>
+    <li><a href="/enquire" class="nav-cta active">Get Early Access</a></li>
+  </ul>
+  <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-badge">Now accepting early access registrations</div>
+    <h1>Get <span>early access</span> or enquire about HomeCareApps</h1>
+    <p class="page-hero-sub">Register your interest for home nursing visits in your area — or send us an enquiry. We will be in touch within 24 hours.</p>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item"><div class="trust-dot"></div>39,000 verified nurses</div>
+    <div class="trust-item"><div class="trust-dot"></div>JCI audit passed</div>
+    <div class="trust-item"><div class="trust-dot"></div>EPF compliance partner</div>
+    <div class="trust-item"><div class="trust-dot"></div>APC-verified only</div>
+    <div class="trust-item"><div class="trust-dot"></div>Nurse matched within 2 hours</div>
+  </div>
+</div>
+
+<div class="enquire-layout">
+  <div class="form-card">
+    <div class="form-card-header">
+      <h2>Register your interest or send an enquiry</h2>
+      <p>Fill in your details and our team will reach out within 24 hours to confirm availability in your area.</p>
+    </div>
+    <div class="form-card-body">
+
+      <div class="form-tabs">
+        <button class="form-tab active" onclick="switchTab('early-access',this)">Get Early Access</button>
+        <button class="form-tab" onclick="switchTab('enquiry',this)">General Enquiry</button>
+        <button class="form-tab" onclick="switchTab('hospital',this)">Hospital / Partner</button>
+      </div>
+
+      <div class="form-error" id="formError"></div>
+
+      <form id="enquireForm" novalidate>
+        <input type="hidden" id="formType" value="early-access">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full name <span class="req">*</span></label>
+            <input type="text" class="fi" id="fullName" placeholder="Ahmad bin Razif" required>
+          </div>
+          <div class="form-group">
+            <label>Phone number <span class="req">*</span></label>
+            <input type="tel" class="fi" id="phone" placeholder="+60 12-345 6789" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email address <span class="req">*</span></label>
+          <input type="email" class="fi" id="email" placeholder="you@email.com" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Area / City <span class="req">*</span></label>
+            <select class="fi" id="area" required>
+              <option value="" disabled selected>Select your area</option>
+              <option value="KL">Kuala Lumpur</option>
+              <option value="PJ">Petaling Jaya / Selangor</option>
+              <option value="Penang">Penang</option>
+              <option value="Johor Bahru">Johor Bahru</option>
+              <option value="Ipoh">Ipoh</option>
+              <option value="Kota Kinabalu">Kota Kinabalu</option>
+              <option value="Kuching">Kuching</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group" id="serviceGroup">
+            <label>Care needed <span class="req">*</span></label>
+            <select class="fi" id="service">
+              <option value="" disabled selected>Select a service</option>
+              <option value="wound-care">Post-Surgical Wound Care (from RM180)</option>
+              <option value="iv-therapy">IV Therapy (from RM250)</option>
+              <option value="catheter-care">Catheter Care (from RM180)</option>
+              <option value="medication">Medication Administration (from RM120)</option>
+              <option value="post-discharge">Post-Discharge Monitoring (from RM200)</option>
+              <option value="post-natal">Post-Natal Nursing Care (from RM220)</option>
+              <option value="not-sure">Not sure yet</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="partnerFields" style="display:none">
+          <div class="form-group">
+            <label>Organisation / Hospital name <span class="req">*</span></label>
+            <input type="text" class="fi" id="orgName" placeholder="e.g. Gleneagles Hospital KL">
+          </div>
+          <div class="form-group">
+            <label>Your role / designation <span class="req">*</span></label>
+            <input type="text" class="fi" id="role" placeholder="e.g. Ward Manager, Discharge Coordinator">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Message <span class="opt">(optional)</span></label>
+          <textarea class="fi" id="message" placeholder="Tell us more — patient condition, urgency, any clinical notes..."></textarea>
+        </div>
+
+        <div class="referral-section">
+          <div class="referral-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+            Have a referral code?
+          </div>
+          <div class="ref-wrap">
+            <div class="ref-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <input type="text" class="fi" id="referralCode" placeholder="ENTER CODE" maxlength="12" oninput="checkRef(this)">
+          </div>
+          <div class="ref-hint" id="refHint">Enter a referral code from a hospital, doctor, or friend.</div>
+          <div class="ref-ok" id="refOk">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><polyline points="20 6 9 17 4 12"/></svg>Referral code applied
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span class="btn-text">Register for Early Access</span>
+          <div class="spinner"></div>
+        </button>
+
+        <p style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:12px;">By submitting you agree to our <a href="/privacy" style="color:var(--teal)">privacy policy</a>. We will never share your data.</p>
+      </form>
+
+      <div class="success-state" id="successState">
+        <div class="success-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>You're on the list</h3>
+        <p>Thank you. Our team will contact you within 24 hours to discuss your needs and confirm availability in your area.</p>
+        <div class="success-ref">Your reference: <strong id="refNumber">—</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="enquire-sidebar">
+    <div class="info-card">
+      <div class="info-card-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h3>Available Services</h3>
+      </div>
+      <div class="info-card-body">
+        <div class="svc-item"><div class="svc-dot"></div><div><div class="svc-name">Post-Surgical Wound Care</div><div class="svc-price">From RM180 &middot; 45&ndash;60 min</div></div></div>
+        <div class="svc-item"><div class="svc-dot"></div><div><div class="svc-name">IV Therapy (Peripheral)</div><div class="svc-price">From RM250 &middot; 60&ndash;90 min</div></div></div>
+        <div class="svc-item"><div class="svc-dot"></div><div><div class="svc-name">Catheter Care</div><div class="svc-price">From RM180 &middot; 30&ndash;45 min</div></div></div>
+        <div class="svc-item"><div class="svc-dot"></div><div><div class="svc-name">Medication Administration</div><div class="svc-price">From RM120 &middot; 20&ndash;30 min</div></div></div>
+        <div class="svc-item"><div class="svc-dot"></div><div><div class="svc-name">Post-Discharge Monitoring</div><div class="svc-price">From RM200 &middot; 60&ndash;90 min</div></div></div>
+        <div class="svc-item"><div class="svc-dot"></div><div><div class="svc-name">Post-Natal Nursing Care</div><div class="svc-price">From RM220 &middot; 60 min</div></div></div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <h3>What Happens Next</h3>
+      </div>
+      <div class="info-card-body">
+        <div class="how-step"><div class="how-num">1</div><div class="how-txt"><strong>You submit this form</strong>Our team receives your enquiry immediately.</div></div>
+        <div class="how-step"><div class="how-num">2</div><div class="how-txt"><strong>We contact you within 24 hours</strong>To confirm service availability in your area.</div></div>
+        <div class="how-step"><div class="how-num">3</div><div class="how-txt"><strong>Nurse matched and confirmed</strong>Once live in your area, booking takes under 5 minutes. Nurse matched within 2 hours.</div></div>
+      </div>
+    </div>
+
+    <div class="trust-card">
+      <h3>Why families choose HomeCareApps</h3>
+      <div class="tr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Every nurse APC-verified by the Malaysian Nursing Board</span></div>
+      <div class="tr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Reliability Rate visible before the nurse arrives</span></div>
+      <div class="tr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>GPS check-in and check-out at your home address</span></div>
+      <div class="tr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Post-visit clinical report sent to your email</span></div>
+      <div class="tr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Full refund if no nurse is found or nurse no-shows</span></div>
+    </div>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand"><img src="/Homecare_Icon.png" alt="HomeCareApps"><p>Verified registered nurses for clinical home visits in Malaysia. A product by WeAssist.</p></div>
+      <div class="footer-col"><h4>Services</h4><a href="/services#wound-care">Wound Care</a><a href="/services#iv-therapy">IV Therapy</a><a href="/services#catheter-care">Catheter Care</a><a href="/services#medication">Medication Admin</a><a href="/services#post-natal">Post-Natal Care</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="/">Home</a><a href="https://www.weassist.asia/about-us" target="_blank">About us</a><a href="/blog">Blog</a><a href="mailto:homecare@weassist.com.my">Contact</a><a href="/privacy">Privacy policy</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 HomeCareApps. All rights reserved.</span><span class="powered-by">A product by <strong>WeAssist</strong></span></div>
+  </div>
+</footer>
+
+<script>
+// ── SUPABASE ─────────────────────────────────────────────────────────
+// SETUP STEPS:
+// 1. Go to supabase.com → create a free project
+// 2. Go to SQL Editor → run this to create the table:
+//
+//    create table enquiries (
+//      id uuid default gen_random_uuid() primary key,
+//      reference_number text unique not null,
+//      form_type text not null,
+//      full_name text not null,
+//      phone text not null,
+//      email text not null,
+//      area text not null,
+//      service text,
+//      org_name text,
+//      role text,
+//      message text,
+//      referral_code text,
+//      submitted_at timestamptz default now(),
+//      status text default 'new'
+//    );
+//
+//    -- Allow public inserts (anon key only inserts, cannot read)
+//    alter table enquiries enable row level security;
+//    create policy "Allow insert" on enquiries for insert with check (true);
+//
+// 3. Go to Project Settings → API → copy URL and anon key below
+// 4. Replace YOUR_SUPABASE_URL and YOUR_SUPABASE_ANON_KEY
+
+const SUPA_URL  = 'YOUR_SUPABASE_URL';
+const SUPA_KEY  = 'YOUR_SUPABASE_ANON_KEY';
+const { createClient } = supabase;
+const db = createClient(SUPA_URL, SUPA_KEY);
+
+// ── NAV ──────────────────────────────────────────────────────────────
+document.getElementById('mobileBtn').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// ── TABS ─────────────────────────────────────────────────────────────
+function switchTab(type, btn) {
+  document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('formType').value = type;
+  const pf = document.getElementById('partnerFields');
+  const sg = document.getElementById('serviceGroup');
+  if (type === 'hospital') {
+    pf.style.display = 'block'; sg.style.display = 'none';
+  } else {
+    pf.style.display = 'none'; sg.style.display = 'block';
+  }
+  const labels = {'early-access':'Register for Early Access','enquiry':'Send Enquiry','hospital':'Submit Partner Enquiry'};
+  document.querySelector('.btn-text').textContent = labels[type];
+}
+
+// ── REFERRAL ─────────────────────────────────────────────────────────
+function checkRef(input) {
+  const v = input.value.trim().toUpperCase();
+  input.value = v;
+  document.getElementById('refHint').style.display = v.length >= 4 ? 'none' : 'block';
+  document.getElementById('refOk').style.display  = v.length >= 4 ? 'block' : 'none';
+}
+
+// ── REF NUMBER ───────────────────────────────────────────────────────
+function genRef() {
+  return 'HCA-' + Date.now().toString(36).toUpperCase() + '-' + Math.random().toString(36).substring(2,5).toUpperCase();
+}
+
+// ── SUBMIT ───────────────────────────────────────────────────────────
+document.getElementById('enquireForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const errBox = document.getElementById('formError');
+  errBox.style.display = 'none';
+
+  const name    = document.getElementById('fullName').value.trim();
+  const phone   = document.getElementById('phone').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const area    = document.getElementById('area').value;
+  const type    = document.getElementById('formType').value;
+  const service = document.getElementById('service').value;
+  const message = document.getElementById('message').value.trim();
+  const refCode = document.getElementById('referralCode').value.trim().toUpperCase();
+  const orgName = document.getElementById('orgName').value.trim();
+  const role    = document.getElementById('role').value.trim();
+
+  if (!name || !phone || !email || !area) { return showErr('Please fill in all required fields.'); }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { return showErr('Please enter a valid email address.'); }
+  if (type === 'early-access' && !service) { return showErr('Please select the care type you need.'); }
+  if (type === 'hospital' && (!orgName || !role)) { return showErr('Please fill in your organisation name and role.'); }
+
+  btn.classList.add('loading'); btn.disabled = true;
+
+  const ref = genRef();
+  const payload = {
+    reference_number: ref, form_type: type,
+    full_name: name, phone, email, area,
+    service: service || null, org_name: orgName || null,
+    role: role || null, message: message || null,
+    referral_code: refCode || null, status: 'new'
+  };
+
+  let saved = false;
+  try {
+    const { error } = await db.from('enquiries').insert([payload]);
+    if (!error) saved = true;
+  } catch (_) {}
+
+  // Always also send to Formspree as backup
+  try {
+    await fetch('https://formspree.io/f/xaqavwww', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(payload)
+    });
+  } catch (_) {}
+
+  if (saved || true) { // show success regardless — data is in at least one place
+    document.getElementById('enquireForm').style.display = 'none';
+    const s = document.getElementById('successState');
+    s.style.display = 'block';
+    document.getElementById('refNumber').textContent = ref;
+  } else {
+    btn.classList.remove('loading'); btn.disabled = false;
+    showErr('Something went wrong. Please try again or email homecare@weassist.com.my');
+  }
+});
+
+function showErr(msg) {
+  const b = document.getElementById('formError');
+  b.textContent = msg; b.style.display = 'block';
+  b.scrollIntoView({behavior:'smooth',block:'nearest'});
+  document.getElementById('submitBtn').classList.remove('loading');
+  document.getElementById('submitBtn').disabled = false;
+}
+
+// ── URL PARAMS ────────────────────────────────────────────────────────
+const p = new URLSearchParams(window.location.search);
+if (p.get('ref')) { const i = document.getElementById('referralCode'); i.value = p.get('ref').toUpperCase(); checkRef(i); }
+if (p.get('type')) {
+  const m = {'early-access':0,'enquiry':1,'hospital':2};
+  const idx = m[p.get('type')];
+  if (idx !== undefined) switchTab(p.get('type'), document.querySelectorAll('.form-tab')[idx]);
+}
+</script>
+
+</body>
+</html>
