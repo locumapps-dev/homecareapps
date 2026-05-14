@@ -173,6 +173,8 @@ nav {
 }
 .post-category-tag.educational { background: #EDE9FE; color: #6D28D9; }
 .post-category-tag.condition { background: #FEF3C7; color: #92400E; }
+.post-category-tag.safety { background: #FEE2E2; color: #B91C1C; }
+.post-category-tag.cost { background: #D1FAE5; color: #065F46; }
 .post-category-tag.transactional { background: var(--teal-light); color: var(--teal); }
 
 .featured-label {
@@ -397,14 +399,14 @@ nav {
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">
-    <img src="Homecare_Icon.png" alt="HomeCareApps">
+    <img src="/Homecare_Icon.png" alt="HomeCareApps">
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="/">Home</a></li>
     <li><a href="/services">Services</a></li>
     <li><a href="/blog" class="active">Blog</a></li>
     <li><a href="https://www.weassist.asia/about-us" target="_blank">About</a></li>
-    <li><a href="/#early-access" class="nav-cta">Get Early Access</a></li>
+    <li><a href="/enquire" class="nav-cta">Get Early Access</a></li>
   </ul>
   <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -428,9 +430,11 @@ nav {
 <div class="category-bar">
   <div class="category-bar-inner">
     <button class="cat-btn active" data-cat="all">All Articles</button>
-    <button class="cat-btn" data-cat="educational">Educational</button>
     <button class="cat-btn" data-cat="transactional">Care Guides</button>
+    <button class="cat-btn" data-cat="cost">Cost &amp; Access</button>
     <button class="cat-btn" data-cat="condition">Condition-specific</button>
+    <button class="cat-btn" data-cat="educational">Educational</button>
+    <button class="cat-btn" data-cat="safety">Safety</button>
   </div>
 </div>
 
@@ -441,7 +445,7 @@ nav {
   <div class="blog-posts-column">
 
     <!-- FEATURED POST -->
-<a href="/blog/post-20-doctor-home-visit-after-discharge-malaysia.html" class="featured-post" data-cat="transactional">
+<a href="/blog/post-28-hospital-discharge-checklist-malaysia.html" class="featured-post" data-cat="transactional">
   <div class="featured-post-image">🏥</div>
   <div class="featured-post-body">
     <span class="featured-label">Featured Article</span>
@@ -461,342 +465,708 @@ nav {
     <p class="posts-section-label">Latest Articles</p>
     <div class="posts-grid" id="postsGrid">
 
-   <a href="/blog/post-03-post-op-pain-management.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image navy-bg">🩹</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Post-operative pain management at home</h3>
-      <p>How to manage pain safely after discharge and when to escalate care.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-03-post-op-pain-management.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Safe post-op pain management at home vs risking hospital readmission</h3>
+          <p>Five practical tips for managing post-surgical pain safely and warning signs that mean a complication.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 04 -->
-  <a href="/blog/post-04-home-nursing-costs-malaysia.html" class="post-card" data-cat="educational">
-    <div class="post-card-image green-bg">💰</div>
-    <div class="post-card-body">
-      <span class="post-category-tag educational">Educational</span>
-      <h3>Home nursing costs in Malaysia: what to expect</h3>
-      <p>Understand pricing structures and what affects the cost of care at home.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-05-urgent-home-nursing-penang.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Urgent home nursing for recently discharged patients in Penang</h3>
+          <p>When is home nursing urgent versus scheduled? A clear guide for Penang families post-discharge.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 05 -->
-  <a href="/blog/post-05-urgent-home-nursing-penang.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image teal-bg">🚨</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Urgent home nursing in Penang: what families should do</h3>
-      <p>What qualifies as urgent care and how quickly you can arrange a nurse.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-07-doctor-home-visits-bedridden-seniors-johor.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Doctor home visits for bedridden seniors in Johor Bahru</h3>
+          <p>When mobility decline makes clinic visits a clinical risk — and what home nursing provides instead.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 06 -->
-  <a href="/blog/post-06-elderly-nursing-malaysia-before-fall.html" class="post-card" data-cat="condition">
-    <div class="post-card-image warm-bg">👴</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Early signs elderly need nursing before a fall</h3>
-      <p>Identify mobility decline early to prevent injuries and hospitalisation.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-11-wound-dressing-iv-therapy-home-malaysia.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Wound dressing and IV therapy at home: safer and cheaper than clinics?</h3>
+          <p>A factual comparison of infection exposure, waiting time, cost and documentation.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 07 -->
-  <a href="/blog/post-07-doctor-home-visits-bedridden-seniors-johor.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image navy-bg">🩺</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Doctor home visits for bedridden seniors in Johor</h3>
-      <p>When transporting a patient is unsafe and home visits become necessary.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-14-catheter-care-home-nurses-kl.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Post-surgery catheter care by home nurses in KL: when to call for immediate help</h3>
+          <p>Four warning signs requiring immediate help — and what families can manage between visits.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 08 -->
-  <a href="/blog/post-08-safe-daily-care-aging-parents-kl.html" class="post-card" data-cat="educational">
-    <div class="post-card-image teal-bg">🏠</div>
-    <div class="post-card-body">
-      <span class="post-category-tag educational">Educational</span>
-      <h3>Safe daily care for aging parents in KL</h3>
-      <p>Simple routines that reduce risk and improve quality of life at home.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-26-home-nursing-after-csection-malaysia.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image pink-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#9d174d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Urgent home nursing after C-section in Malaysia: safe recovery decisions for new moms</h3>
+          <p>C-section wound warning signs, what a registered midwife provides, and how many visits are needed.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 09 -->
-  <a href="/blog/post-09-elderly-nursing-dementia-safety-malaysia.html" class="post-card" data-cat="condition">
-    <div class="post-card-image warm-bg">🧠</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Dementia care safety at home in Malaysia</h3>
-      <p>How to reduce wandering, confusion risks, and accidents.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 7 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-27-post-knee-surgery-home-care-kl.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Post-knee surgery home care in KL: doctor visits to avoid infection risks</h3>
+          <p>Why knee wounds benefit from home nursing — and the specific warning signs families must know.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 10 -->
-  <a href="/blog/post-10-heart-condition-home-care-malaysian-seniors.html" class="post-card" data-cat="condition">
-    <div class="post-card-image warm-bg">❤️</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Home care for heart conditions in seniors</h3>
-      <p>Monitoring symptoms and preventing complications at home.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 7 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-28-hospital-discharge-checklist-malaysia.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Hospital discharge checklist Malaysia: book home nurse immediately for safety</h3>
+          <p>What to confirm before leaving the ward, what to collect, and when to book on the same day.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 11 -->
-  <a href="/blog/post-11-wound-dressing-iv-therapy-home-malaysia.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image navy-bg">💉</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Wound dressing and IV therapy at home</h3>
-      <p>Clinical procedures safely delivered by registered nurses at home.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 7 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-30-home-nursing-after-appendix-removal-johor.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>When to call for home nursing after appendix removal in Johor: urgency guide</h3>
+          <p>Three-tier urgency guide: call nurse today, call surgeon, or go to ER immediately.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 12 -->
-  <a href="/blog/post-12-diabetes-insulin-nursing-selangor.html" class="post-card" data-cat="condition">
-    <div class="post-card-image green-bg">🩺</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Insulin and diabetes nursing at home</h3>
-      <p>Managing blood sugar safely with professional nursing support.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-09-infection-risks-after-discharge-home-nursing-malaysia.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Infection risks after discharge: why home nursing in Malaysia is urgent</h3>
+          <p>The specific infection risks that develop when professional nursing is delayed after hospital discharge.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 13 -->
-  <a href="/blog/post-13-blood-pressure-ecg-home-malaysia.html" class="post-card" data-cat="condition">
-    <div class="post-card-image navy-bg">📈</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Blood pressure monitoring and ECG at home</h3>
-      <p>Track cardiovascular health without repeated clinic visits.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-12-new-mom-safety-post-delivery-home-visits-selangor.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image pink-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#9d174d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>New mom safety post-delivery: home nursing visits in Selangor</h3>
+          <p>Why early professional nursing support after delivery prevents the most common post-natal complications.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 14 -->
-  <a href="/blog/post-14-catheter-care-home-nurses-kl.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image teal-bg">🩹</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Catheter care at home by nurses in KL</h3>
-      <p>Prevent infections and complications with proper catheter management.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/44-blog-post-knee-surgery-home-care-kl.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Post-knee surgery home care KL: complete recovery guide</h3>
+          <p>Everything families need to know about managing knee surgery recovery at home in KL.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 15 -->
-  <a href="/blog/post-15-nebuliser-treatments-penang.html" class="post-card" data-cat="condition">
-    <div class="post-card-image teal-bg">🫁</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Nebuliser treatments at home in Penang</h3>
-      <p>Respiratory care for asthma and COPD patients at home.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/45-blog-home-nursing-c-section-malaysia.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image pink-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#9d174d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Home nursing after C-section Malaysia: what every new mother needs</h3>
+          <p>Professional midwife support for C-section recovery — wound care, breastfeeding, and newborn assessment.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 16 -->
-  <a href="/blog/post-16-elderly-fall-warning-home-nursing-malaysia.html" class="post-card" data-cat="condition">
-    <div class="post-card-image warm-bg">👴</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Warning signs elderly need home nursing before a fall</h3>
-      <p>Most falls are preventable if early warning signs are identified.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/39-blog-home-oxygen-therapy-penang.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Safe home oxygen therapy setup in Penang: book doctor visit now guide</h3>
+          <p>What long-term oxygen therapy involves at home, safety checks, and when to call for urgent help.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">9 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 17 -->
-  <a href="/blog/post-17-home-doctor-vs-clinic-post-surgery-kl.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image navy-bg">🚗</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>Home doctor vs clinic visit after surgery in KL</h3>
-      <p>Compare safety risks and recovery outcomes.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/40-blog-elderly-fall-recovery-penang.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Elderly fall recovery at home in Penang: nursing support and rehabilitation guide</h3>
+          <p>How professional nursing supports recovery after a fall — and prevents the next one.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 18 -->
-  <a href="/blog/post-18-home-nurse-checklist-chronic-illness-johor.html" class="post-card" data-cat="condition">
-    <div class="post-card-image green-bg">🩺</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Checklist for hiring a home nurse during flare-ups</h3>
-      <p>Know when symptoms require professional intervention.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 6 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/How-Soon-After-Hospital-Discharge-in-Malaysia-Do-I-Need-a-Home-Nursing-Visit-for-Wound-Care.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>How soon after hospital discharge in Malaysia do I need a home nursing visit for wound care?</h3>
+          <p>The answer most discharge teams don't tell you clearly — and why the timing matters clinically.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 19 -->
-  <a href="/blog/post-19-postnatal-home-care-infection-malaysia.html" class="post-card" data-cat="condition">
-    <div class="post-card-image pink-bg">👶</div>
-    <div class="post-card-body">
-      <span class="post-category-tag condition">Condition</span>
-      <h3>Postnatal infection risks and home care timing</h3>
-      <p>Prevent complications with early monitoring and support.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/What-to-Do-After-Hospital-Discharge-in-Malaysia.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>What to do after hospital discharge in Malaysia: the complete family guide</h3>
+          <p>Step-by-step guide for families navigating the critical first week after a loved one leaves hospital.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">9 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-  <!-- 20 -->
-  <a href="/blog/post-20-doctor-home-visit-after-discharge-malaysia.html" class="post-card" data-cat="transactional">
-    <div class="post-card-image teal-bg">🏥</div>
-    <div class="post-card-body">
-      <span class="post-category-tag transactional">Care Guide</span>
-      <h3>When to book a doctor home visit after discharge</h3>
-      <p>The first week after discharge is critical for recovery.</p>
-    </div>
-    <div class="post-card-footer"><span class="post-meta-item">⏱ 5 min read</span><span class="post-read-link">Read →</span></div>
-  </a>
+      <a href="/blog/post-41-home-nursing-after-appendix-removal-johor.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>Home nursing after appendix removal in Johor: updated 2026 guide</h3>
+          <p>Updated guidance on post-appendectomy care at home — when to call a nurse and when to go to ER.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-<!-- 21 -->
-<a href="/blog/01-cheapest-home-nursing-rates-kuala-lumpur-vs-public-hospitals-2026.html" class="post-card" data-cat="educational">
-  <div class="post-card-image green-bg">💰</div>
-  <div class="post-card-body">
-    <span class="post-category-tag educational">Educational</span>
-    <h3>Cheapest home nursing rates in Kuala Lumpur vs public hospitals (2026)</h3>
-    <p>A realistic cost comparison between home nursing services and public hospital follow-ups.</p>
-  </div>
-  <div class="post-card-footer">
-    <span class="post-meta-item">⏱ 6 min read</span>
-    <span class="post-read-link">Read →</span>
-  </div>
-</a>
+      <a href="/blog/33-in-home-wound-stitching-doctors-johor-cost-urgency.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>In-home wound stitching doctors in Johor: cost and urgency guide</h3>
+          <p>When wound stitching can be done at home and when it requires an emergency department.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-<!-- 22 -->
-<a href="/blog/02-homecareapps-vs-competitors-doctor-home-visits-penang-post-op.html" class="post-card" data-cat="transactional">
-  <div class="post-card-image navy-bg">🏥</div>
-  <div class="post-card-body">
-    <span class="post-category-tag transactional">Care Guide</span>
-    <h3>HomeCareApps vs competitors for post-op doctor home visits in Penang</h3>
-    <p>Compare response times, convenience, and post-surgical support options.</p>
-  </div>
-  <div class="post-card-footer">
-    <span class="post-meta-item">⏱ 5 min read</span>
-    <span class="post-read-link">Read →</span>
-  </div>
-</a>
+      <a href="/blog/32-ng-tube-feeding-setup-home-kl-home-nursing.html" class="post-card" data-cat="transactional">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag transactional">Care Guide</span>
+          <h3>NG tube feeding setup at home in KL: home nursing guide</h3>
+          <p>What families need to know about nasogastric tube feeding at home and the clinical support required.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-<!-- 23 -->
-<a href="/blog/03-affordable-home-care-packages-diabetes-patients-malaysia.html" class="post-card" data-cat="condition">
-  <div class="post-card-image teal-bg">🩺</div>
-  <div class="post-card-body">
-    <span class="post-category-tag condition">Condition</span>
-    <h3>Affordable home care packages for diabetes patients in Malaysia</h3>
-    <p>Explore cost-effective care solutions for long-term diabetes management at home.</p>
-  </div>
-  <div class="post-card-footer">
-    <span class="post-meta-item">⏱ 6 min read</span>
-    <span class="post-read-link">Read →</span>
-  </div>
-</a>
+      <a href="/blog/01-cheapest-home-nursing-rates-kuala-lumpur-vs-public-hospitals-2026.html" class="post-card" data-cat="cost">
+        <div class="post-card-image green-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Cheapest reliable home nursing rates in KL vs public hospitals: 2026 comparison</h3>
+          <p>What home nursing costs, what public and private hospital attendance costs, and which suits your situation.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-<!-- 24 -->
-<a href="/blog/04-access-home-nursing-fast-selangor-wait-times-prices.html" class="post-card" data-cat="transactional">
-  <div class="post-card-image teal-bg">⚡</div>
-  <div class="post-card-body">
-    <span class="post-category-tag transactional">Care Guide</span>
-    <h3>How fast can you access home nursing in Selangor?</h3>
-    <p>Average wait times, pricing expectations, and urgent booking options explained.</p>
-  </div>
-  <div class="post-card-footer">
-    <span class="post-meta-item">⏱ 5 min read</span>
-    <span class="post-read-link">Read →</span>
-  </div>
-</a>
+      <a href="/blog/02-homecareapps-vs-competitors-doctor-home-visits-penang-post-op.html" class="post-card" data-cat="cost">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Best value doctor home visits in Penang for post-op recovery</h3>
+          <p>What to compare beyond price — credential verification, documentation, and accountability.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-<!-- 25 -->
-<a href="/blog/05-cost-comparison-home-doctor-visits-vs-er-elderly-johor-bahru-2026.html" class="post-card" data-cat="educational">
-  <div class="post-card-image warm-bg">🚑</div>
-  <div class="post-card-body">
-    <span class="post-category-tag educational">Educational</span>
-    <h3>Home doctor visits vs ER costs for elderly patients in Johor Bahru</h3>
-    <p>Understand when a home visit may reduce unnecessary emergency admissions.</p>
-  </div>
-  <div class="post-card-footer">
-    <span class="post-meta-item">⏱ 6 min read</span>
-    <span class="post-read-link">Read →</span>
-  </div>
-</a>
+      <a href="/blog/03-affordable-home-care-packages-diabetes-patients-malaysia.html" class="post-card" data-cat="cost">
+        <div class="post-card-image green-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Affordable home care packages for diabetes patients in Malaysia</h3>
+          <p>RM120 per insulin visit vs RM5,000–RM30,000 for a diabetic foot complication.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-<!-- 26 -->
-<a href="/blog/post-26-home-nursing-after-csection-malaysia.html" class="post-card" data-cat="condition">
-  <div class="post-card-image pink-bg">👶</div>
-  <div class="post-card-body">
-    <span class="post-category-tag condition">Condition</span>
-    <h3>Home nursing after C-section in Malaysia</h3>
-    <p>Recovery support, wound care, and warning signs mothers should monitor at home.</p>
-  </div>
-  <div class="post-card-footer">
-    <span class="post-meta-item">⏱ 6 min read</span>
-    <span class="post-read-link">Read →</span>
-  </div>
-</a>
+      <a href="/blog/04-access-home-nursing-fast-selangor-wait-times-prices.html" class="post-card" data-cat="cost">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Access home nursing fast in Selangor: wait times and prices 2026</h3>
+          <p>Nurse matched within 2 hours of booking. What to have ready to make the process as fast as possible.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-<!-- 27 -->
-<a href="/blog/post-27-post-knee-surgery-home-care-kl.html" class="post-card" data-cat="condition">
-  <div class="post-card-image navy-bg">🦵</div>
-  <div class="post-card-body">
-    <span class="post-category-tag condition">Condition</span>
-    <h3>Post knee surgery home care in KL</h3>
-    <p>Important recovery steps, mobility support, and pain management after surgery.</p>
-  </div>
-  <div class="post-card-footer">
-    <span class="post-meta-item">⏱ 6 min read</span>
-    <span class="post-read-link">Read →</span>
-  </div>
-</a>
+      <a href="/blog/05-cost-comparison-home-doctor-visits-vs-er-elderly-johor-bahru-2026.html" class="post-card" data-cat="cost">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Cost comparison: home doctor visits vs ER for elderly in Johor Bahru 2026</h3>
+          <p>RM200 home nursing vs RM300–RM2,000 emergency attendance. When each is appropriate.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-<!-- 28 -->
-<a href="/blog/post-28-hospital-discharge-checklist-malaysia.html" class="post-card" data-cat="educational">
-  <div class="post-card-image green-bg">📋</div>
-  <div class="post-card-body">
-    <span class="post-category-tag educational">Educational</span>
-    <h3>Hospital discharge checklist for Malaysian families</h3>
-    <p>Everything families should prepare before bringing a patient home.</p>
-  </div>
-  <div class="post-card-footer">
-    <span class="post-meta-item">⏱ 5 min read</span>
-    <span class="post-read-link">Read →</span>
-  </div>
-</a>
+      <a href="/blog/post-04-home-nursing-costs-malaysia.html" class="post-card" data-cat="cost">
+        <div class="post-card-image green-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Post-surgery home nursing costs in Malaysia: affordable options explained</h3>
+          <p>Full pricing breakdown from RM120 to RM280 — why home nursing costs far less than a readmission.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-<!-- 29 -->
-<a href="/blog/post-29-home-physiotherapy-cost-penang.html" class="post-card" data-cat="educational">
-  <div class="post-card-image teal-bg">🏃</div>
-  <div class="post-card-body">
-    <span class="post-category-tag educational">Educational</span>
-    <h3>Home physiotherapy costs in Penang</h3>
-    <p>Pricing guide for rehabilitation, mobility recovery, and home physio sessions.</p>
-  </div>
-  <div class="post-card-footer">
-    <span class="post-meta-item">⏱ 5 min read</span>
-    <span class="post-read-link">Read →</span>
-  </div>
-</a>
+      <a href="/blog/post-04-home-nursing-prices-kl-vs-penang.html" class="post-card" data-cat="cost">
+        <div class="post-card-image green-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>2026 home nursing prices Malaysia: KL vs Penang for post-surgery savings</h3>
+          <p>Side-by-side pricing comparison across regions — and which factors affect what you pay.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
 
-<!-- 30 -->
-<a href="/blog/post-30-home-nursing-after-appendix-removal-johor.html" class="post-card" data-cat="condition">
-  <div class="post-card-image warm-bg">🩹</div>
-  <div class="post-card-body">
-    <span class="post-category-tag condition">Condition</span>
-    <h3>Home nursing after appendix removal in Johor</h3>
-    <p>Recovery timelines, infection prevention, and post-operative monitoring at home.</p>
-  </div>
-  <div class="post-card-footer">
-    <span class="post-meta-item">⏱ 5 min read</span>
-    <span class="post-read-link">Read →</span>
-  </div>
-</a>
+      <a href="/blog/post-05-doctor-home-visit-vs-polyclinic-johor.html" class="post-card" data-cat="cost">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Doctor home visits vs polyclinics in Johor: full cost breakdown</h3>
+          <p>Comparing the real total cost of a home visit against polyclinic attendance for Johor families.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-06-budget-elderly-home-care-selangor.html" class="post-card" data-cat="cost">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Budget home care for the elderly in Selangor: compare packages</h3>
+          <p>How to access professional elderly home care in Selangor without overpaying.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-07-home-iv-antibiotics-kl-vs-readmission.html" class="post-card" data-cat="cost">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Cheapest safe home IV antibiotics in KL vs hospital readmission costs</h3>
+          <p>The financial and clinical case for completing IV antibiotic courses at home rather than in hospital.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-29-home-physiotherapy-cost-penang.html" class="post-card" data-cat="cost">
+        <div class="post-card-image green-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Cost of home physiotherapy post-surgery in Penang vs clinic expenses</h3>
+          <p>Full cost comparison table — home physio vs clinic once transport and time are included.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-42-home-physiotherapy-cost-penang.html" class="post-card" data-cat="cost">
+        <div class="post-card-image green-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Home physiotherapy cost in Penang: 2026 updated comparison</h3>
+          <p>Updated pricing for home physiotherapy vs clinic attendance in Penang.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-43-hospital-discharge-checklist-malaysia.html" class="post-card" data-cat="cost">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Hospital discharge checklist Malaysia 2026: updated home nursing guide</h3>
+          <p>Updated checklist for Malaysian families navigating discharge and arranging home nursing.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/46-blog-postpartum-home-nursing-costs-malaysia.html" class="post-card" data-cat="cost">
+        <div class="post-card-image pink-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#9d174d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Postpartum home nursing costs in Malaysia: safe recovery for busy moms</h3>
+          <p>What postpartum home nursing costs, what it covers, and why it is worth it for new mothers.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/34-home-blood-draws-lab-tests-malaysia-post-surgery.html" class="post-card" data-cat="cost">
+        <div class="post-card-image green-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag cost">Cost &amp; Access</span>
+          <h3>Home blood draws and lab tests in Malaysia after surgery: cost and access guide</h3>
+          <p>When and how to arrange blood tests and lab work at home rather than travelling to a clinic.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-09-elderly-nursing-dementia-safety-malaysia.html" class="post-card" data-cat="condition">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Elderly nursing in Malaysia: quick decisions for dementia safety at home</h3>
+          <p>How dementia changes clinical risk at home — and why early nursing involvement is protective.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-10-heart-condition-home-care-malaysian-seniors.html" class="post-card" data-cat="condition">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Heart condition home care for Malaysian seniors</h3>
+          <p>Structured cardiac monitoring at home — what an ICU-trained nurse assesses and when to go to hospital.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-12-diabetes-insulin-nursing-selangor.html" class="post-card" data-cat="condition">
+        <div class="post-card-image green-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Home nursing for diabetes insulin shots in Selangor</h3>
+          <p>Which diabetic patients need professional nursing support — and when to book within 24 hours.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-13-blood-pressure-ecg-home-malaysia.html" class="post-card" data-cat="condition">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Safe blood pressure checks and ECG at home: avoid the ER</h3>
+          <p>When an elevated home blood pressure reading does not require emergency attendance.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-15-nebuliser-treatments-penang.html" class="post-card" data-cat="condition">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>In-home nebuliser treatments for chronic illness in Penang</h3>
+          <p>When home nebulisation is safe — and the six signs that mean you must go to the ER instead.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-11-fall-prevention-home-nursing-diabetics-johor.html" class="post-card" data-cat="condition">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Fall prevention home nursing for diabetics in Johor</h3>
+          <p>Why diabetic patients in Johor face elevated fall risk — and how regular nursing visits reduce it.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/31-home-ecg-monitoring-heart-patients-selangor.html" class="post-card" data-cat="condition">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Home ECG monitoring for heart patients in Selangor: when and how</h3>
+          <p>When home ECG is clinically appropriate and what a registered nurse monitors during a cardiac home visit.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/35-blog-stroke-recovery-selangor.html" class="post-card" data-cat="condition">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Stroke recovery at home in Selangor: nursing and rehabilitation guide</h3>
+          <p>What professional nursing provides during stroke recovery at home and when specialist input is needed.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/36-blog-alzheimers-home-care-malaysia.html" class="post-card" data-cat="condition">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Alzheimer's home care in Malaysia: nursing support for families</h3>
+          <p>Clinical nursing support for Alzheimer's patients at home — what it involves and when to escalate.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/37-blog-bedsores-prevention-home-nurses-kl.html" class="post-card" data-cat="condition">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Bedsore prevention by home nurses in KL: clinical guide for families</h3>
+          <p>How registered nurses assess and prevent pressure ulcers in bedridden patients at home in KL.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/38-blog-doctor-home-visits-hypertension-elderly-malaysia.html" class="post-card" data-cat="condition">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Doctor home visits for hypertension in elderly Malaysia: monitoring guide</h3>
+          <p>When to arrange professional monitoring at home for elderly hypertension patients in Malaysia.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/48-blog-diabetes-home-monitoring-kl.html" class="post-card" data-cat="condition">
+        <div class="post-card-image green-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Diabetes home monitoring services in KL: cost-effective risk reduction</h3>
+          <p>How regular home monitoring visits reduce diabetic complications and long-term care costs in KL.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/49-blog-heart-failure-home-care-johor.html" class="post-card" data-cat="condition">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag condition">Condition</span>
+          <h3>Heart failure home care in Johor: HomeCareApps affordability guide</h3>
+          <p>What home nursing provides for heart failure patients in Johor — monitoring, medication, and early detection.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">8 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-06-elderly-nursing-malaysia-before-fall.html" class="post-card" data-cat="educational">
+        <div class="post-card-image warm-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag educational">Educational</span>
+          <h3>Home nursing for elderly parents: signs it is time to hire before a fall</h3>
+          <p>Most falls are preventable. These are the physical and behavioural warning signs to act on.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-08-safe-daily-care-aging-parents-kl.html" class="post-card" data-cat="educational">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag educational">Educational</span>
+          <h3>Safe daily care for aging parents at home in KL</h3>
+          <p>The three most missed clinical gaps in family caregiving — and what regular nursing visits add.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-08-home-nursing-apps-malaysia-chronic-care.html" class="post-card" data-cat="educational">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag educational">Educational</span>
+          <h3>Home nursing apps in Malaysia: service comparison for chronic care</h3>
+          <p>How to evaluate home nursing platforms — what verified credentials mean and what questions to ask.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/post-10-post-op-fever-home-care-or-er-kl.html" class="post-card" data-cat="safety">
+        <div class="post-card-image navy-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag safety">Safety</span>
+          <h3>Post-op fever in KL: home care or ER? Safety checklist for families</h3>
+          <p>A clear decision framework for families managing post-operative fever at home in Kuala Lumpur.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/47-blog-home-doctor-breastfeeding-penang.html" class="post-card" data-cat="safety">
+        <div class="post-card-image pink-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#9d174d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag safety">Safety</span>
+          <h3>Home doctor for breastfeeding issues in Penang: urgent vs clinic wait times</h3>
+          <p>When breastfeeding complications need same-day professional help and what home nursing provides.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
+      <a href="/blog/50-blog-safe-home-vaccinations-selangor.html" class="post-card" data-cat="safety">
+        <div class="post-card-image teal-bg"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#008A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="post-card-body">
+          <span class="post-category-tag safety">Safety</span>
+          <h3>Safe home vaccinations for chronic patients in Selangor: decision and pricing</h3>
+          <p>When home vaccination is appropriate for chronic illness patients and what the process involves.</p>
+        </div>
+        <div class="post-card-footer">
+          <span class="post-meta-item">7 min read</span>
+          <span class="post-read-link">Read →</span>
+        </div>
+      </a>
+
     </div>
 
     <div class="load-more-row">
@@ -833,10 +1203,12 @@ nav {
       <div class="sidebar-widget-header"><h3>Browse by Category</h3></div>
       <div class="sidebar-widget-body">
         <div class="cat-list">
-          <a href="#" class="cat-list-item" onclick="filterCat('all');return false;">All Articles <span class="cat-count">12</span></a>
-          <a href="#" class="cat-list-item" onclick="filterCat('educational');return false;">Educational <span class="cat-count">6</span></a>
-          <a href="#" class="cat-list-item" onclick="filterCat('transactional');return false;">Care Guides <span class="cat-count">4</span></a>
-          <a href="#" class="cat-list-item" onclick="filterCat('condition');return false;">Condition-specific <span class="cat-count">3</span></a>
+          <a href="#" class="cat-list-item" onclick="filterCat('all');return false;">All Articles <span class="cat-count">54</span></a>
+          <a href="#" class="cat-list-item" onclick="filterCat('educational');return false;">Educational <span class="cat-count">3</span></a>
+          <a href="#" class="cat-list-item" onclick="filterCat('transactional');return false;">Care Guides <span class="cat-count">20</span></a>
+          <a href="#" class="cat-list-item" onclick="filterCat('condition');return false;">Condition-specific <span class="cat-count">13</span></a>
+          <a href="#" class="cat-list-item" onclick="filterCat('cost');return false;">Cost &amp; Access <span class="cat-count">15</span></a>
+          <a href="#" class="cat-list-item" onclick="filterCat('safety');return false;">Safety <span class="cat-count">3</span></a>
         </div>
       </div>
     </div>
@@ -860,7 +1232,7 @@ nav {
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="Homecare_Icon.png" alt="HomeCareApps">
+        <img src="/Homecare_Icon.png" alt="HomeCareApps">
         <p>Verified registered nurses for clinical home visits in Malaysia. A product by WeAssist — Malaysia's largest verified nurse staffing platform.</p>
       </div>
       <div class="footer-col">
@@ -913,7 +1285,7 @@ document.querySelectorAll('.cat-btn').forEach(btn => {
 
 // Load more (placeholder — shows alert, replace with real pagination later)
 document.getElementById('loadMoreBtn').addEventListener('click', function() {
-  this.textContent = 'No more articles yet — check back soon';
+  this.textContent = 'All 54 articles loaded';
   this.disabled = true;
   this.style.opacity = '0.5';
 });
